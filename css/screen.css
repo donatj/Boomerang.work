@@ -1,0 +1,227 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+main {
+  display: block;
+}
+
+body {
+  background: #217dbb;
+  font-family: Arial;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+
+a {
+  color: #0092B4;
+  text-decoration: none;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+a:hover {
+  color: #D70036;
+}
+
+#logotitle {
+  position: absolute;
+  top: 73px;
+  left: 60px;
+  font-family: 'Lily Script One';
+  font-size: 83px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+#logotitle i {
+  font-size: 1.3em;
+}
+
+body > header main, body > main main, body > footer main {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+body > header {
+  background: #3498db;
+  line-height: 0;
+  color: white;
+}
+body > header main {
+  height: 125px;
+  background: #2980b9;
+}
+body > header nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+body > header nav a {
+  display: inline-block;
+  color: #2980b9;
+  background: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px;
+  margin: 4px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border: 1px solid white;
+}
+body > header nav a:hover {
+  background: #2980b9;
+  color: white;
+}
+body > header svg {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+body > header svg path {
+  fill: white;
+}
+body > main {
+  background: #ecf0f1;
+}
+body > main main {
+  min-height: 100%;
+  padding: 10px 20px;
+  background: white;
+}
+body > footer {
+  margin-bottom: 40px;
+  background: #217dbb;
+  font-size: .9em;
+}
+body > footer main {
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  background: #20638f;
+}
+body > footer a {
+  color: #CCF;
+}
+
+pre, code {
+  background: bottom repeat-x rgba(223, 221, 221, 0.3);
+  font-family: Consolas,"Courier New",Courier,monospace;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+pre {
+  display: block;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+  font-size: .9em;
+  padding: 22px;
+  line-height: 1.4em;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  background: transparent;
+  -webkit-box-shadow: 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
+  display: block;
+  overflow: auto;
+}
+
+#content_struct {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  background: #f5f7f8;
+  font-size: 12px;
+  line-height: 1.4em;
+  float: right;
+  padding: 20px;
+}
+#content_struct ul, #content_struct li {
+  list-style-type: lower-greek;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#content_struct ul {
+  padding-left: 20px;
+  padding-top: 0;
+}
+
+/* * Github Badge * */
+.github_badge {
+  background-color: #3498db;
+  overflow: hidden;
+  /* top left corner */
+  position: fixed;
+  right: -3em;
+  top: 2.5em;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 1em #888888;
+  -moz-box-shadow: 0 0 1em #888888;
+  box-shadow: 0 0 1em #888888;
+  z-index: 100;
+}
+.github_badge a {
+  border: 1px solid white;
+  color: #fff;
+  display: block;
+  font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+  margin: 0.05em 0 0.075em 0;
+  padding: 0.5em 3.5em;
+  text-align: center;
+  text-decoration: none;
+  /* shadow */
+  text-shadow: 0 0 0.5em #444444;
+}

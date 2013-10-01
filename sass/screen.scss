@@ -1,0 +1,210 @@
+@import "compass/css3";
+@import "compass/reset/utilities";
+@import "compass/typography/text/force-wrap";
+@import "github_badge.scss";
+
+@include reset-html5;
+
+$headerbg: #3498DB;
+$headerInner: #2980B9;
+$headerContrast: white;
+
+$mainbg: #ECF0F1;
+$mainInner: white;
+
+// $footerbg: #2C3E50;
+// $footerInner: #34495E;
+$footerbg: darken($headerbg, 10);
+$footerInner: darken($headerInner, 10);
+
+main {
+  display: block;
+}
+
+// @include reset-body;
+body {
+	background: $footerbg;
+	font-family: Arial;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5em;
+}
+
+a {
+	color: #0092B4;
+	text-decoration: none;
+	@include transition-property(all);
+	@include transition-duration(.2s);
+
+}
+
+a:hover { color: #D70036;}
+
+#logotitle {
+	position: absolute;
+	top: 73px;
+	left: 60px;
+	font-family: 'Lily Script One';
+	font-size: 83px;
+	display: inline-block;
+	text-decoration: none;
+	color: $headerContrast;
+
+	i {
+		font-size: 1.3em;
+	}
+}
+
+body {
+	& > header, & > main, & > footer {
+		main {
+			@include box-sizing(border-box);
+			// box-sizing: border-box;
+			width: 1000px;
+			margin: 0 auto;
+			position: relative;
+		}
+	}
+
+	& > header {
+
+		background: $headerbg;
+		line-height: 0;
+		
+		color: $headerContrast;
+
+		main {
+			height: 125px;
+			background: $headerInner;
+			// background: #2980B9;
+			
+		}
+
+		nav {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+
+			// float: right;
+			a {
+				display: inline-block;
+				color: $headerInner;
+				background: $headerContrast;
+				font-weight: bold;
+				text-decoration: none;
+				font-size: 20px;
+				padding: 20px;
+				margin: 4px;
+
+				@include border-radius(8px);
+
+				@include transition-property(all);
+				@include transition-duration(.3s);
+
+				border: 1px solid $headerContrast;
+
+				&:hover {
+					background: $headerInner;
+					color: $headerContrast;
+					// border: 1px solid $headerContrast;
+				}
+
+			}
+		}
+
+		svg {
+			position: absolute;
+			top: -20px;
+			left: 0;
+			width: 120px;
+			height: 120px;
+
+			@include rotate( -40deg );
+
+			path {
+				fill: $headerContrast;
+			}
+
+		}
+	}
+
+	& > main {
+		background: $mainbg;
+
+		main {
+			min-height: 100%;
+			padding: 10px 20px;
+			background: $mainInner;
+		}
+	}
+
+	& > footer {
+
+		margin-bottom: 40px;
+
+		background: $footerbg;
+		font-size: .9em;
+
+		main {
+			text-align: center;
+
+			color: white;
+			padding: 10px 20px;
+			background: $footerInner;
+		}
+
+		a {
+			color: #CCF;
+		}
+
+	}
+}
+
+
+pre, code {
+	background: /* url(images/box_shadow.png) */ bottom repeat-x rgba(223, 221, 221, .3); //#DFDDDD;
+	font-family: Consolas,"Courier New",Courier,monospace;
+	@include border-radius(3px);
+}
+
+pre {
+	display: block;
+	@include force-wrap();
+	font-size: .9em;
+	padding: 22px;
+	line-height: 1.4em;
+	@include box-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+
+	code { 
+		margin: 0;
+  		padding: 0;
+		white-space: pre;
+		background: transparent; 
+		@include box-shadow(0 0 0 transparent);
+		display: block;
+		overflow: auto;
+	}
+}
+
+#content_struct {
+	@include border-radius(8px);
+	background: mix($mainbg, $mainInner);
+	font-size: 12px;
+	line-height: 1.4em;
+	float: right;
+
+	padding: 20px;
+	ul, li {
+		list-style-type: lower-greek;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	ul {
+		padding-left: 20px;
+		padding-top: 0;
+	}
+
+}
+
+@include github_badge( $headerbg );

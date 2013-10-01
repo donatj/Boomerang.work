@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+			     _o
+			    //\/    ⧽
+			   _/\
+			     /
+-->
+	<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Jesse Donat" />
+		<title>{% if page.title %}{{ page.title }} - {% endif %}Boomerang!</title>
+		<link href='http://fonts.googleapis.com/css?family=Lily+Script+One' rel='stylesheet' type='text/css'>
+		<link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link href="css/syntax.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<script src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+		<script src="js/header_anchoring.js"></script>
+		{% if page.header_anchor %}
+		<script type="text/javascript">
+		window.addEvent('load', function() {
+			console.log('x');
+			header_anchoring( 'body > main', '#content_struct' );
+		});
+		</script>
+		{% endif %}
+	</head>
+	<body>
+
+	<div class="github_badge"><a href="https://github.com/donatj/boomerang" target="_blank">Fork me on Github!</a></div>
+
+	<header>
+		<main>
+
+
+			{% include images/boomerang.svg %}
+
+
+			<a href="/" id="logotitle">Boomerang<i>!</i></a>
+			<nav>
+				<a href="docs.html">Docs</a><a href="getting_started.html">Get Started</a><a href="install.html">Install</a>
+			</nav>
+		</main>
+	</header>
+	<main>
+		<main>{% if page.header_anchor %}<nav id="content_struct"></nav>{% endif %}
+
+			{{ content }}
+
+		</main>
+	</main>
+	<footer>
+		<main>
+
+			Boomerang<i>!</i> was created by: <a href="http://donatstudios.com">Jesse G. Donat</a><!-- img src="http://www.gravatar.com/avatar/50cb4981bbaa51b1713269a29f78d826?s=32" alt="Jesse G. Donat" --><br />
+			Boomerang<i>!</i> and the content of this site are open source under the <a href="https://github.com/donatj/Boomerang/blob/master/LICENSE.md">MIT License</a>
+
+			<a href="/index.html"></a>
+
+		</main>
+	</footer>
+
+	</body>
+</html>
