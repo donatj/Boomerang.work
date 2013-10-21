@@ -14,7 +14,7 @@ Inspired by [Frisby.js](http://frisbyjs.com/), Boomerang*!* takes API testing a 
 
 ## What does a simple test look like?
 
-Here is a simple sample that validates a respond like `{ "origin": "216.14.16.226" }`
+Here is a simple sample that validates a response like `{ "origin": "216.14.16.226" }` where the IP address could be variable.
 
 {% highlight php %}
 <?php
