@@ -23,20 +23,20 @@ namespace Boomerang;
 
 use Boomerang\TypeExpectations\RegexEx;
 
-$req      = new HttpRequest('http://httpbin.org/ip'); // Create the API Request
+$req      = new HttpRequest('http:                    //httpbin.org/ip'); // Create the API Request
 $response = $req->makeRequest();                      // Execute the request, return a Response object
 
-$valid = new HttpResponseValidator($response);  // Create an HTTP response validator.
-$valid->expectStatus(200)                       // State a HTTP 200 status expectation
-->expectHeaderContains('Content-Type', 'json'); // State a Content-Type expectation
+$valid = new HttpResponseValidator($response);        // Create an HTTP response validator.
+$valid->expectStatus(200)                             // State a HTTP 200 status expectation
+->expectHeaderContains('Content-Type', 'json');       // State a Content-Type expectation
 
-Boomerang::addValidator($valid); // Register the validator with Boomerang to output the results
+Boomerang::addValidator($valid);                      // Register the validator with Boomerang
 
-$json = new JSONValidator($response); // Create a JSON Validator
+$json = new JSONValidator($response);                 // Create a JSON Validator
 $json->expectStructure(array(
 	// Check that the 'origin' key matches a simple four dot IPv4 pattern.
 	"origin" => new RegexEx('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/')
 ));
 
-Boomerang::addValidator($json); // Register the validator with Boomerang to output the results
+Boomerang::addValidator($json);                       // Register the validator with Boomerang
 {% endhighlight %}
