@@ -34,7 +34,8 @@ Boomerang::addValidator($valid); // Register the validator with Boomerang to out
 
 $json = new JSONValidator($response); // Create a JSON Validator
 $json->expectStructure(array(
-	"origin" => new RegexEx('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/') // Check that the 'origin' key matches a simple IP pattern.
+	// Check that the 'origin' key matches a simple four dot IPv4 pattern.
+	"origin" => new RegexEx('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/')
 ));
 
 Boomerang::addValidator($json); // Register the validator with Boomerang to output the results
