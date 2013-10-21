@@ -11,7 +11,7 @@ header_anchor: true
 - Unix-like Enviornment (OS X / Linux / Cygwin)
 - PHP 5.3.0+
 
-## Via Composer 
+## Via Composer (recommended)
 
 If you are a PHP developer, `composer` is the recommended installation method. Boomerang*!* can be installed globally or within the current project.
 
@@ -34,3 +34,5 @@ Add the following to your composer.json
 Then, from beneath the `vendor` folder, you can execute `./vendor/bin/boomerang`
 
 ## Via Self Updating PHAR
+
+Info to come!
