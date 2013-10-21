@@ -23,7 +23,7 @@ namespace Boomerang;
 
 use Boomerang\TypeExpectations\RegexEx;
 
-$req      = new HttpRequest('http:                    //httpbin.org/ip'); // Create the API Request
+$req      = new HttpRequest('http://httpbin.org/ip'); // Create the API Request
 $response = $req->makeRequest();                      // Execute the request, return a Response object
 
 $valid = new HttpResponseValidator($response);        // Create an HTTP response validator.
