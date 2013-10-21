@@ -28,7 +28,7 @@ $response = $req->makeRequest();                       // Execute the request, r
 
 $valid = new HttpResponseValidator($response);         // Create an HTTP response validator.
 $valid->expectStatus(200)                              // State a HTTP 200 status expectation
-       ->expectHeaderContains('Content-Type', 'json'); // State a Content-Type expectation
+      ->expectHeaderContains('Content-Type', 'json');  // State a Content-Type expectation
 
 Boomerang::addValidator($valid);                       // Register the validator with Boomerang
 
