@@ -61,7 +61,7 @@ Set an outgoing header by name.
 
 ##### Arguments
 
-- `$key` (``)
+- `$key` (`mixed`)
 
 
 ##### Returns
@@ -75,8 +75,8 @@ Set a named key of the post value
 
 ##### Arguments
 
-- `$key` (``)
-- `$value` (``)
+- `$key` (`mixed`)
+- `$value` (`mixed`)
 
 
 
