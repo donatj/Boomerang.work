@@ -39,6 +39,24 @@ a {
 
 }
 
+h1 {
+	padding-bottom: 15px;
+	border-bottom: 7px double $mainbg;
+}
+
+h2 {
+	padding-bottom: 7px;
+	border-bottom: 5px double $mainbg;
+}
+
+h3 {
+	border-bottom: 2px solid $mainbg;
+}
+
+h4 {
+	border-bottom: 1px solid $mainbg;
+}
+
 a:hover { color: #D70036;}
 
 #logotitle {
@@ -163,7 +181,7 @@ body {
 
 
 pre, code {
-	background: /* url(images/box_shadow.png) */ bottom repeat-x rgba(223, 221, 221, .3); //#DFDDDD;
+	background: bottom repeat-x rgba(223, 221, 221, .3); //#DFDDDD;
 	font-family: Consolas,"Courier New",Courier,monospace;
 	@include border-radius(3px);
 }

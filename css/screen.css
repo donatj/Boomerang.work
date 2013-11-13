@@ -28,6 +28,24 @@ a {
   transition-duration: 0.2s;
 }
 
+h1 {
+  padding-bottom: 15px;
+  border-bottom: 7px double #ecf0f1;
+}
+
+h2 {
+  padding-bottom: 7px;
+  border-bottom: 5px double #ecf0f1;
+}
+
+h3 {
+  border-bottom: 2px solid #ecf0f1;
+}
+
+h4 {
+  border-bottom: 1px solid #ecf0f1;
+}
+
 a:hover {
   color: #D70036;
 }
