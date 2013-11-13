@@ -1,3 +1,10 @@
+---
+layout: default
+title: Documentation
+header_anchor: true
+---
+# Documentation
+
 ## Application
 
 ### Class: Boomerang - `\Boomerang\Boomerang`
