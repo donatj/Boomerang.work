@@ -5,14 +5,12 @@ header_anchor: true
 ---
 # Documentation
 
+
 ## Application
 
 ### Class: Boomerang - `\Boomerang\Boomerang`
 
-#### Method: `::main($args)`
-
-
-#### Method: `::addValidator($validator)`
+#### Method: `Boomerang`::`addValidator($validator)`
 
 After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.
 
@@ -26,10 +24,10 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 
 ### Class: HttpRequest - `\Boomerang\HttpRequest`
 
-#### Method: `->__construct($endpoint, $responseFactory)`
+#### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
 
-#### Method: `->getHeader($key)`
+#### Method: `HttpRequest`->`getHeader($key)`
 
 Retrieve an outgoing header by name
 
@@ -44,7 +42,7 @@ Retrieve an outgoing header by name
 (`string` | `null`)
 
 
-#### Method: `->setHeader($key, $value)`
+#### Method: `HttpRequest`->`setHeader($key, $value)`
 
 Set an outgoing header by name.
 
@@ -57,7 +55,7 @@ Set an outgoing header by name.
 
 
 
-#### Method: `->getPost($key)`
+#### Method: `HttpRequest`->`getPost($key)`
 
 ##### Arguments
 
@@ -69,7 +67,7 @@ Set an outgoing header by name.
 (`string` | `null`)
 
 
-#### Method: `->setPost($key, $value)`
+#### Method: `HttpRequest`->`setPost($key, $value)`
 
 Set a named key of the post value
 
@@ -80,7 +78,7 @@ Set a named key of the post value
 
 
 
-#### Method: `->getPostdata()`
+#### Method: `HttpRequest`->`getPostdata()`
 
 Retrieve all enqueued post-data as an array.
 
@@ -89,7 +87,7 @@ Retrieve all enqueued post-data as an array.
 (`array`)
 
 
-#### Method: `->setPostdata($post)`
+#### Method: `HttpRequest`->`setPostdata($post)`
 
 Set all post data, whipping past values.
 
@@ -99,7 +97,7 @@ Set all post data, whipping past values.
 
 
 
-#### Method: `->setCookiesFollowRedirects($bool, $tmp_path)`
+#### Method: `HttpRequest`->`setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
 
 Allows you to enable cookie's set by server re-posting following a redirect.
 
@@ -111,7 +109,7 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 
 
-#### Method: `->setCookies($cookies)`
+#### Method: `HttpRequest`->`setCookies($cookies)`
 
 ##### Arguments
 
@@ -119,7 +117,7 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 
 
-#### Method: `->setCookie($key, $value)`
+#### Method: `HttpRequest`->`setCookie($key, $value)`
 
 ##### Arguments
 
@@ -128,14 +126,14 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 
 
-#### Method: `->getEndpoint()`
+#### Method: `HttpRequest`->`getEndpoint()`
 
 ##### Returns
 
 (`string`)
 
 
-#### Method: `->setEndpoint($endpoint)`
+#### Method: `HttpRequest`->`setEndpoint($endpoint)`
 
 ##### Arguments
 
@@ -143,21 +141,21 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 
 
-#### Method: `->makeRequest()`
+#### Method: `HttpRequest`->`makeRequest()`
 
 ##### Returns
 
 (`\Boomerang\HttpResponse`)
 
 
-#### Method: `->getHeaders()`
+#### Method: `HttpRequest`->`getHeaders()`
 
 ##### Returns
 
 (`array`)
 
 
-#### Method: `->setHeaders($headers)`
+#### Method: `HttpRequest`->`setHeaders($headers)`
 
 ##### Arguments
 
@@ -165,7 +163,7 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 
 
-#### Method: `->getLastRequestTime()`
+#### Method: `HttpRequest`->`getLastRequestTime()`
 
 Get the time the last request took in seconds a float
 
@@ -174,7 +172,7 @@ Get the time the last request took in seconds a float
 (`null` | `float`)
 
 
-#### Method: `->setMaxRedirects($maxRedirects)`
+#### Method: `HttpRequest`->`setMaxRedirects($maxRedirects)`
 
 Set the maximum number of redirects(hops) a request should follow.
 
@@ -186,7 +184,7 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ### Class: HttpResponse - `\Boomerang\HttpResponse`
 
-#### Method: `->__construct($body, $headers, $request)`
+#### Method: `HttpResponse`->`__construct($body, $headers [, $request = null])`
 
 ##### Arguments
 
@@ -197,7 +195,7 @@ Set the maximum number of redirects(hops) a request should follow.
 
 
 
-#### Method: `->getHeader($header, $hop)`
+#### Method: `HttpResponse`->`getHeader($header [, $hop = null])`
 
 ##### Arguments
 
@@ -210,7 +208,7 @@ Set the maximum number of redirects(hops) a request should follow.
 (`null` | `string`) - Header value or null on not found
 
 
-#### Method: `->getHeaders($hop)`
+#### Method: `HttpResponse`->`getHeaders([ $hop = null])`
 
 ##### Arguments
 
@@ -222,42 +220,42 @@ Set the maximum number of redirects(hops) a request should follow.
 (`array` | `null`)
 
 
-#### Method: `->getAllHeaders()`
+#### Method: `HttpResponse`->`getAllHeaders()`
 
 ##### Returns
 
 (`array`)
 
 
-#### Method: `->getRawHeaders()`
+#### Method: `HttpResponse`->`getRawHeaders()`
 
 ##### Returns
 
 (`string`)
 
 
-#### Method: `->getBody()`
+#### Method: `HttpResponse`->`getBody()`
 
 ##### Returns
 
 (`string`)
 
 
-#### Method: `->getRequest()`
+#### Method: `HttpResponse`->`getRequest()`
 
 ##### Returns
 
 (`\Boomerang\HttpRequest`)
 
 
-#### Method: `->getHopCount()`
+#### Method: `HttpResponse`->`getHopCount()`
 
 ##### Returns
 
 (`int`)
 
 
-#### Method: `->getStatus($hop)`
+#### Method: `HttpResponse`->`getStatus([ $hop = null])`
 
 ##### Arguments
 
@@ -273,17 +271,17 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ### Class: HttpResponseValidator - `\Boomerang\HttpResponseValidator`
 
-#### Method: `->__construct($response)`
+#### Method: `HttpResponseValidator`->`__construct($response)`
 
 
-#### Method: `->getResponse()`
+#### Method: `HttpResponseValidator`->`getResponse()`
 
 ##### Returns
 
 (`\Boomerang\HttpResponse`)
 
 
-#### Method: `->expectStatus($expected_status, $hop)`
+#### Method: `HttpResponseValidator`->`expectStatus([ $expected_status = 200 [, $hop = null]])`
 
 ##### Arguments
 
@@ -296,7 +294,7 @@ Set the maximum number of redirects(hops) a request should follow.
 (`$this`)
 
 
-#### Method: `->expectHeader($key, $value, $hop)`
+#### Method: `HttpResponseValidator`->`expectHeader($key, $value [, $hop = null])`
 
 ##### Arguments
 
@@ -310,7 +308,7 @@ Set the maximum number of redirects(hops) a request should follow.
 (`$this`)
 
 
-#### Method: `->expectHeaderContains($key, $value, $hop)`
+#### Method: `HttpResponseValidator`->`expectHeaderContains($key, $value [, $hop = null])`
 
 ##### Arguments
 
@@ -324,7 +322,7 @@ Set the maximum number of redirects(hops) a request should follow.
 (`$this`)
 
 
-#### Method: `->expectBody($expectedContent)`
+#### Method: `HttpResponseValidator`->`expectBody($expectedContent)`
 
 ##### Arguments
 
@@ -336,7 +334,7 @@ Set the maximum number of redirects(hops) a request should follow.
 (`$this`)
 
 
-#### Method: `->expectBodyContains($expectedContent)`
+#### Method: `HttpResponseValidator`->`expectBodyContains($expectedContent)`
 
 ##### Arguments
 
@@ -348,7 +346,7 @@ Set the maximum number of redirects(hops) a request should follow.
 (`$this`)
 
 
-#### Method: `->getExpectationResults()`
+#### Method: `HttpResponseValidator`->`getExpectationResults()`
 
 ##### Returns
 
@@ -357,9 +355,163 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ### Class: JSONValidator - `\Boomerang\JSONValidator`
 
-#### Method: `->__construct($response)`
+#### Method: `JSONValidator`->`__construct($response)`
 
 
-#### Method: `->inspectJSON()`
+#### Method: `JSONValidator`->`inspectJSON()`
+
+
+## Type Expectations
+
+### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
+
+#### Method: `AllEx`->`__construct()`
+
+
+#### Method: `AllEx`->`match($data)`
+
+
+#### Method: `AllEx`->`getMatchingTypeName()`
+
+
+### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
+
+#### Method: `AnyEx`->`match($data)`
+
+
+#### Method: `AnyEx`->`getMatchingTypeName()`
+
+
+### Class: ArrayEx - `\Boomerang\TypeExpectations\ArrayEx`
+
+#### Method: `ArrayEx`->`match($data)`
+
+
+### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
+
+#### Method: `IntEx`->`match($data)`
+
+
+#### Method: `IntEx`->`getMatchingTypeName()`
+
+
+### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
+
+#### Method: `IterateArrayEx`->`match($data)`
+
+
+#### Method: `IterateArrayEx`->`getMatchingTypeName()`
+
+
+### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
+
+#### Method: `IterateObjectEx`->`getMatchingTypeName()`
+
+
+### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
+
+#### Method: `IterateStructureEx`->`match($data)`
+
+
+#### Method: `IterateStructureEx`->`getMatchingTypeName()`
+
+
+### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
+
+#### Method: `NullEx`->`match($data)`
+
+
+#### Method: `NullEx`->`getMatchingTypeName()`
+
+
+### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
+
+#### Method: `NumberEx`->`match($data)`
+
+
+#### Method: `NumberEx`->`getMatchingTypeName()`
+
+
+### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
+
+#### Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
+
+
+#### Method: `NumericEx`->`match($data)`
+
+
+#### Method: `NumericEx`->`getMatchingTypeName()`
+
+
+### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
+
+#### Method: `NumericStringEx`->`match($data)`
+
+
+#### Method: `NumericStringEx`->`getMatchingTypeName()`
+
+
+### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
+
+#### Method: `RegexEx`->`__construct($pattern)`
+
+
+#### Method: `RegexEx`->`match($data)`
+
+
+#### Method: `RegexEx`->`getMatchingTypeName()`
+
+
+### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
+
+#### Method: `StringEx`->`match($data)`
+
+
+#### Method: `StringEx`->`getMatchingTypeName()`
+
+
+### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
+
+#### Method: `StructureEx`->`__construct($structure)`
+
+
+#### Method: `StructureEx`->`getValidator()`
+
+##### Returns
+
+(`\Boomerang\Interfaces\ValidatorInterface`)
+
+
+#### Method: `StructureEx`->`setValidator($validator)`
+
+##### Arguments
+
+- `$validator` (`\Boomerang\Interfaces\ValidatorInterface`)
+
+
+
+#### Method: `StructureEx`->`match($data)`
+
+
+#### Method: `StructureEx`->`setPath($path)`
+
+##### Arguments
+
+- `$path` (`array`)
+
+
+##### Returns
+
+(`mixed`)
+
+
+#### Method: `StructureEx`->`getExpectations()`
+
+##### Returns
+
+(`array`)
+
+
+#### Method: `StructureEx`->`getMatchingTypeName()`
 
 
