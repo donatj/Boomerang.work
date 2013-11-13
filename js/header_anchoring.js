@@ -1,5 +1,5 @@
 
-function header_anchoring( search_selector, injection_selector ) {
+function header_anchoring( search_selector, injection_selector, max_depth ) {
 
 	if( typeof "".repeat == "undefined" ) {
 		String.prototype.repeat = function( num ) {
@@ -15,6 +15,10 @@ function header_anchoring( search_selector, injection_selector ) {
 		var tag = e.get('tag');
 		var hv  = parseInt( /^h(\d+)/gi.exec(tag)[1], 10);
 		var hv_diff = hv - last_hv;
+
+		if(hv > max_depth) {
+			return;
+		}
 
 		if( hv_diff > 0 ) {
 			output += '<ul>'.repeat( hv_diff );
