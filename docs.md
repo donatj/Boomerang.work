@@ -26,6 +26,14 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 
 #### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
+##### Arguments
+
+- `$endpoint` (`string`)
+	- URI to request.
+- `$responseFactory` (`\Boomerang\Factories\HttpResponseFactory`)
+	- A factory for creating Response objects.
+
+
 
 #### Method: `HttpRequest`->`getHeader($key)`
 
@@ -39,7 +47,7 @@ Retrieve an outgoing header by name
 
 ##### Returns
 
-(`string` | `null`)
+(`string` | `null`) - Null on failure.
 
 
 #### Method: `HttpRequest`->`setHeader($key, $value)`
@@ -55,7 +63,29 @@ Set an outgoing header by name.
 
 
 
+#### Method: `HttpRequest`->`getHeaders()`
+
+Get all set headers.
+
+##### Returns
+
+(`array`)
+
+
+#### Method: `HttpRequest`->`setHeaders($headers)`
+
+Set outgoing headers as an array of HeaderName => Value
+
+##### Arguments
+
+- `$headers` (`array`)
+	- Headers to set
+
+
+
 #### Method: `HttpRequest`->`getPost($key)`
+
+Retrieve an post value by name.
 
 ##### Arguments
 
@@ -80,7 +110,7 @@ Set a named key of the post value
 
 #### Method: `HttpRequest`->`getPostdata()`
 
-Retrieve all enqueued post-data as an array.
+Retrieve all queued post-data as an array.
 
 ##### Returns
 
@@ -104,6 +134,7 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 ##### Arguments
 
 - `$bool` (`bool`)
+	- true/false to enable/disable respectively
 - `$tmp_path` (`string`)
 	- Path to save the cookie jar file, defaults to /tmp
 
@@ -111,13 +142,18 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 #### Method: `HttpRequest`->`setCookies($cookies)`
 
+Set outgoing cookies as an array of CookieName => Value
+
 ##### Arguments
 
 - `$cookies` (`array`)
+	- Cookies to set
 
 
 
 #### Method: `HttpRequest`->`setCookie($key, $value)`
+
+Set a named cookies outgoing value
 
 ##### Arguments
 
@@ -128,12 +164,16 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 #### Method: `HttpRequest`->`getEndpoint()`
 
+Gets the request URI
+
 ##### Returns
 
 (`string`)
 
 
 #### Method: `HttpRequest`->`setEndpoint($endpoint)`
+
+Sets the request URI
 
 ##### Arguments
 
@@ -143,24 +183,11 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 
 #### Method: `HttpRequest`->`makeRequest()`
 
-##### Returns
-
-(`\Boomerang\HttpResponse`)
-
-
-#### Method: `HttpRequest`->`getHeaders()`
+Execute the request
 
 ##### Returns
 
-(`array`)
-
-
-#### Method: `HttpRequest`->`setHeaders($headers)`
-
-##### Arguments
-
-- `$headers` (`array`)
-
+(`\Boomerang\HttpResponse`) - An object representing the result of the request
 
 
 #### Method: `HttpRequest`->`getLastRequestTime()`
@@ -169,7 +196,16 @@ Get the time the last request took in seconds a float
 
 ##### Returns
 
-(`null` | `float`)
+(`null` | `float`) - null if there is no last request
+
+
+#### Method: `HttpRequest`->`getMaxRedirects()`
+
+Get the current maximum number of redirects(hops) a request should follow.
+
+##### Returns
+
+(`int`)
 
 
 #### Method: `HttpRequest`->`setMaxRedirects($maxRedirects)`
@@ -210,9 +246,12 @@ Set the maximum number of redirects(hops) a request should follow.
 
 #### Method: `HttpResponse`->`getHeaders([ $hop = null])`
 
+Get Response headers as a HeaderName => Value array
+
 ##### Arguments
 
 - `$hop` (`null` | `int`)
+	- The zero indexed hop(redirect). Defaults to the final hop.
 
 
 ##### Returns
@@ -222,12 +261,16 @@ Set the maximum number of redirects(hops) a request should follow.
 
 #### Method: `HttpResponse`->`getAllHeaders()`
 
+Get all Response headers from all hops as a HopIndex => HeaderName => Value array.
+
 ##### Returns
 
 (`array`)
 
 
 #### Method: `HttpResponse`->`getRawHeaders()`
+
+Get the raw unparsed Response header string.
 
 ##### Returns
 
@@ -236,12 +279,16 @@ Set the maximum number of redirects(hops) a request should follow.
 
 #### Method: `HttpResponse`->`getBody()`
 
+Get the body of the Response.
+
 ##### Returns
 
 (`string`)
 
 
 #### Method: `HttpResponse`->`getRequest()`
+
+Get the HttpRequest object that made the Response object.
 
 ##### Returns
 
@@ -250,6 +297,8 @@ Set the maximum number of redirects(hops) a request should follow.
 
 #### Method: `HttpResponse`->`getHopCount()`
 
+Get the number of hops(redirects) the request took
+
 ##### Returns
 
 (`int`)
@@ -257,9 +306,12 @@ Set the maximum number of redirects(hops) a request should follow.
 
 #### Method: `HttpResponse`->`getStatus([ $hop = null])`
 
+Get the HTTP status of a hop
+
 ##### Arguments
 
 - `$hop` (`int` | `null`)
+	- The zero indexed hop(redirect). Defaults to the final hop.
 
 
 ##### Returns
@@ -271,9 +323,7 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ### Class: HttpResponseValidator - `\Boomerang\HttpResponseValidator`
 
-#### Method: `HttpResponseValidator`->`__construct($response)`
-
-
+#### Undocumented Method: `HttpResponseValidator`->`__construct($response)`
 #### Method: `HttpResponseValidator`->`getResponse()`
 
 ##### Returns
@@ -355,126 +405,66 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ### Class: JSONValidator - `\Boomerang\JSONValidator`
 
-#### Method: `JSONValidator`->`__construct($response)`
-
-
-#### Method: `JSONValidator`->`inspectJSON()`
-
-
+#### Undocumented Method: `JSONValidator`->`__construct($response)`
+#### Undocumented Method: `JSONValidator`->`inspectJSON()`
 ## Type Expectations
 
 ### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
 
-#### Method: `AllEx`->`__construct()`
-
-
-#### Method: `AllEx`->`match($data)`
-
-
-#### Method: `AllEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `AllEx`->`__construct()`
+#### Undocumented Method: `AllEx`->`match($data)`
+#### Undocumented Method: `AllEx`->`getMatchingTypeName()`
 ### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
 
-#### Method: `AnyEx`->`match($data)`
-
-
-#### Method: `AnyEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `AnyEx`->`match($data)`
+#### Undocumented Method: `AnyEx`->`getMatchingTypeName()`
 ### Class: ArrayEx - `\Boomerang\TypeExpectations\ArrayEx`
 
-#### Method: `ArrayEx`->`match($data)`
-
-
+#### Undocumented Method: `ArrayEx`->`match($data)`
 ### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
 
-#### Method: `IntEx`->`match($data)`
-
-
-#### Method: `IntEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `IntEx`->`match($data)`
+#### Undocumented Method: `IntEx`->`getMatchingTypeName()`
 ### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
 
-#### Method: `IterateArrayEx`->`match($data)`
-
-
-#### Method: `IterateArrayEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `IterateArrayEx`->`match($data)`
+#### Undocumented Method: `IterateArrayEx`->`getMatchingTypeName()`
 ### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
 
-#### Method: `IterateObjectEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `IterateObjectEx`->`getMatchingTypeName()`
 ### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
 
-#### Method: `IterateStructureEx`->`match($data)`
-
-
-#### Method: `IterateStructureEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `IterateStructureEx`->`match($data)`
+#### Undocumented Method: `IterateStructureEx`->`getMatchingTypeName()`
 ### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
 
-#### Method: `NullEx`->`match($data)`
-
-
-#### Method: `NullEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `NullEx`->`match($data)`
+#### Undocumented Method: `NullEx`->`getMatchingTypeName()`
 ### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
 
-#### Method: `NumberEx`->`match($data)`
-
-
-#### Method: `NumberEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `NumberEx`->`match($data)`
+#### Undocumented Method: `NumberEx`->`getMatchingTypeName()`
 ### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
 
-#### Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
-
-
-#### Method: `NumericEx`->`match($data)`
-
-
-#### Method: `NumericEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
+#### Undocumented Method: `NumericEx`->`match($data)`
+#### Undocumented Method: `NumericEx`->`getMatchingTypeName()`
 ### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
 
-#### Method: `NumericStringEx`->`match($data)`
-
-
-#### Method: `NumericStringEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `NumericStringEx`->`match($data)`
+#### Undocumented Method: `NumericStringEx`->`getMatchingTypeName()`
 ### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
 
-#### Method: `RegexEx`->`__construct($pattern)`
-
-
-#### Method: `RegexEx`->`match($data)`
-
-
-#### Method: `RegexEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `RegexEx`->`__construct($pattern)`
+#### Undocumented Method: `RegexEx`->`match($data)`
+#### Undocumented Method: `RegexEx`->`getMatchingTypeName()`
 ### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
 
-#### Method: `StringEx`->`match($data)`
-
-
-#### Method: `StringEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `StringEx`->`match($data)`
+#### Undocumented Method: `StringEx`->`getMatchingTypeName()`
 ### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
 
-#### Method: `StructureEx`->`__construct($structure)`
-
-
+#### Undocumented Method: `StructureEx`->`__construct($structure)`
 #### Method: `StructureEx`->`getValidator()`
 
 ##### Returns
@@ -490,9 +480,7 @@ Set the maximum number of redirects(hops) a request should follow.
 
 
 
-#### Method: `StructureEx`->`match($data)`
-
-
+#### Undocumented Method: `StructureEx`->`match($data)`
 #### Method: `StructureEx`->`setPath($path)`
 
 ##### Arguments
@@ -512,6 +500,4 @@ Set the maximum number of redirects(hops) a request should follow.
 (`array`)
 
 
-#### Method: `StructureEx`->`getMatchingTypeName()`
-
-
+#### Undocumented Method: `StructureEx`->`getMatchingTypeName()`
