@@ -5,18 +5,19 @@ header_anchor: true
 ---
 # Documentation
 
-
 ## Application
 
 ### Class: Boomerang - `\Boomerang\Boomerang`
 
 #### Method: `Boomerang`::`addValidator($validator)`
 
-After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.
+Register a Validator with Boomerang  
+After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.  
 
-##### Arguments
 
-- `$validator` (`\Boomerang\Interfaces\ValidatorInterface`)
+##### Parameters
+
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
 
 
 
@@ -26,195 +27,254 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 
 #### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
-##### Arguments
+##### Parameters
 
-- `$endpoint` (`string`)
-	- URI to request.
-- `$responseFactory` (`\Boomerang\Factories\HttpResponseFactory`)
-	- A factory for creating Response objects.
+- ***string*** `$endpoint` - URI to request.
+- ***\Boomerang\Factories\HttpResponseFactory*** `$responseFactory` - A factory for creating Response objects.
 
 
+
+---
 
 #### Method: `HttpRequest`->`getHeader($key)`
 
-Retrieve an outgoing header by name
+Retrieve an outgoing header by name  
+  
 
-##### Arguments
 
-- `$key` (`string`)
-	- The name of the header.
+##### Parameters
+
+- ***string*** `$key` - The name of the header.
 
 
 ##### Returns
 
-(`string` | `null`) - Null on failure.
+- ***string*** | ***null*** - Null on failure.
 
+
+---
 
 #### Method: `HttpRequest`->`setHeader($key, $value)`
 
-Set an outgoing header by name.
-
-##### Arguments
-
-- `$key` (`string`)
-	- The name of the header.
-- `$value` (`string`)
-	- The value to set the header to.
+Set an outgoing header by name.  
+  
 
 
+##### Parameters
+
+- ***string*** `$key` - The name of the header.
+- ***string*** `$value` - The value to set the header to.
+
+
+
+---
 
 #### Method: `HttpRequest`->`getHeaders()`
 
-Get all set headers.
+Get all set headers.  
+  
+
 
 ##### Returns
 
-(`array`)
+- ***array***
 
+
+---
 
 #### Method: `HttpRequest`->`setHeaders($headers)`
 
-Set outgoing headers as an array of HeaderName => Value
-
-##### Arguments
-
-- `$headers` (`array`)
-	- Headers to set
+Set outgoing headers as an array of HeaderName => Value  
+  
 
 
+##### Parameters
+
+- ***array*** `$headers` - Headers to set
+
+
+
+---
 
 #### Method: `HttpRequest`->`getPost($key)`
 
-Retrieve an post value by name.
+Retrieve an post value by name.  
+  
 
-##### Arguments
 
-- `$key` (`mixed`)
+##### Parameters
+
+- ***mixed*** `$key`
 
 
 ##### Returns
 
-(`string` | `null`)
+- ***string*** | ***null***
 
+
+---
 
 #### Method: `HttpRequest`->`setPost($key, $value)`
 
-Set a named key of the post value
-
-##### Arguments
-
-- `$key` (`mixed`)
-- `$value` (`mixed`)
+Set a named key of the post value  
+  
 
 
+##### Parameters
+
+- ***mixed*** `$key`
+- ***mixed*** `$value`
+
+
+
+---
 
 #### Method: `HttpRequest`->`getPostdata()`
 
-Retrieve all queued post-data as an array.
+Retrieve all queued post-data as an array.  
+  
+
 
 ##### Returns
 
-(`array`)
+- ***array***
 
+
+---
 
 #### Method: `HttpRequest`->`setPostdata($post)`
 
-Set all post data, whipping past values.
-
-##### Arguments
-
-- `$post` (`array`)
+Set all post data, whipping past values.  
+  
 
 
+##### Parameters
+
+- ***array*** `$post`
+
+
+
+---
 
 #### Method: `HttpRequest`->`setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
 
-Allows you to enable cookie's set by server re-posting following a redirect.
-
-##### Arguments
-
-- `$bool` (`bool`)
-	- true/false to enable/disable respectively
-- `$tmp_path` (`string`)
-	- Path to save the cookie jar file, defaults to /tmp
+Allows you to enable cookie's set by server re-posting following a redirect.  
+Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
 
 
+##### Parameters
+
+- ***bool*** `$bool` - true/false to enable/disable respectively
+- ***string*** `$tmp_path` - Path to save the cookie jar file, defaults to /tmp
+
+
+
+---
 
 #### Method: `HttpRequest`->`setCookies($cookies)`
 
-Set outgoing cookies as an array of CookieName => Value
-
-##### Arguments
-
-- `$cookies` (`array`)
-	- Cookies to set
+Set outgoing cookies as an array of CookieName => Value  
+  
 
 
+##### Parameters
+
+- ***array*** `$cookies` - Cookies to set
+
+
+
+---
 
 #### Method: `HttpRequest`->`setCookie($key, $value)`
 
-Set a named cookies outgoing value
-
-##### Arguments
-
-- `$key` (`string`)
-- `$value` (`string`)
+Set a named cookies outgoing value  
+  
 
 
+##### Parameters
+
+- ***string*** `$key`
+- ***string*** `$value`
+
+
+
+---
 
 #### Method: `HttpRequest`->`getEndpoint()`
 
-Gets the request URI
+Gets the request URI  
+  
+
 
 ##### Returns
 
-(`string`)
+- ***string***
 
+
+---
 
 #### Method: `HttpRequest`->`setEndpoint($endpoint)`
 
-Sets the request URI
-
-##### Arguments
-
-- `$endpoint` (`string`)
+Sets the request URI  
+  
 
 
+##### Parameters
+
+- ***string*** `$endpoint`
+
+
+
+---
 
 #### Method: `HttpRequest`->`makeRequest()`
 
-Execute the request
+Execute the request  
+  
+
 
 ##### Returns
 
-(`\Boomerang\HttpResponse`) - An object representing the result of the request
+- ***\Boomerang\HttpResponse*** - An object representing the result of the request
 
+
+---
 
 #### Method: `HttpRequest`->`getLastRequestTime()`
 
-Get the time the last request took in seconds a float
+Get the time the last request took in seconds a float  
+  
+
 
 ##### Returns
 
-(`null` | `float`) - null if there is no last request
+- ***null*** | ***float*** - null if there is no last request
 
+
+---
 
 #### Method: `HttpRequest`->`getMaxRedirects()`
 
-Get the current maximum number of redirects(hops) a request should follow.
+Get the current maximum number of redirects(hops) a request should follow.  
+  
+
 
 ##### Returns
 
-(`int`)
+- ***int***
 
+
+---
 
 #### Method: `HttpRequest`->`setMaxRedirects($maxRedirects)`
 
-Set the maximum number of redirects(hops) a request should follow.
+Set the maximum number of redirects(hops) a request should follow.  
+  
 
-##### Arguments
 
-- `$maxRedirects` (`int`)
+##### Parameters
+
+- ***int*** `$maxRedirects`
 
 
 
@@ -222,101 +282,128 @@ Set the maximum number of redirects(hops) a request should follow.
 
 #### Method: `HttpResponse`->`__construct($body, $headers [, $request = null])`
 
-##### Arguments
+##### Parameters
 
-- `$body` (`string`)
-	- The body of the HTTP Request
-- `$headers` (`string`)
-- `$request` (`\Boomerang\HttpRequest` | `null`)
+- ***string*** `$body` - The body of the HTTP Request
+- ***string*** `$headers`
+- ***\Boomerang\HttpRequest*** | ***null*** `$request`
 
 
+
+---
 
 #### Method: `HttpResponse`->`getHeader($header [, $hop = null])`
 
-##### Arguments
+##### Parameters
 
-- `$header` (`string`)
-- `$hop` (`null` | `int`)
+- ***string*** `$header`
+- ***null*** | ***int*** `$hop`
 
 
 ##### Returns
 
-(`null` | `string`) - Header value or null on not found
+- ***null*** | ***string*** - Header value or null on not found
 
+
+---
 
 #### Method: `HttpResponse`->`getHeaders([ $hop = null])`
 
-Get Response headers as a HeaderName => Value array
+Get Response headers as a HeaderName => Value array  
+  
 
-##### Arguments
 
-- `$hop` (`null` | `int`)
-	- The zero indexed hop(redirect). Defaults to the final hop.
+##### Parameters
+
+- ***null*** | ***int*** `$hop` - The zero indexed hop(redirect). Defaults to the final hop.
 
 
 ##### Returns
 
-(`array` | `null`)
+- ***array*** | ***null***
 
+
+---
 
 #### Method: `HttpResponse`->`getAllHeaders()`
 
-Get all Response headers from all hops as a HopIndex => HeaderName => Value array.
+Get all Response headers from all hops as a HopIndex => HeaderName => Value array.  
+  
+
 
 ##### Returns
 
-(`array`)
+- ***array***
 
+
+---
 
 #### Method: `HttpResponse`->`getRawHeaders()`
 
-Get the raw unparsed Response header string.
+Get the raw unparsed Response header string.  
+  
+
 
 ##### Returns
 
-(`string`)
+- ***string***
 
+
+---
 
 #### Method: `HttpResponse`->`getBody()`
 
-Get the body of the Response.
+Get the body of the Response.  
+  
+
 
 ##### Returns
 
-(`string`)
+- ***string***
 
+
+---
 
 #### Method: `HttpResponse`->`getRequest()`
 
-Get the HttpRequest object that made the Response object.
+Get the HttpRequest object that made the Response object.  
+  
+
 
 ##### Returns
 
-(`\Boomerang\HttpRequest`)
+- ***\Boomerang\HttpRequest***
 
+
+---
 
 #### Method: `HttpResponse`->`getHopCount()`
 
-Get the number of hops(redirects) the request took
+Get the number of hops(redirects) the request took  
+  
+
 
 ##### Returns
 
-(`int`)
+- ***int***
 
+
+---
 
 #### Method: `HttpResponse`->`getStatus([ $hop = null])`
 
-Get the HTTP status of a hop
+Get the HTTP status of a hop  
+  
 
-##### Arguments
 
-- `$hop` (`int` | `null`)
-	- The zero indexed hop(redirect). Defaults to the final hop.
+##### Parameters
+
+- ***int*** | ***null*** `$hop` - The zero indexed hop(redirect). Defaults to the final hop.
 
 
 ##### Returns
 
-(`int` | `null`)
+- ***int*** | ***null***
 
 
 ## Validators
@@ -324,83 +411,97 @@ Get the HTTP status of a hop
 ### Class: HttpResponseValidator - `\Boomerang\HttpResponseValidator`
 
 #### Undocumented Method: `HttpResponseValidator`->`__construct($response)`
+---
+
 #### Method: `HttpResponseValidator`->`getResponse()`
 
 ##### Returns
 
-(`\Boomerang\HttpResponse`)
+- ***\Boomerang\HttpResponse***
 
+
+---
 
 #### Method: `HttpResponseValidator`->`expectStatus([ $expected_status = 200 [, $hop = null]])`
 
-##### Arguments
+##### Parameters
 
-- `$expected_status` (`int`)
-- `$hop` (`null`)
+- ***int*** `$expected_status`
+- ***null*** `$hop`
 
 
 ##### Returns
 
-(`$this`)
+- ***$this***
 
+
+---
 
 #### Method: `HttpResponseValidator`->`expectHeader($key, $value [, $hop = null])`
 
-##### Arguments
+##### Parameters
 
-- `$key` (`string`)
-- `$value` (`string`)
-- `$hop` (`null` | `int`)
+- ***string*** `$key`
+- ***string*** `$value`
+- ***null*** | ***int*** `$hop`
 
 
 ##### Returns
 
-(`$this`)
+- ***$this***
 
+
+---
 
 #### Method: `HttpResponseValidator`->`expectHeaderContains($key, $value [, $hop = null])`
 
-##### Arguments
+##### Parameters
 
-- `$key` (`string`)
-- `$value` (`string`)
-- `$hop` (`null` | `int`)
+- ***string*** `$key`
+- ***string*** `$value`
+- ***null*** | ***int*** `$hop`
 
 
 ##### Returns
 
-(`$this`)
+- ***$this***
 
+
+---
 
 #### Method: `HttpResponseValidator`->`expectBody($expectedContent)`
 
-##### Arguments
+##### Parameters
 
-- `$expectedContent` (`string`)
+- ***string*** `$expectedContent`
 
 
 ##### Returns
 
-(`$this`)
+- ***$this***
 
+
+---
 
 #### Method: `HttpResponseValidator`->`expectBodyContains($expectedContent)`
 
-##### Arguments
+##### Parameters
 
-- `$expectedContent` (`string`)
+- ***string*** `$expectedContent`
 
 
 ##### Returns
 
-(`$this`)
+- ***$this***
 
+
+---
 
 #### Method: `HttpResponseValidator`->`getExpectationResults()`
 
 ##### Returns
 
-(`\Boomerang\Interfaces\ExpectationResultInterface[]`)
+- ***\Boomerang\Interfaces\ExpectationResultInterface[]***
 
 
 ### Class: JSONValidator - `\Boomerang\JSONValidator`
@@ -465,39 +566,47 @@ Get the HTTP status of a hop
 ### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
 
 #### Undocumented Method: `StructureEx`->`__construct($structure)`
+---
+
 #### Method: `StructureEx`->`getValidator()`
 
 ##### Returns
 
-(`\Boomerang\Interfaces\ValidatorInterface`)
+- ***\Boomerang\Interfaces\ValidatorInterface***
 
+
+---
 
 #### Method: `StructureEx`->`setValidator($validator)`
 
-##### Arguments
+##### Parameters
 
-- `$validator` (`\Boomerang\Interfaces\ValidatorInterface`)
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
 
 
 
 #### Undocumented Method: `StructureEx`->`match($data)`
+---
+
 #### Method: `StructureEx`->`setPath($path)`
 
-##### Arguments
+##### Parameters
 
-- `$path` (`array`)
+- ***array*** `$path`
 
 
 ##### Returns
 
-(`mixed`)
+- ***mixed***
 
+
+---
 
 #### Method: `StructureEx`->`getExpectations()`
 
 ##### Returns
 
-(`array`)
+- ***array***
 
 
 #### Undocumented Method: `StructureEx`->`getMatchingTypeName()`
