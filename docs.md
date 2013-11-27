@@ -508,61 +508,487 @@ Get the HTTP status of a hop
 
 #### Undocumented Method: `JSONValidator`->`__construct($response)`
 #### Undocumented Method: `JSONValidator`->`inspectJSON()`
+---
+
+#### Method: `JSONValidator`->`getExpectationResults()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ExpectationResultInterface[]***
+
+
+#### Undocumented Method: `JSONValidator`->`expectStructure($structure)`
+---
+
+#### Method: `JSONValidator`->`getResponse()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ResponseInterface***
+
+
 ## Type Expectations
 
 ### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
 
 #### Undocumented Method: `AllEx`->`__construct()`
-#### Undocumented Method: `AllEx`->`match($data)`
-#### Undocumented Method: `AllEx`->`getMatchingTypeName()`
+---
+
+#### Method: `AllEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+---
+
+#### Method: `AllEx`->`getValidator()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
+
+---
+
+#### Method: `AllEx`->`setValidator($validator)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
+
+
+
+---
+
+#### Method: `AllEx`->`setPath($path)`
+
+##### Parameters
+
+- ***array*** `$path`
+
+
+##### Returns
+
+- ***mixed***
+
+
+---
+
+#### Method: `AllEx`->`getExpectations()`
+
+##### Returns
+
+- ***array***
+
+
 ### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
 
-#### Undocumented Method: `AnyEx`->`match($data)`
-#### Undocumented Method: `AnyEx`->`getMatchingTypeName()`
+#### Method: `AnyEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `AnyEx`->`__construct()`
+---
+
+#### Method: `AnyEx`->`getValidator()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
+
+---
+
+#### Method: `AnyEx`->`setValidator($validator)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
+
+
+
+---
+
+#### Method: `AnyEx`->`setPath($path)`
+
+##### Parameters
+
+- ***array*** `$path`
+
+
+##### Returns
+
+- ***mixed***
+
+
+---
+
+#### Method: `AnyEx`->`getExpectations()`
+
+##### Returns
+
+- ***array***
+
+
 ### Class: ArrayEx - `\Boomerang\TypeExpectations\ArrayEx`
 
-#### Undocumented Method: `ArrayEx`->`match($data)`
+#### Method: `ArrayEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
 ### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
 
-#### Undocumented Method: `IntEx`->`match($data)`
-#### Undocumented Method: `IntEx`->`getMatchingTypeName()`
+#### Method: `IntEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `IntEx`->`__construct([ $min = null [, $max = null]])`
 ### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
 
-#### Undocumented Method: `IterateArrayEx`->`match($data)`
-#### Undocumented Method: `IterateArrayEx`->`getMatchingTypeName()`
+#### Method: `IterateArrayEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `IterateArrayEx`->`__construct($structure)`
+---
+
+#### Method: `IterateArrayEx`->`getValidator()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
+
+---
+
+#### Method: `IterateArrayEx`->`setValidator($validator)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
+
+
+
+---
+
+#### Method: `IterateArrayEx`->`setPath($path)`
+
+##### Parameters
+
+- ***array*** `$path`
+
+
+##### Returns
+
+- ***mixed***
+
+
+---
+
+#### Method: `IterateArrayEx`->`getExpectations()`
+
+##### Returns
+
+- ***array***
+
+
 ### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
 
-#### Undocumented Method: `IterateObjectEx`->`getMatchingTypeName()`
+#### Method: `IterateObjectEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `IterateObjectEx`->`__construct($structure)`
+---
+
+#### Method: `IterateObjectEx`->`getValidator()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
+
+---
+
+#### Method: `IterateObjectEx`->`setValidator($validator)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
+
+
+
+---
+
+#### Method: `IterateObjectEx`->`setPath($path)`
+
+##### Parameters
+
+- ***array*** `$path`
+
+
+##### Returns
+
+- ***mixed***
+
+
+---
+
+#### Method: `IterateObjectEx`->`getExpectations()`
+
+##### Returns
+
+- ***array***
+
+
 ### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
 
-#### Undocumented Method: `IterateStructureEx`->`match($data)`
-#### Undocumented Method: `IterateStructureEx`->`getMatchingTypeName()`
+#### Method: `IterateStructureEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `IterateStructureEx`->`__construct($structure)`
+---
+
+#### Method: `IterateStructureEx`->`getValidator()`
+
+##### Returns
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
+
+---
+
+#### Method: `IterateStructureEx`->`setValidator($validator)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
+
+
+
+---
+
+#### Method: `IterateStructureEx`->`setPath($path)`
+
+##### Parameters
+
+- ***array*** `$path`
+
+
+##### Returns
+
+- ***mixed***
+
+
+---
+
+#### Method: `IterateStructureEx`->`getExpectations()`
+
+##### Returns
+
+- ***array***
+
+
 ### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
 
-#### Undocumented Method: `NullEx`->`match($data)`
-#### Undocumented Method: `NullEx`->`getMatchingTypeName()`
+#### Method: `NullEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
 ### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
 
-#### Undocumented Method: `NumberEx`->`match($data)`
-#### Undocumented Method: `NumberEx`->`getMatchingTypeName()`
+#### Method: `NumberEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `NumberEx`->`__construct([ $min = null [, $max = null]])`
 ### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
 
 #### Undocumented Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
-#### Undocumented Method: `NumericEx`->`match($data)`
-#### Undocumented Method: `NumericEx`->`getMatchingTypeName()`
+---
+
+#### Method: `NumericEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
 ### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
 
-#### Undocumented Method: `NumericStringEx`->`match($data)`
-#### Undocumented Method: `NumericStringEx`->`getMatchingTypeName()`
+#### Method: `NumericStringEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
+#### Undocumented Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`
 ### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
 
 #### Undocumented Method: `RegexEx`->`__construct($pattern)`
-#### Undocumented Method: `RegexEx`->`match($data)`
-#### Undocumented Method: `RegexEx`->`getMatchingTypeName()`
+---
+
+#### Method: `RegexEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
 ### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
 
-#### Undocumented Method: `StringEx`->`match($data)`
-#### Undocumented Method: `StringEx`->`getMatchingTypeName()`
+#### Method: `StringEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
 ### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
 
 #### Undocumented Method: `StructureEx`->`__construct($structure)`
@@ -585,7 +1011,24 @@ Get the HTTP status of a hop
 
 
 
-#### Undocumented Method: `StructureEx`->`match($data)`
+---
+
+#### Method: `StructureEx`->`match($data)`
+
+Method to pass data to compare against  
+  
+
+
+##### Parameters
+
+- ***mixed*** `$data`
+
+
+##### Returns
+
+- ***bool***
+
+
 ---
 
 #### Method: `StructureEx`->`setPath($path)`
@@ -609,4 +1052,3 @@ Get the HTTP status of a hop
 - ***array***
 
 
-#### Undocumented Method: `StructureEx`->`getMatchingTypeName()`
