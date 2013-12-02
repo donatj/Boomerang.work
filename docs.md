@@ -9,6 +9,8 @@ header_anchor: true
 
 ### Class: Boomerang - `\Boomerang\Boomerang`
 
+Boomerang Application
+
 #### Method: `Boomerang`::`addValidator($validator)`
 
 Register a Validator with Boomerang  
@@ -24,6 +26,8 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 ## Http
 
 ### Class: HttpRequest - `\Boomerang\HttpRequest`
+
+Utility for generating HTTP Requests and receiving Responses into `HttpResponse` objects.
 
 #### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
@@ -280,6 +284,10 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ### Class: HttpResponse - `\Boomerang\HttpResponse`
 
+Represents an HTTP Response.
+
+Usually received from an `HttpRequest` object
+
 #### Method: `HttpResponse`->`__construct($body, $headers [, $request = null])`
 
 ##### Parameters
@@ -410,7 +418,18 @@ Get the HTTP status of a hop
 
 ### Class: HttpResponseValidator - `\Boomerang\HttpResponseValidator`
 
-#### Undocumented Method: `HttpResponseValidator`->`__construct($response)`
+HTTP Validation
+
+Used to validate expected responses, headers and HTTP statues
+
+#### Method: `HttpResponseValidator`->`__construct($response)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\HttpResponseInterface*** `$response`
+
+
+
 ---
 
 #### Method: `HttpResponseValidator`->`getResponse()`
@@ -506,7 +525,18 @@ Get the HTTP status of a hop
 
 ### Class: JSONValidator - `\Boomerang\JSONValidator`
 
-#### Undocumented Method: `JSONValidator`->`__construct($response)`
+JSON Validator
+
+Used to validate JSON encoding and structure.
+
+#### Method: `JSONValidator`->`__construct($response)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\ResponseInterface*** `$response`
+
+
+
 #### Undocumented Method: `JSONValidator`->`inspectJSON()`
 ---
 
@@ -517,7 +547,20 @@ Get the HTTP status of a hop
 - ***\Boomerang\Interfaces\ExpectationResultInterface[]***
 
 
-#### Undocumented Method: `JSONValidator`->`expectStructure($structure)`
+---
+
+#### Method: `JSONValidator`->`expectStructure($structure)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+
+
+##### Returns
+
+- ***$this***
+
+
 ---
 
 #### Method: `JSONValidator`->`getResponse()`
@@ -531,23 +574,12 @@ Get the HTTP status of a hop
 
 ### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
 
-#### Undocumented Method: `AllEx`->`__construct()`
----
-
-#### Method: `AllEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
+#### Method: `AllEx`->`__construct()`
 
 ##### Parameters
 
-- ***mixed*** `$data`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
-
-##### Returns
-
-- ***bool***
 
 
 ---
@@ -559,58 +591,16 @@ Method to pass data to compare against
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
 
----
-
-#### Method: `AllEx`->`setValidator($validator)`
-
-##### Parameters
-
-- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
-
----
-
-#### Method: `AllEx`->`setPath($path)`
-
-##### Parameters
-
-- ***array*** `$path`
-
-
-##### Returns
-
-- ***mixed***
-
-
----
-
-#### Method: `AllEx`->`getExpectations()`
-
-##### Returns
-
-- ***array***
-
-
 ### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
 
-#### Method: `AnyEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
+#### Method: `AnyEx`->`__construct()`
 
 ##### Parameters
 
-- ***mixed*** `$data`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
 
-##### Returns
 
-- ***bool***
-
-
-#### Undocumented Method: `AnyEx`->`__construct()`
 ---
 
 #### Method: `AnyEx`->`getValidator()`
@@ -620,95 +610,21 @@ Method to pass data to compare against
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
 
----
-
-#### Method: `AnyEx`->`setValidator($validator)`
-
-##### Parameters
-
-- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
-
----
-
-#### Method: `AnyEx`->`setPath($path)`
-
-##### Parameters
-
-- ***array*** `$path`
-
-
-##### Returns
-
-- ***mixed***
-
-
----
-
-#### Method: `AnyEx`->`getExpectations()`
-
-##### Returns
-
-- ***array***
-
-
 ### Class: ArrayEx - `\Boomerang\TypeExpectations\ArrayEx`
 
-#### Method: `ArrayEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
-
 ### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
-
-#### Method: `IntEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
 
 #### Undocumented Method: `IntEx`->`__construct([ $min = null [, $max = null]])`
 ### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
 
-#### Method: `IterateArrayEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
+#### Method: `IterateArrayEx`->`__construct($structure)`
 
 ##### Parameters
 
-- ***mixed*** `$data`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
 
-##### Returns
 
-- ***bool***
-
-
-#### Undocumented Method: `IterateArrayEx`->`__construct($structure)`
 ---
 
 #### Method: `IterateArrayEx`->`getValidator()`
@@ -718,58 +634,16 @@ Method to pass data to compare against
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
 
----
-
-#### Method: `IterateArrayEx`->`setValidator($validator)`
-
-##### Parameters
-
-- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
-
----
-
-#### Method: `IterateArrayEx`->`setPath($path)`
-
-##### Parameters
-
-- ***array*** `$path`
-
-
-##### Returns
-
-- ***mixed***
-
-
----
-
-#### Method: `IterateArrayEx`->`getExpectations()`
-
-##### Returns
-
-- ***array***
-
-
 ### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
 
-#### Method: `IterateObjectEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
+#### Method: `IterateObjectEx`->`__construct($structure)`
 
 ##### Parameters
 
-- ***mixed*** `$data`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
 
-##### Returns
 
-- ***bool***
-
-
-#### Undocumented Method: `IterateObjectEx`->`__construct($structure)`
 ---
 
 #### Method: `IterateObjectEx`->`getValidator()`
@@ -779,58 +653,16 @@ Method to pass data to compare against
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
 
----
-
-#### Method: `IterateObjectEx`->`setValidator($validator)`
-
-##### Parameters
-
-- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
-
----
-
-#### Method: `IterateObjectEx`->`setPath($path)`
-
-##### Parameters
-
-- ***array*** `$path`
-
-
-##### Returns
-
-- ***mixed***
-
-
----
-
-#### Method: `IterateObjectEx`->`getExpectations()`
-
-##### Returns
-
-- ***array***
-
-
 ### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
 
-#### Method: `IterateStructureEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
+#### Method: `IterateStructureEx`->`__construct($structure)`
 
 ##### Parameters
 
-- ***mixed*** `$data`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
 
-##### Returns
 
-- ***bool***
-
-
-#### Undocumented Method: `IterateStructureEx`->`__construct($structure)`
 ---
 
 #### Method: `IterateStructureEx`->`getValidator()`
@@ -840,158 +672,36 @@ Method to pass data to compare against
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
 
----
-
-#### Method: `IterateStructureEx`->`setValidator($validator)`
-
-##### Parameters
-
-- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
-
----
-
-#### Method: `IterateStructureEx`->`setPath($path)`
-
-##### Parameters
-
-- ***array*** `$path`
-
-
-##### Returns
-
-- ***mixed***
-
-
----
-
-#### Method: `IterateStructureEx`->`getExpectations()`
-
-##### Returns
-
-- ***array***
-
-
 ### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
 
-#### Method: `NullEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
-
 ### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
-
-#### Method: `NumberEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
 
 #### Undocumented Method: `NumberEx`->`__construct([ $min = null [, $max = null]])`
 ### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
 
 #### Undocumented Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
----
-
-#### Method: `NumericEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
-
 ### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
-
-#### Method: `NumericStringEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
 
 #### Undocumented Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`
 ### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
 
 #### Undocumented Method: `RegexEx`->`__construct($pattern)`
----
-
-#### Method: `RegexEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
-
 ### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
-
-#### Method: `StringEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
 
 ### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
 
-#### Undocumented Method: `StructureEx`->`__construct($structure)`
+Structure Expectation
+
+Used to define rules about structure.
+
+#### Method: `StructureEx`->`__construct($structure)`
+
+##### Parameters
+
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+
+
+
 ---
 
 #### Method: `StructureEx`->`getValidator()`
@@ -999,56 +709,5 @@ Method to pass data to compare against
 ##### Returns
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
-
-
----
-
-#### Method: `StructureEx`->`setValidator($validator)`
-
-##### Parameters
-
-- ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
-
----
-
-#### Method: `StructureEx`->`match($data)`
-
-Method to pass data to compare against  
-  
-
-
-##### Parameters
-
-- ***mixed*** `$data`
-
-
-##### Returns
-
-- ***bool***
-
-
----
-
-#### Method: `StructureEx`->`setPath($path)`
-
-##### Parameters
-
-- ***array*** `$path`
-
-
-##### Returns
-
-- ***mixed***
-
-
----
-
-#### Method: `StructureEx`->`getExpectations()`
-
-##### Returns
-
-- ***array***
 
 
