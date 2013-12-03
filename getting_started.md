@@ -8,11 +8,11 @@ header_anchor: true
 
 The first step is simply getting Boomerang*!* installed. You can find instructions for that [here](install.html).
 
-To verify your installation try running `boomerang --version` from the command line.  If everything is good you should get back something like `Boomerang! .X.Y by Jesse G. Donat`.
+To verify your installation try running `boomerang --version` from the command line.  If everything is good you should get back something like `Boomerang! {version} by Jesse G. Donat`.
 
-## Layout
+## Running Tests
 
-The `boomerang` executable takes a filename or directory as the final argument.
+The `boomerang` executable optionally takes a filename or directory as the final argument.
 When loading a directory it will recursively search for files matching the glob `*Spec.php` and load them as tests.
 
 As an example, testing a simple API with the following structure
@@ -36,7 +36,7 @@ There are three steps to creating a test.
 	
 ### Sample
 
-The following is a very simple example test that ensures a call returns the HTTP status code `418`. 
+The following is a simple example that ensures a call returns the HTTP status code `200`. 
 	
 {% highlight php %}
 <?php
