@@ -533,11 +533,23 @@ Used to validate JSON encoding and structure.
 
 ##### Parameters
 
-- ***\Boomerang\Interfaces\ResponseInterface*** `$response`
+- ***\Boomerang\Interfaces\ResponseInterface*** `$response` - The response to inspect
 
 
 
-#### Undocumented Method: `JSONValidator`->`inspectJSON()`
+---
+
+#### Method: `JSONValidator`->`inspectJSON()`
+
+Log the JSON response as an InfoResult in the output.  
+  
+
+
+##### Returns
+
+- ***$this***
+
+
 ---
 
 #### Method: `JSONValidator`->`getExpectationResults()`
@@ -574,11 +586,22 @@ Used to validate JSON encoding and structure.
 
 ### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
 
-#### Method: `AllEx`->`__construct()`
+All Expectation
+
+Defines a requirement to match **all** structure definitions expectations.
+
+Example:
+
+    new AllEx(
+        array(1,2,3),
+        function($data) { return count($data) == 3; }
+    );
+
+#### Method: `AllEx`->`__construct($structure)`
 
 ##### Parameters
 
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
 
 
 
@@ -593,11 +616,22 @@ Used to validate JSON encoding and structure.
 
 ### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
 
-#### Method: `AnyEx`->`__construct()`
+Any Expectation
+
+Defines a requirement to match **any** structure definitions expectations.
+
+Example:
+
+    new AllEx(
+        array(1,2,3),
+        function($data) { return count($data) == 4; }
+    );
+
+#### Method: `AnyEx`->`__construct($structure)`
 
 ##### Parameters
 
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
 
 
 
@@ -614,8 +648,27 @@ Used to validate JSON encoding and structure.
 
 ### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
 
-#### Undocumented Method: `IntEx`->`__construct([ $min = null [, $max = null]])`
+Integer Expectation
+
+Defines a placeholder expectation of an integer with an optional minimum/maximum range.
+
+**Passes**: int
+**Fails**: float/numeric string
+
+#### Method: `IntEx`->`__construct([ $min = null [, $max = null]])`
+
+##### Parameters
+
+- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
+- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
+
+
+
 ### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
+
+Iterating Array Expectation
+
+Iterates over every element of an array, ensuring it is an array, and matching against passed structure expectations.
 
 #### Method: `IterateArrayEx`->`__construct($structure)`
 
@@ -636,6 +689,10 @@ Used to validate JSON encoding and structure.
 
 ### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
 
+Iterating Object Expectation
+
+Iterates over every element of an object, ensuring it is an object, and matching against passed structure expectations.
+
 #### Method: `IterateObjectEx`->`__construct($structure)`
 
 ##### Parameters
@@ -654,6 +711,10 @@ Used to validate JSON encoding and structure.
 
 
 ### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
+
+Iterating Structure (object/array) Expectation
+
+Iterates over every element of a iterable structure (object/array), ensuring it iterable, and matching against passed structure expectations.
 
 #### Method: `IterateStructureEx`->`__construct($structure)`
 
@@ -674,19 +735,84 @@ Used to validate JSON encoding and structure.
 
 ### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
 
+Null Expectation
+
+Defines a placeholder expectation of a NULL value.
+
 ### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
 
-#### Undocumented Method: `NumberEx`->`__construct([ $min = null [, $max = null]])`
+Number Expectation
+
+Defines a placeholder expectation of a "number" (int/float) with an optional minimum/maximum range.
+
+**Passes**: `int` / `float`
+**Fails**: `numeric string`
+
+#### Method: `NumberEx`->`__construct([ $min = null [, $max = null]])`
+
+##### Parameters
+
+- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
+- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
+
+
+
 ### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
 
-#### Undocumented Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
+Numeric Expectation
+
+Defines a placeholder expectation of a "numeric" (int/float/numeric string) with an optional minimum/maximum range.
+
+See: [php.net/is_numeric](http://php.net/is_numeric)
+
+**Passes**: `numeric string` / `int` / `float`
+
+#### Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
+
+##### Parameters
+
+- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
+- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
+
+
+
 ### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
 
-#### Undocumented Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`
+Numeric String Expectation
+
+Defines a placeholder expectation of a "numeric string" with an optional minimum/maximum range.
+
+**Passes**: `numeric string`
+**Fails**: `int` / `float`
+
+#### Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`
+
+##### Parameters
+
+- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
+- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
+
+
+
 ### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
 
-#### Undocumented Method: `RegexEx`->`__construct($pattern)`
+Regex Match Expectation
+
+Define a regex matching placeholder
+
+#### Method: `RegexEx`->`__construct($pattern)`
+
+##### Parameters
+
+- ***string*** `$pattern` - The preg pattern to search for
+
+
+
 ### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
+
+String Expectation
+
+Define a string matching placeholder expectation
 
 ### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
 
