@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Documentation
+title: Full API Documentation
 header_anchor: true
 ---
-# Documentation
+
+# Full Documentation
 
 ## Application
 
@@ -20,8 +21,6 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 ##### Parameters
 
 - ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
-
-
 
 ## Http
 
@@ -413,7 +412,6 @@ Get the HTTP status of a hop
 
 - ***int*** | ***null***
 
-
 ## Validators
 
 ### Class: HttpResponseValidator - `\Boomerang\HttpResponseValidator`
@@ -581,7 +579,6 @@ Log the JSON response as an InfoResult in the output.
 
 - ***\Boomerang\Interfaces\ResponseInterface***
 
-
 ## Type Expectations
 
 ### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
@@ -613,7 +610,6 @@ Example:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-
 ### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
 
 Any Expectation
@@ -643,8 +639,9 @@ Example:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-
 ### Class: ArrayEx - `\Boomerang\TypeExpectations\ArrayEx`
+
+
 
 ### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
 
@@ -661,8 +658,6 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
-
-
 
 ### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
 
@@ -686,7 +681,6 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-
 ### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
 
 Iterating Object Expectation
@@ -708,7 +702,6 @@ Iterates over every element of an object, ensuring it is an object, and matching
 ##### Returns
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
-
 
 ### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
 
@@ -732,7 +725,6 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-
 ### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
 
 Null Expectation
@@ -755,8 +747,6 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-
-
 ### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
 
 Numeric Expectation
@@ -774,8 +764,6 @@ See: [php.net/is_numeric](http://php.net/is_numeric)
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-
-
 ### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
 
 Numeric String Expectation
@@ -792,8 +780,6 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-
-
 ### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
 
 Regex Match Expectation
@@ -805,8 +791,6 @@ Define a regex matching placeholder
 ##### Parameters
 
 - ***string*** `$pattern` - The preg pattern to search for
-
-
 
 ### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
 
@@ -835,5 +819,4 @@ Used to define rules about structure.
 ##### Returns
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
-
 

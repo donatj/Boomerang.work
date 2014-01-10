@@ -1,0 +1,56 @@
+<mddoc>
+	<docpage target="docs/index.md" autoloader="psr0" autoloader-root="/Users/jdonat/Projects/Boomerang/src">
+		<text>
+			<![CDATA[
+---
+layout: default
+title: Documentation
+header_anchor: true
+---
+]]>
+		</text>
+		<section title="Documentation Overview">
+			<docpage target="docs/api.md" link="docs/api.html" link-pre-text="For more information view the "
+					 link-text="full api documentation" link-post-text="." autoloader="psr0"
+					 autoloader-root="/Users/jdonat/Projects/Boomerang/src">
+				<text>
+					<![CDATA[
+---
+layout: default
+title: Full API Documentation
+header_anchor: true
+---
+]]>
+				</text>
+				<section title="Full Documentation">
+					<section title="Application">
+						<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/Boomerang.php"/>
+					</section>
+					<section title="Http">
+						<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpRequest.php"/>
+						<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpResponse.php"/>
+					</section>
+					<section title="Validators">
+						<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpResponseValidator.php"/>
+						<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/JSONValidator.php"/>
+					</section>
+					<section title="Type Expectations">
+						<recursiveDirectory name="/Users/jdonat/Projects/Boomerang/src/Boomerang/TypeExpectations"/>
+					</section>
+				</section>
+			</docpage>
+			<section title="Making a Request">
+				<text>The first step in surface testing your API is making the request. That is done with the `HttpRequest` object.</text>
+				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpRequest.php"
+					  method-filter="/>set|>__construct|>makeRequest/i" skip-class-header="true" skip-method-returns="true"/>
+			</section>
+			<section title="Validating API Expectations">
+				<text>Validators are used to define your expecations for the response.</text>
+				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpResponseValidator.php"
+					  method-filter="/>expect/i" skip-class-header="true" skip-method-returns="true"/>
+				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/JSONValidator.php"
+					  method-filter="/>expect/i" skip-class-header="true" skip-method-returns="true"/>
+			</section>
+		</section>
+	</docpage>
+</mddoc>

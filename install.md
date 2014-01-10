@@ -8,8 +8,8 @@ header_anchor: true
 
 ## Requirements
 
-- Unix-like Enviornment (OS X / Linux / Cygwin)
-- PHP 5.3.0+
+- Unix-like Environment (OS X / Linux / Cygwin)
+- PHP 5.3.0+ Locally
 
 ## Via Composer (recommended)
 
@@ -33,6 +33,6 @@ Add the following to your composer.json
 	
 Then, from beneath the `vendor` folder, you can execute `./vendor/bin/boomerang`
 
-## Via Self Updating PHAR
+## Via PHAR
 
 Info to come!
