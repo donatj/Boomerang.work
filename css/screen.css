@@ -35,6 +35,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
   display: block;
 }
+h1[id^=method], h2[id^=method], h3[id^=method], h4[id^=method], h5[id^=method], h6[id^=method] {
+  color: #3498db;
+}
+h1[id^=class], h2[id^=class], h3[id^=class], h4[id^=class], h5[id^=class], h6[id^=class] {
+  color: #2980b9;
+}
 
 h1 {
   font-size: 2.5em;
