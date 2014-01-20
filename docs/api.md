@@ -243,6 +243,15 @@ Execute the request
 
 ---
 
+#### Method: `HttpRequest`->`getCurlInfo()`
+
+##### Returns
+
+- ***mixed***
+
+
+---
+
 #### Method: `HttpRequest`->`getLastRequestTime()`
 
 Get the time the last request took in seconds a float  
@@ -441,10 +450,14 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`expectStatus([ $expected_status = 200 [, $hop = null]])`
 
+Verify that the HTTP response code is as expected.  
+  
+
+
 ##### Parameters
 
 - ***int*** `$expected_status`
-- ***null*** `$hop`
+- ***null*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
 ##### Returns
@@ -456,11 +469,15 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`expectHeader($key, $value [, $hop = null])`
 
+Verify that a header field equals an expected value.  
+  
+
+
 ##### Parameters
 
-- ***string*** `$key`
-- ***string*** `$value`
-- ***null*** | ***int*** `$hop`
+- ***string*** `$key` - The header field name to verify.
+- ***string*** `$value` - The expected value.
+- ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
 ##### Returns
@@ -472,11 +489,15 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`expectHeaderContains($key, $value [, $hop = null])`
 
+Verify that a header field contains an expected value.  
+For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
+
+
 ##### Parameters
 
-- ***string*** `$key`
-- ***string*** `$value`
-- ***null*** | ***int*** `$hop`
+- ***string*** `$key` - The header field name to verify.
+- ***string*** `$value` - The expected containing value.
+- ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
 ##### Returns
@@ -488,9 +509,13 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`expectBody($expectedContent)`
 
+Verify that the content body equals an expected value.  
+  
+
+
 ##### Parameters
 
-- ***string*** `$expectedContent`
+- ***string*** `$expectedContent` - The expected value.
 
 
 ##### Returns
@@ -502,9 +527,13 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`expectBodyContains($expectedContent)`
 
+Verify that the content body contains an expected value.  
+  
+
+
 ##### Parameters
 
-- ***string*** `$expectedContent`
+- ***string*** `$expectedContent` - The expected containing value.
 
 
 ##### Returns
@@ -561,9 +590,13 @@ Log the JSON response as an InfoResult in the output.
 
 #### Method: `JSONValidator`->`expectStructure($structure)`
 
+Verify that the data matches the passed expected structure definition.  
+  
+
+
 ##### Parameters
 
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure` - A description of the expected structure.
 
 
 ##### Returns
@@ -731,6 +764,8 @@ Null Expectation
 
 Defines a placeholder expectation of a NULL value.
 
+**Passes**: `null`
+
 ### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
 
 Number Expectation
@@ -770,7 +805,7 @@ Numeric String Expectation
 
 Defines a placeholder expectation of a "numeric string" with an optional minimum/maximum range.
 
-**Passes**: `numeric string`
+**Passes**: `numeric string` eg: "1.2"
 **Fails**: `int` / `float`
 
 #### Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`

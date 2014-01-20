@@ -10,7 +10,8 @@ For more information view the [full api documentation](docs/api.html).
 
 ## Making a Request
 
-The first step in surface testing your API is making the request. That is done with the `HttpRequest` object.
+The first step in surface testing your API is making the request. That is done with the
+					`HttpRequest` object.
 
 #### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
@@ -164,10 +165,14 @@ Validators are used to define your expecations for the response.
 
 #### Method: `HttpResponseValidator`->`expectStatus([ $expected_status = 200 [, $hop = null]])`
 
+Verify that the HTTP response code is as expected.  
+  
+
+
 ##### Parameters
 
 - ***int*** `$expected_status`
-- ***null*** `$hop`
+- ***null*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
 
@@ -175,11 +180,15 @@ Validators are used to define your expecations for the response.
 
 #### Method: `HttpResponseValidator`->`expectHeader($key, $value [, $hop = null])`
 
+Verify that a header field equals an expected value.  
+  
+
+
 ##### Parameters
 
-- ***string*** `$key`
-- ***string*** `$value`
-- ***null*** | ***int*** `$hop`
+- ***string*** `$key` - The header field name to verify.
+- ***string*** `$value` - The expected value.
+- ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
 
@@ -187,11 +196,15 @@ Validators are used to define your expecations for the response.
 
 #### Method: `HttpResponseValidator`->`expectHeaderContains($key, $value [, $hop = null])`
 
+Verify that a header field contains an expected value.  
+For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
+
+
 ##### Parameters
 
-- ***string*** `$key`
-- ***string*** `$value`
-- ***null*** | ***int*** `$hop`
+- ***string*** `$key` - The header field name to verify.
+- ***string*** `$value` - The expected containing value.
+- ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
 
@@ -199,9 +212,13 @@ Validators are used to define your expecations for the response.
 
 #### Method: `HttpResponseValidator`->`expectBody($expectedContent)`
 
+Verify that the content body equals an expected value.  
+  
+
+
 ##### Parameters
 
-- ***string*** `$expectedContent`
+- ***string*** `$expectedContent` - The expected value.
 
 
 
@@ -209,15 +226,23 @@ Validators are used to define your expecations for the response.
 
 #### Method: `HttpResponseValidator`->`expectBodyContains($expectedContent)`
 
+Verify that the content body contains an expected value.  
+  
+
+
 ##### Parameters
 
-- ***string*** `$expectedContent`
+- ***string*** `$expectedContent` - The expected containing value.
 
 
 
 #### Method: `JSONValidator`->`expectStructure($structure)`
 
+Verify that the data matches the passed expected structure definition.  
+  
+
+
 ##### Parameters
 
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure` - A description of the expected structure.
 

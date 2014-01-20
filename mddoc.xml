@@ -11,8 +11,7 @@ header_anchor: true
 		</text>
 		<section title="Documentation Overview">
 			<docpage target="docs/api.md" link="docs/api.html" link-pre-text="For more information view the "
-					 link-text="full api documentation" link-post-text="." autoloader="psr0"
-					 autoloader-root="/Users/jdonat/Projects/Boomerang/src">
+					 link-text="full api documentation" link-post-text=".">
 				<text>
 					<![CDATA[
 ---
@@ -40,9 +39,12 @@ header_anchor: true
 				</section>
 			</docpage>
 			<section title="Making a Request">
-				<text>The first step in surface testing your API is making the request. That is done with the `HttpRequest` object.</text>
+				<text>The first step in surface testing your API is making the request. That is done with the
+					`HttpRequest` object.
+				</text>
 				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpRequest.php"
-					  method-filter="/>set|>__construct|>makeRequest/i" skip-class-header="true" skip-method-returns="true"/>
+					  method-filter="/>set|>__construct|>makeRequest/i" skip-class-header="true"
+					  skip-method-returns="true"/>
 			</section>
 			<section title="Validating API Expectations">
 				<text>Validators are used to define your expecations for the response.</text>
