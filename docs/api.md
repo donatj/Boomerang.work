@@ -8,7 +8,7 @@ header_anchor: true
 
 ## Application
 
-### Class: Boomerang - `\Boomerang\Boomerang`
+### Class: Boomerang \[ `\Boomerang` \]
 
 Boomerang Application
 
@@ -18,19 +18,19 @@ Register a Validator with Boomerang
 After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.  
 
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\ValidatorInterface*** `$validator`
 
 ## Http
 
-### Class: HttpRequest - `\Boomerang\HttpRequest`
+### Class: HttpRequest \[ `\Boomerang` \]
 
 Utility for generating HTTP Requests and receiving Responses into `HttpResponse` objects.
 
 #### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$endpoint` - URI to request.
 - ***\Boomerang\Factories\HttpResponseFactory*** `$responseFactory` - A factory for creating Response objects.
@@ -45,12 +45,12 @@ Retrieve an outgoing header by name
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The name of the header.
 
 
-##### Returns
+##### Returns:
 
 - ***string*** | ***null*** - Null on failure.
 
@@ -63,7 +63,7 @@ Set an outgoing header by name.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The name of the header.
 - ***string*** `$value` - The value to set the header to.
@@ -78,7 +78,7 @@ Get all set headers.
   
 
 
-##### Returns
+##### Returns:
 
 - ***array***
 
@@ -91,7 +91,7 @@ Set outgoing headers as an array of HeaderName => Value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***array*** `$headers` - Headers to set
 
@@ -105,12 +105,12 @@ Retrieve an post value by name.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***mixed*** `$key`
 
 
-##### Returns
+##### Returns:
 
 - ***string*** | ***null***
 
@@ -123,7 +123,7 @@ Set a named key of the post value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***mixed*** `$key`
 - ***mixed*** `$value`
@@ -138,7 +138,7 @@ Retrieve all queued post-data as an array.
   
 
 
-##### Returns
+##### Returns:
 
 - ***array***
 
@@ -151,7 +151,7 @@ Set all post data, whipping past values.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***array*** `$post`
 
@@ -165,7 +165,7 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
 
 
-##### Parameters
+##### Parameters:
 
 - ***bool*** `$bool` - true/false to enable/disable respectively
 - ***string*** `$tmp_path` - Path to save the cookie jar file, defaults to /tmp
@@ -180,7 +180,7 @@ Set outgoing cookies as an array of CookieName => Value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***array*** `$cookies` - Cookies to set
 
@@ -194,7 +194,7 @@ Set a named cookies outgoing value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key`
 - ***string*** `$value`
@@ -209,7 +209,7 @@ Gets the request URI
   
 
 
-##### Returns
+##### Returns:
 
 - ***string***
 
@@ -222,7 +222,7 @@ Sets the request URI
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$endpoint`
 
@@ -236,7 +236,7 @@ Execute the request
   
 
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\HttpResponse*** - An object representing the result of the request
 
@@ -245,7 +245,7 @@ Execute the request
 
 #### Method: `HttpRequest`->`getCurlInfo()`
 
-##### Returns
+##### Returns:
 
 - ***mixed***
 
@@ -258,7 +258,7 @@ Get the time the last request took in seconds a float
   
 
 
-##### Returns
+##### Returns:
 
 - ***null*** | ***float*** - null if there is no last request
 
@@ -271,7 +271,7 @@ Get the current maximum number of redirects(hops) a request should follow.
   
 
 
-##### Returns
+##### Returns:
 
 - ***int***
 
@@ -284,13 +284,13 @@ Set the maximum number of redirects(hops) a request should follow.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***int*** `$maxRedirects`
 
 
 
-### Class: HttpResponse - `\Boomerang\HttpResponse`
+### Class: HttpResponse \[ `\Boomerang` \]
 
 Represents an HTTP Response.
 
@@ -298,7 +298,7 @@ Usually received from an `HttpRequest` object
 
 #### Method: `HttpResponse`->`__construct($body, $headers [, $request = null])`
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$body` - The body of the HTTP Request
 - ***string*** `$headers`
@@ -310,13 +310,13 @@ Usually received from an `HttpRequest` object
 
 #### Method: `HttpResponse`->`getHeader($header [, $hop = null])`
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$header`
 - ***null*** | ***int*** `$hop`
 
 
-##### Returns
+##### Returns:
 
 - ***null*** | ***string*** - Header value or null on not found
 
@@ -329,12 +329,12 @@ Get Response headers as a HeaderName => Value array
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***null*** | ***int*** `$hop` - The zero indexed hop(redirect). Defaults to the final hop.
 
 
-##### Returns
+##### Returns:
 
 - ***array*** | ***null***
 
@@ -347,7 +347,7 @@ Get all Response headers from all hops as a HopIndex => HeaderName => Value arra
   
 
 
-##### Returns
+##### Returns:
 
 - ***array***
 
@@ -360,7 +360,7 @@ Get the raw unparsed Response header string.
   
 
 
-##### Returns
+##### Returns:
 
 - ***string***
 
@@ -373,7 +373,7 @@ Get the body of the Response.
   
 
 
-##### Returns
+##### Returns:
 
 - ***string***
 
@@ -386,7 +386,7 @@ Get the HttpRequest object that made the Response object.
   
 
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\HttpRequest***
 
@@ -399,7 +399,7 @@ Get the number of hops(redirects) the request took
   
 
 
-##### Returns
+##### Returns:
 
 - ***int***
 
@@ -412,18 +412,18 @@ Get the HTTP status of a hop
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***int*** | ***null*** `$hop` - The zero indexed hop(redirect). Defaults to the final hop.
 
 
-##### Returns
+##### Returns:
 
 - ***int*** | ***null***
 
 ## Validators
 
-### Class: HttpResponseValidator - `\Boomerang\HttpResponseValidator`
+### Class: HttpResponseValidator \[ `\Boomerang` \]
 
 HTTP Validation
 
@@ -431,7 +431,7 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`__construct($response)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\HttpResponseInterface*** `$response`
 
@@ -441,7 +441,7 @@ Used to validate expected responses, headers and HTTP statues
 
 #### Method: `HttpResponseValidator`->`getResponse()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\HttpResponse***
 
@@ -454,13 +454,13 @@ Verify that the HTTP response code is as expected.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***int*** `$expected_status`
 - ***null*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -473,14 +473,14 @@ Verify that a header field equals an expected value.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The header field name to verify.
 - ***string*** `$value` - The expected value.
 - ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -493,14 +493,14 @@ Verify that a header field contains an expected value.
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The header field name to verify.
 - ***string*** `$value` - The expected containing value.
 - ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -513,12 +513,12 @@ Verify that the content body equals an expected value.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$expectedContent` - The expected value.
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -531,12 +531,12 @@ Verify that the content body contains an expected value.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$expectedContent` - The expected containing value.
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -545,12 +545,12 @@ Verify that the content body contains an expected value.
 
 #### Method: `HttpResponseValidator`->`getExpectationResults()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ExpectationResultInterface[]***
 
 
-### Class: JSONValidator - `\Boomerang\JSONValidator`
+### Class: JSONValidator \[ `\Boomerang` \]
 
 JSON Validator
 
@@ -558,7 +558,7 @@ Used to validate JSON encoding and structure.
 
 #### Method: `JSONValidator`->`__construct($response)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\ResponseInterface*** `$response` - The response to inspect
 
@@ -572,7 +572,7 @@ Log the JSON response as an InfoResult in the output.
   
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -581,7 +581,7 @@ Log the JSON response as an InfoResult in the output.
 
 #### Method: `JSONValidator`->`getExpectationResults()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ExpectationResultInterface[]***
 
@@ -594,12 +594,12 @@ Verify that the data matches the passed expected structure definition.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure` - A description of the expected structure.
 
 
-##### Returns
+##### Returns:
 
 - ***$this***
 
@@ -608,13 +608,13 @@ Verify that the data matches the passed expected structure definition.
 
 #### Method: `JSONValidator`->`getResponse()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ResponseInterface***
 
 ## Type Expectations
 
-### Class: AllEx - `\Boomerang\TypeExpectations\AllEx`
+### Class: AllEx \[ `\Boomerang\TypeExpectations` \]
 
 All Expectation
 
@@ -629,7 +629,7 @@ Example:
 
 #### Method: `AllEx`->`__construct($structure)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
 
@@ -639,11 +639,11 @@ Example:
 
 #### Method: `AllEx`->`getValidator()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: AnyEx - `\Boomerang\TypeExpectations\AnyEx`
+### Class: AnyEx \[ `\Boomerang\TypeExpectations` \]
 
 Any Expectation
 
@@ -658,7 +658,7 @@ Example:
 
 #### Method: `AnyEx`->`__construct($structure)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
 
@@ -668,15 +668,15 @@ Example:
 
 #### Method: `AnyEx`->`getValidator()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: ArrayEx - `\Boomerang\TypeExpectations\ArrayEx`
+### Class: ArrayEx \[ `\Boomerang\TypeExpectations` \]
 
 
 
-### Class: IntEx - `\Boomerang\TypeExpectations\IntEx`
+### Class: IntEx \[ `\Boomerang\TypeExpectations` \]
 
 Integer Expectation
 
@@ -687,12 +687,12 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 
 #### Method: `IntEx`->`__construct([ $min = null [, $max = null]])`
 
-##### Parameters
+##### Parameters:
 
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: IterateArrayEx - `\Boomerang\TypeExpectations\Iterate\IterateArrayEx`
+### Class: IterateArrayEx \[ `\Boomerang\TypeExpectations\Iterate` \]
 
 Iterating Array Expectation
 
@@ -700,7 +700,7 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 #### Method: `IterateArrayEx`->`__construct($structure)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
@@ -710,11 +710,11 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 #### Method: `IterateArrayEx`->`getValidator()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: IterateObjectEx - `\Boomerang\TypeExpectations\Iterate\IterateObjectEx`
+### Class: IterateObjectEx \[ `\Boomerang\TypeExpectations\Iterate` \]
 
 Iterating Object Expectation
 
@@ -722,7 +722,7 @@ Iterates over every element of an object, ensuring it is an object, and matching
 
 #### Method: `IterateObjectEx`->`__construct($structure)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
@@ -732,11 +732,11 @@ Iterates over every element of an object, ensuring it is an object, and matching
 
 #### Method: `IterateObjectEx`->`getValidator()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: IterateStructureEx - `\Boomerang\TypeExpectations\Iterate\IterateStructureEx`
+### Class: IterateStructureEx \[ `\Boomerang\TypeExpectations\Iterate` \]
 
 Iterating Structure (object/array) Expectation
 
@@ -744,7 +744,7 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 #### Method: `IterateStructureEx`->`__construct($structure)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
@@ -754,11 +754,11 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 #### Method: `IterateStructureEx`->`getValidator()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: NullEx - `\Boomerang\TypeExpectations\NullEx`
+### Class: NullEx \[ `\Boomerang\TypeExpectations` \]
 
 Null Expectation
 
@@ -766,7 +766,7 @@ Defines a placeholder expectation of a NULL value.
 
 **Passes**: `null`
 
-### Class: NumberEx - `\Boomerang\TypeExpectations\NumberEx`
+### Class: NumberEx \[ `\Boomerang\TypeExpectations` \]
 
 Number Expectation
 
@@ -777,12 +777,12 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 
 #### Method: `NumberEx`->`__construct([ $min = null [, $max = null]])`
 
-##### Parameters
+##### Parameters:
 
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: NumericEx - `\Boomerang\TypeExpectations\NumericEx`
+### Class: NumericEx \[ `\Boomerang\TypeExpectations` \]
 
 Numeric Expectation
 
@@ -794,12 +794,12 @@ See: [php.net/is_numeric](http://php.net/is_numeric)
 
 #### Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
 
-##### Parameters
+##### Parameters:
 
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: NumericStringEx - `\Boomerang\TypeExpectations\NumericStringEx`
+### Class: NumericStringEx \[ `\Boomerang\TypeExpectations` \]
 
 Numeric String Expectation
 
@@ -810,12 +810,12 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 
 #### Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`
 
-##### Parameters
+##### Parameters:
 
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: RegexEx - `\Boomerang\TypeExpectations\RegexEx`
+### Class: RegexEx \[ `\Boomerang\TypeExpectations` \]
 
 Regex Match Expectation
 
@@ -823,17 +823,17 @@ Define a regex matching placeholder
 
 #### Method: `RegexEx`->`__construct($pattern)`
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$pattern` - The preg pattern to search for
 
-### Class: StringEx - `\Boomerang\TypeExpectations\StringEx`
+### Class: StringEx \[ `\Boomerang\TypeExpectations` \]
 
 String Expectation
 
 Define a string matching placeholder expectation
 
-### Class: StructureEx - `\Boomerang\TypeExpectations\StructureEx`
+### Class: StructureEx \[ `\Boomerang\TypeExpectations` \]
 
 Structure Expectation
 
@@ -841,7 +841,7 @@ Used to define rules about structure.
 
 #### Method: `StructureEx`->`__construct($structure)`
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
@@ -851,7 +851,7 @@ Used to define rules about structure.
 
 #### Method: `StructureEx`->`getValidator()`
 
-##### Returns
+##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 

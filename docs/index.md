@@ -15,7 +15,7 @@ The first step in surface testing your API is making the request. That is done w
 
 #### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$endpoint` - URI to request.
 - ***\Boomerang\Factories\HttpResponseFactory*** `$responseFactory` - A factory for creating Response objects.
@@ -30,7 +30,7 @@ Set an outgoing header by name.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The name of the header.
 - ***string*** `$value` - The value to set the header to.
@@ -45,7 +45,7 @@ Set outgoing headers as an array of HeaderName => Value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***array*** `$headers` - Headers to set
 
@@ -59,7 +59,7 @@ Set a named key of the post value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***mixed*** `$key`
 - ***mixed*** `$value`
@@ -74,7 +74,7 @@ Set all post data, whipping past values.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***array*** `$post`
 
@@ -88,7 +88,7 @@ Allows you to enable cookie's set by server re-posting following a redirect.
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
 
 
-##### Parameters
+##### Parameters:
 
 - ***bool*** `$bool` - true/false to enable/disable respectively
 - ***string*** `$tmp_path` - Path to save the cookie jar file, defaults to /tmp
@@ -103,7 +103,7 @@ Set outgoing cookies as an array of CookieName => Value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***array*** `$cookies` - Cookies to set
 
@@ -117,7 +117,7 @@ Set a named cookies outgoing value
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key`
 - ***string*** `$value`
@@ -132,7 +132,7 @@ Sets the request URI
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$endpoint`
 
@@ -155,7 +155,7 @@ Set the maximum number of redirects(hops) a request should follow.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***int*** `$maxRedirects`
 
@@ -169,7 +169,7 @@ Verify that the HTTP response code is as expected.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***int*** `$expected_status`
 - ***null*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
@@ -184,7 +184,7 @@ Verify that a header field equals an expected value.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The header field name to verify.
 - ***string*** `$value` - The expected value.
@@ -200,7 +200,7 @@ Verify that a header field contains an expected value.
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$key` - The header field name to verify.
 - ***string*** `$value` - The expected containing value.
@@ -216,7 +216,7 @@ Verify that the content body equals an expected value.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$expectedContent` - The expected value.
 
@@ -230,7 +230,7 @@ Verify that the content body contains an expected value.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***string*** `$expectedContent` - The expected containing value.
 
@@ -242,7 +242,7 @@ Verify that the data matches the passed expected structure definition.
   
 
 
-##### Parameters
+##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure` - A description of the expected structure.
 
