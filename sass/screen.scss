@@ -9,6 +9,9 @@ $headerbg: #3498DB;
 $headerInner: #2980B9;
 $headerContrast: white;
 
+$headerComplement: complement($headerbg);
+$headerInnerComplement: complement($headerInner);
+
 $mainbg: #ECF0F1;
 $mainInner: white;
 
@@ -62,11 +65,11 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	&[id^=method] {
-		color:  complement($headerbg);
+		color:  $headerComplement;
 	}
 
 	&[id^=class] {
-		color: complement($headerInner);
+		color: $headerInnerComplement;
 	}
 
 }
@@ -154,9 +157,14 @@ body {
 		
 		color: $headerContrast;
 
+		border-bottom: 17px solid $headerComplement;
+
+
 		main {
 			height: 125px;
 			background: $headerInner;
+			border-bottom: 17px solid $headerInnerComplement;
+			margin-bottom: -17px;
 			// background: #2980B9;
 			@media screen and (max-width: 1000px) {
 				height: 90px;

@@ -134,10 +134,13 @@ body > header {
   background: #3498db;
   line-height: 0;
   color: white;
+  border-bottom: 17px solid #db7734;
 }
 body > header main {
   height: 125px;
   background: #2980b9;
+  border-bottom: 17px solid #b96229;
+  margin-bottom: -17px;
 }
 @media screen and (max-width: 1000px) {
   body > header main {
