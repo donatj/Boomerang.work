@@ -28,29 +28,45 @@ a {
   transition-duration: 0.2s;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0 15px;
+li, ul {
   padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-left: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   line-height: 1.7;
   display: block;
+  margin: 0 -20px;
+  padding: 0 10px;
+}
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  font-weight: normal;
+  background: none;
 }
 h1[id^=method], h2[id^=method], h3[id^=method], h4[id^=method], h5[id^=method], h6[id^=method] {
-  color: #3498db;
+  color: #db7734;
 }
 h1[id^=class], h2[id^=class], h3[id^=class], h4[id^=class], h5[id^=class], h6[id^=class] {
-  color: #2980b9;
+  color: #b96229;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding-top: .3em;
+  padding-bottom: .3em;
 }
 
 h1 {
   font-size: 2.5em;
-  padding-bottom: 15px;
   border-bottom: 7px double #ecf0f1;
 }
 
 h2 {
   font-size: 2em;
-  padding-bottom: 7px;
   border-bottom: 5px double #ecf0f1;
 }
 
@@ -93,6 +109,13 @@ a:hover {
 #logotitle i {
   font-size: 1.3em;
 }
+@media screen and (max-width: 1000px) {
+  #logotitle {
+    font-size: 50px;
+    top: 62px;
+    left: 38px;
+  }
+}
 
 body > header main, body > main main, body > footer main {
   -webkit-box-sizing: border-box;
@@ -102,6 +125,11 @@ body > header main, body > main main, body > footer main {
   margin: 0 auto;
   position: relative;
 }
+@media screen and (max-width: 1000px) {
+  body > header main, body > main main, body > footer main {
+    width: 100%;
+  }
+}
 body > header {
   background: #3498db;
   line-height: 0;
@@ -110,6 +138,11 @@ body > header {
 body > header main {
   height: 125px;
   background: #2980b9;
+}
+@media screen and (max-width: 1000px) {
+  body > header main {
+    height: 90px;
+  }
 }
 body > header nav {
   position: absolute;
@@ -144,6 +177,29 @@ body > header nav a:hover {
   background: #2980b9;
   color: white;
 }
+@media screen and (max-width: 1000px) {
+  body > header nav a {
+    padding: 15px;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 640px) {
+  body > header nav a {
+    font-size: 15px;
+    padding: 10px;
+    margin: 0 2px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+  }
+}
+@media screen and (max-width: 640px) {
+  body > header nav {
+    top: 0;
+  }
+}
 body > header svg {
   position: absolute;
   top: -20px;
@@ -159,12 +215,19 @@ body > header svg {
 body > header svg path {
   fill: white;
 }
+@media screen and (max-width: 1000px) {
+  body > header svg {
+    width: 70px;
+    height: 70px;
+    top: 0px;
+  }
+}
 body > main {
   background: #ecf0f1;
 }
 body > main main {
   min-height: 100%;
-  padding: 10px 20px;
+  padding: 10px 40px;
   background: white;
 }
 body > footer {
@@ -205,18 +268,13 @@ pre {
   font-size: .9em;
   padding: 22px;
   line-height: 1.4em;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
 }
 pre code {
   margin: 0;
   padding: 0;
   white-space: pre;
   background: transparent;
-  -webkit-box-shadow: 0 0 0 transparent;
-  -moz-box-shadow: 0 0 0 transparent;
-  box-shadow: 0 0 0 transparent;
   display: block;
   overflow: auto;
 }
@@ -231,10 +289,13 @@ pre code {
   font-size: 12px;
   line-height: 1.4em;
   float: right;
+  margin-right: -30px;
   padding: 20px;
+  padding-left: 0;
 }
 #content_struct ul, #content_struct li {
   list-style-type: lower-greek;
+  padding: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -245,7 +306,7 @@ pre code {
 
 /* * Github Badge * */
 .github_badge {
-  background-color: #3498db;
+  background-color: #2980b9;
   overflow: hidden;
   /* top left corner */
   position: fixed;
@@ -262,7 +323,7 @@ pre code {
   z-index: 100;
 }
 .github_badge a {
-  border: 1px solid white;
+  border: 1px solid #e7f2fa;
   color: #fff;
   display: block;
   font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
@@ -272,4 +333,10 @@ pre code {
   text-decoration: none;
   /* shadow */
   text-shadow: 0 0 0.5em #444444;
+}
+
+@media screen and (max-width: 1100px) {
+  .github_badge {
+    display: none;
+  }
 }
