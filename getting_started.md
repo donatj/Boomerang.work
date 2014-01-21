@@ -40,7 +40,7 @@ There are three steps to creating a test.
 2. Validating the response by creating one or more validators.
 3. Register the validator with Boomerang*!* 
 	
-### Sample
+### Example
 
 The following is a simple example that ensures a call returns the HTTP status code `200`. 
 	
