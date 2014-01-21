@@ -6,9 +6,15 @@ header_anchor: true
 
 # Getting Started
 
+## Installing Boomerang*!*
+
 The first step is simply getting Boomerang*!* installed. You can find instructions for that [here](install.html).
 
-To verify your installation try running `boomerang --version` from the command line.  If everything is good you should get back something like `Boomerang! {version} by Jesse G. Donat`.
+To verify your installation try running `boomerang --version` from the command line.  If everything checks out you should get back along the lines of `Boomerang! {version} by Jesse G. Donat`.
+
+## Configure
+
+*Coming Soon!*
 
 ## Running Tests
 
