@@ -13,7 +13,7 @@ For more information view the [full api documentation](docs/api.html).
 The first step in surface testing your API is making the request. That is done with the
 					`HttpRequest` object.
 
-#### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
+#### Method: `HttpRequest->__construct($endpoint [, $responseFactory = null])`
 
 ##### Parameters:
 
@@ -24,7 +24,7 @@ The first step in surface testing your API is making the request. That is done w
 
 ---
 
-#### Method: `HttpRequest`->`setHeader($key, $value)`
+#### Method: `HttpRequest->setHeader($key, $value)`
 
 Set an outgoing header by name.  
   
@@ -39,7 +39,7 @@ Set an outgoing header by name.
 
 ---
 
-#### Method: `HttpRequest`->`setHeaders($headers)`
+#### Method: `HttpRequest->setHeaders($headers)`
 
 Set outgoing headers as an array of HeaderName => Value  
   
@@ -53,7 +53,7 @@ Set outgoing headers as an array of HeaderName => Value
 
 ---
 
-#### Method: `HttpRequest`->`setPost($key, $value)`
+#### Method: `HttpRequest->setPost($key, $value)`
 
 Set a named key of the post value  
   
@@ -68,7 +68,7 @@ Set a named key of the post value
 
 ---
 
-#### Method: `HttpRequest`->`setPostdata($post)`
+#### Method: `HttpRequest->setPostdata($post)`
 
 Set all post data, whipping past values.  
   
@@ -82,7 +82,7 @@ Set all post data, whipping past values.
 
 ---
 
-#### Method: `HttpRequest`->`setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
+#### Method: `HttpRequest->setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
@@ -97,7 +97,7 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 
 ---
 
-#### Method: `HttpRequest`->`setCookies($cookies)`
+#### Method: `HttpRequest->setCookies($cookies)`
 
 Set outgoing cookies as an array of CookieName => Value  
   
@@ -111,7 +111,7 @@ Set outgoing cookies as an array of CookieName => Value
 
 ---
 
-#### Method: `HttpRequest`->`setCookie($key, $value)`
+#### Method: `HttpRequest->setCookie($key, $value)`
 
 Set a named cookies outgoing value  
   
@@ -126,7 +126,7 @@ Set a named cookies outgoing value
 
 ---
 
-#### Method: `HttpRequest`->`setEndpoint($endpoint)`
+#### Method: `HttpRequest->setEndpoint($endpoint)`
 
 Sets the request URI  
   
@@ -140,7 +140,7 @@ Sets the request URI
 
 ---
 
-#### Method: `HttpRequest`->`makeRequest()`
+#### Method: `HttpRequest->makeRequest()`
 
 Execute the request  
   
@@ -149,7 +149,7 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest`->`setMaxRedirects($maxRedirects)`
+#### Method: `HttpRequest->setMaxRedirects($maxRedirects)`
 
 Set the maximum number of redirects(hops) a request should follow.  
   
@@ -163,7 +163,7 @@ Set the maximum number of redirects(hops) a request should follow.
 
 Validators are used to define your expecations for the response.
 
-#### Method: `HttpResponseValidator`->`expectStatus([ $expected_status = 200 [, $hop = null]])`
+#### Method: `HttpResponseValidator->expectStatus([ $expected_status = 200 [, $hop = null]])`
 
 Verify that the HTTP response code is as expected.  
   
@@ -178,7 +178,7 @@ Verify that the HTTP response code is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectHeader($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeader($key, $value [, $hop = null])`
 
 Verify that a header field equals an expected value.  
   
@@ -194,7 +194,7 @@ Verify that a header field equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectHeaderContains($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeaderContains($key, $value [, $hop = null])`
 
 Verify that a header field contains an expected value.  
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
@@ -210,7 +210,7 @@ For example, checking the header Content-Type for "json" **would** match a respo
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectBody($expectedContent)`
+#### Method: `HttpResponseValidator->expectBody($expectedContent)`
 
 Verify that the content body equals an expected value.  
   
@@ -224,7 +224,7 @@ Verify that the content body equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectBodyContains($expectedContent)`
+#### Method: `HttpResponseValidator->expectBodyContains($expectedContent)`
 
 Verify that the content body contains an expected value.  
   
@@ -236,7 +236,7 @@ Verify that the content body contains an expected value.
 
 
 
-#### Method: `JSONValidator`->`expectStructure($structure)`
+#### Method: `JSONValidator->expectStructure($structure)`
 
 Verify that the data matches the passed expected structure definition.  
   

@@ -12,7 +12,7 @@ header_anchor: true
 
 Boomerang Application
 
-#### Method: `Boomerang`::`addValidator($validator)`
+#### Method: `Boomerang::addValidator($validator)`
 
 Register a Validator with Boomerang  
 After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.  
@@ -28,7 +28,7 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 
 Utility for generating HTTP Requests and receiving Responses into `HttpResponse` objects.
 
-#### Method: `HttpRequest`->`__construct($endpoint [, $responseFactory = null])`
+#### Method: `HttpRequest->__construct($endpoint [, $responseFactory = null])`
 
 ##### Parameters:
 
@@ -39,7 +39,7 @@ Utility for generating HTTP Requests and receiving Responses into `HttpResponse`
 
 ---
 
-#### Method: `HttpRequest`->`getHeader($key)`
+#### Method: `HttpRequest->getHeader($key)`
 
 Retrieve an outgoing header by name  
   
@@ -57,7 +57,7 @@ Retrieve an outgoing header by name
 
 ---
 
-#### Method: `HttpRequest`->`setHeader($key, $value)`
+#### Method: `HttpRequest->setHeader($key, $value)`
 
 Set an outgoing header by name.  
   
@@ -72,7 +72,7 @@ Set an outgoing header by name.
 
 ---
 
-#### Method: `HttpRequest`->`getHeaders()`
+#### Method: `HttpRequest->getHeaders()`
 
 Get all set headers.  
   
@@ -85,7 +85,7 @@ Get all set headers.
 
 ---
 
-#### Method: `HttpRequest`->`setHeaders($headers)`
+#### Method: `HttpRequest->setHeaders($headers)`
 
 Set outgoing headers as an array of HeaderName => Value  
   
@@ -99,7 +99,7 @@ Set outgoing headers as an array of HeaderName => Value
 
 ---
 
-#### Method: `HttpRequest`->`getPost($key)`
+#### Method: `HttpRequest->getPost($key)`
 
 Retrieve an post value by name.  
   
@@ -117,7 +117,7 @@ Retrieve an post value by name.
 
 ---
 
-#### Method: `HttpRequest`->`setPost($key, $value)`
+#### Method: `HttpRequest->setPost($key, $value)`
 
 Set a named key of the post value  
   
@@ -132,7 +132,7 @@ Set a named key of the post value
 
 ---
 
-#### Method: `HttpRequest`->`getPostdata()`
+#### Method: `HttpRequest->getPostdata()`
 
 Retrieve all queued post-data as an array.  
   
@@ -145,7 +145,7 @@ Retrieve all queued post-data as an array.
 
 ---
 
-#### Method: `HttpRequest`->`setPostdata($post)`
+#### Method: `HttpRequest->setPostdata($post)`
 
 Set all post data, whipping past values.  
   
@@ -159,7 +159,7 @@ Set all post data, whipping past values.
 
 ---
 
-#### Method: `HttpRequest`->`setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
+#### Method: `HttpRequest->setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
@@ -174,7 +174,7 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 
 ---
 
-#### Method: `HttpRequest`->`setCookies($cookies)`
+#### Method: `HttpRequest->setCookies($cookies)`
 
 Set outgoing cookies as an array of CookieName => Value  
   
@@ -188,7 +188,7 @@ Set outgoing cookies as an array of CookieName => Value
 
 ---
 
-#### Method: `HttpRequest`->`setCookie($key, $value)`
+#### Method: `HttpRequest->setCookie($key, $value)`
 
 Set a named cookies outgoing value  
   
@@ -203,7 +203,7 @@ Set a named cookies outgoing value
 
 ---
 
-#### Method: `HttpRequest`->`getEndpoint()`
+#### Method: `HttpRequest->getEndpoint()`
 
 Gets the request URI  
   
@@ -216,7 +216,7 @@ Gets the request URI
 
 ---
 
-#### Method: `HttpRequest`->`setEndpoint($endpoint)`
+#### Method: `HttpRequest->setEndpoint($endpoint)`
 
 Sets the request URI  
   
@@ -230,7 +230,7 @@ Sets the request URI
 
 ---
 
-#### Method: `HttpRequest`->`makeRequest()`
+#### Method: `HttpRequest->makeRequest()`
 
 Execute the request  
   
@@ -243,7 +243,7 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest`->`getCurlInfo()`
+#### Method: `HttpRequest->getCurlInfo()`
 
 ##### Returns:
 
@@ -252,7 +252,7 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest`->`getLastRequestTime()`
+#### Method: `HttpRequest->getLastRequestTime()`
 
 Get the time the last request took in seconds a float  
   
@@ -265,7 +265,7 @@ Get the time the last request took in seconds a float
 
 ---
 
-#### Method: `HttpRequest`->`getMaxRedirects()`
+#### Method: `HttpRequest->getMaxRedirects()`
 
 Get the current maximum number of redirects(hops) a request should follow.  
   
@@ -278,7 +278,7 @@ Get the current maximum number of redirects(hops) a request should follow.
 
 ---
 
-#### Method: `HttpRequest`->`setMaxRedirects($maxRedirects)`
+#### Method: `HttpRequest->setMaxRedirects($maxRedirects)`
 
 Set the maximum number of redirects(hops) a request should follow.  
   
@@ -296,7 +296,7 @@ Represents an HTTP Response.
 
 Usually received from an `HttpRequest` object
 
-#### Method: `HttpResponse`->`__construct($body, $headers [, $request = null])`
+#### Method: `HttpResponse->__construct($body, $headers [, $request = null])`
 
 ##### Parameters:
 
@@ -308,7 +308,7 @@ Usually received from an `HttpRequest` object
 
 ---
 
-#### Method: `HttpResponse`->`getHeader($header [, $hop = null])`
+#### Method: `HttpResponse->getHeader($header [, $hop = null])`
 
 ##### Parameters:
 
@@ -323,7 +323,7 @@ Usually received from an `HttpRequest` object
 
 ---
 
-#### Method: `HttpResponse`->`getHeaders([ $hop = null])`
+#### Method: `HttpResponse->getHeaders([ $hop = null])`
 
 Get Response headers as a HeaderName => Value array  
   
@@ -341,7 +341,7 @@ Get Response headers as a HeaderName => Value array
 
 ---
 
-#### Method: `HttpResponse`->`getAllHeaders()`
+#### Method: `HttpResponse->getAllHeaders()`
 
 Get all Response headers from all hops as a HopIndex => HeaderName => Value array.  
   
@@ -354,7 +354,7 @@ Get all Response headers from all hops as a HopIndex => HeaderName => Value arra
 
 ---
 
-#### Method: `HttpResponse`->`getRawHeaders()`
+#### Method: `HttpResponse->getRawHeaders()`
 
 Get the raw unparsed Response header string.  
   
@@ -367,7 +367,7 @@ Get the raw unparsed Response header string.
 
 ---
 
-#### Method: `HttpResponse`->`getBody()`
+#### Method: `HttpResponse->getBody()`
 
 Get the body of the Response.  
   
@@ -380,7 +380,7 @@ Get the body of the Response.
 
 ---
 
-#### Method: `HttpResponse`->`getRequest()`
+#### Method: `HttpResponse->getRequest()`
 
 Get the HttpRequest object that made the Response object.  
   
@@ -393,7 +393,7 @@ Get the HttpRequest object that made the Response object.
 
 ---
 
-#### Method: `HttpResponse`->`getHopCount()`
+#### Method: `HttpResponse->getHopCount()`
 
 Get the number of hops(redirects) the request took  
   
@@ -406,7 +406,7 @@ Get the number of hops(redirects) the request took
 
 ---
 
-#### Method: `HttpResponse`->`getStatus([ $hop = null])`
+#### Method: `HttpResponse->getStatus([ $hop = null])`
 
 Get the HTTP status of a hop  
   
@@ -429,7 +429,7 @@ HTTP Validation
 
 Used to validate expected responses, headers and HTTP statues
 
-#### Method: `HttpResponseValidator`->`__construct($response)`
+#### Method: `HttpResponseValidator->__construct($response)`
 
 ##### Parameters:
 
@@ -439,7 +439,7 @@ Used to validate expected responses, headers and HTTP statues
 
 ---
 
-#### Method: `HttpResponseValidator`->`getResponse()`
+#### Method: `HttpResponseValidator->getResponse()`
 
 ##### Returns:
 
@@ -448,7 +448,7 @@ Used to validate expected responses, headers and HTTP statues
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectStatus([ $expected_status = 200 [, $hop = null]])`
+#### Method: `HttpResponseValidator->expectStatus([ $expected_status = 200 [, $hop = null]])`
 
 Verify that the HTTP response code is as expected.  
   
@@ -467,7 +467,7 @@ Verify that the HTTP response code is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectHeader($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeader($key, $value [, $hop = null])`
 
 Verify that a header field equals an expected value.  
   
@@ -487,7 +487,7 @@ Verify that a header field equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectHeaderContains($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeaderContains($key, $value [, $hop = null])`
 
 Verify that a header field contains an expected value.  
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
@@ -507,7 +507,7 @@ For example, checking the header Content-Type for "json" **would** match a respo
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectBody($expectedContent)`
+#### Method: `HttpResponseValidator->expectBody($expectedContent)`
 
 Verify that the content body equals an expected value.  
   
@@ -525,7 +525,7 @@ Verify that the content body equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator`->`expectBodyContains($expectedContent)`
+#### Method: `HttpResponseValidator->expectBodyContains($expectedContent)`
 
 Verify that the content body contains an expected value.  
   
@@ -543,7 +543,7 @@ Verify that the content body contains an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator`->`getExpectationResults()`
+#### Method: `HttpResponseValidator->getExpectationResults()`
 
 ##### Returns:
 
@@ -556,7 +556,7 @@ JSON Validator
 
 Used to validate JSON encoding and structure.
 
-#### Method: `JSONValidator`->`__construct($response)`
+#### Method: `JSONValidator->__construct($response)`
 
 ##### Parameters:
 
@@ -566,7 +566,7 @@ Used to validate JSON encoding and structure.
 
 ---
 
-#### Method: `JSONValidator`->`inspectJSON()`
+#### Method: `JSONValidator->inspectJSON()`
 
 Log the JSON response as an InfoResult in the output.  
   
@@ -579,7 +579,7 @@ Log the JSON response as an InfoResult in the output.
 
 ---
 
-#### Method: `JSONValidator`->`expectStructure($structure)`
+#### Method: `JSONValidator->expectStructure($structure)`
 
 Verify that the data matches the passed expected structure definition.  
   
@@ -597,7 +597,7 @@ Verify that the data matches the passed expected structure definition.
 
 ---
 
-#### Method: `JSONValidator`->`getResponse()`
+#### Method: `JSONValidator->getResponse()`
 
 ##### Returns:
 
@@ -606,7 +606,7 @@ Verify that the data matches the passed expected structure definition.
 
 ---
 
-#### Method: `JSONValidator`->`getExpectationResults()`
+#### Method: `JSONValidator->getExpectationResults()`
 
 ##### Returns:
 
@@ -627,7 +627,7 @@ Example:
         function($data) { return count($data) == 3; }
     );
 
-#### Method: `AllEx`->`__construct($structure)`
+#### Method: `AllEx->__construct($structure)`
 
 ##### Parameters:
 
@@ -637,7 +637,7 @@ Example:
 
 ---
 
-#### Method: `AllEx`->`getValidator()`
+#### Method: `AllEx->getValidator()`
 
 ##### Returns:
 
@@ -656,7 +656,7 @@ Example:
         function($data) { return count($data) == 4; }
     );
 
-#### Method: `AnyEx`->`__construct($structure)`
+#### Method: `AnyEx->__construct($structure)`
 
 ##### Parameters:
 
@@ -666,7 +666,7 @@ Example:
 
 ---
 
-#### Method: `AnyEx`->`getValidator()`
+#### Method: `AnyEx->getValidator()`
 
 ##### Returns:
 
@@ -685,7 +685,7 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 **Passes**: int
 **Fails**: float/numeric string
 
-#### Method: `IntEx`->`__construct([ $min = null [, $max = null]])`
+#### Method: `IntEx->__construct([ $min = null [, $max = null]])`
 
 ##### Parameters:
 
@@ -698,7 +698,7 @@ Iterating Array Expectation
 
 Iterates over every element of an array, ensuring it is an array, and matching against passed structure expectations.
 
-#### Method: `IterateArrayEx`->`__construct($structure)`
+#### Method: `IterateArrayEx->__construct($structure)`
 
 ##### Parameters:
 
@@ -708,7 +708,7 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 ---
 
-#### Method: `IterateArrayEx`->`getValidator()`
+#### Method: `IterateArrayEx->getValidator()`
 
 ##### Returns:
 
@@ -720,7 +720,7 @@ Iterating Object Expectation
 
 Iterates over every element of an object, ensuring it is an object, and matching against passed structure expectations.
 
-#### Method: `IterateObjectEx`->`__construct($structure)`
+#### Method: `IterateObjectEx->__construct($structure)`
 
 ##### Parameters:
 
@@ -730,7 +730,7 @@ Iterates over every element of an object, ensuring it is an object, and matching
 
 ---
 
-#### Method: `IterateObjectEx`->`getValidator()`
+#### Method: `IterateObjectEx->getValidator()`
 
 ##### Returns:
 
@@ -742,7 +742,7 @@ Iterating Structure (object/array) Expectation
 
 Iterates over every element of a iterable structure (object/array), ensuring it iterable, and matching against passed structure expectations.
 
-#### Method: `IterateStructureEx`->`__construct($structure)`
+#### Method: `IterateStructureEx->__construct($structure)`
 
 ##### Parameters:
 
@@ -752,7 +752,7 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 ---
 
-#### Method: `IterateStructureEx`->`getValidator()`
+#### Method: `IterateStructureEx->getValidator()`
 
 ##### Returns:
 
@@ -775,7 +775,7 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 **Passes**: `int` / `float`
 **Fails**: `numeric string`
 
-#### Method: `NumberEx`->`__construct([ $min = null [, $max = null]])`
+#### Method: `NumberEx->__construct([ $min = null [, $max = null]])`
 
 ##### Parameters:
 
@@ -792,7 +792,7 @@ See: [php.net/is_numeric](http://php.net/is_numeric)
 
 **Passes**: `numeric string` / `int` / `float`
 
-#### Method: `NumericEx`->`__construct([ $min = null [, $max = null]])`
+#### Method: `NumericEx->__construct([ $min = null [, $max = null]])`
 
 ##### Parameters:
 
@@ -808,7 +808,7 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 **Passes**: `numeric string` eg: "1.2"
 **Fails**: `int` / `float`
 
-#### Method: `NumericStringEx`->`__construct([ $min = null [, $max = null]])`
+#### Method: `NumericStringEx->__construct([ $min = null [, $max = null]])`
 
 ##### Parameters:
 
@@ -821,7 +821,7 @@ Regex Match Expectation
 
 Define a regex matching placeholder
 
-#### Method: `RegexEx`->`__construct($pattern)`
+#### Method: `RegexEx->__construct($pattern)`
 
 ##### Parameters:
 
@@ -839,7 +839,7 @@ Structure Expectation
 
 Used to define rules about structure.
 
-#### Method: `StructureEx`->`__construct($structure)`
+#### Method: `StructureEx->__construct($structure)`
 
 ##### Parameters:
 
@@ -849,7 +849,7 @@ Used to define rules about structure.
 
 ---
 
-#### Method: `StructureEx`->`getValidator()`
+#### Method: `StructureEx->getValidator()`
 
 ##### Returns:
 
