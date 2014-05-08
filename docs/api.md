@@ -579,15 +579,6 @@ Log the JSON response as an InfoResult in the output.
 
 ---
 
-#### Method: `JSONValidator`->`getExpectationResults()`
-
-##### Returns:
-
-- ***\Boomerang\Interfaces\ExpectationResultInterface[]***
-
-
----
-
 #### Method: `JSONValidator`->`expectStructure($structure)`
 
 Verify that the data matches the passed expected structure definition.  
@@ -611,6 +602,15 @@ Verify that the data matches the passed expected structure definition.
 ##### Returns:
 
 - ***\Boomerang\Interfaces\ResponseInterface***
+
+
+---
+
+#### Method: `JSONValidator`->`getExpectationResults()`
+
+##### Returns:
+
+- ***\Boomerang\Interfaces\ExpectationResultInterface[]***
 
 ## Type Expectations
 
