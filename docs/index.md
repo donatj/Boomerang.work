@@ -53,6 +53,21 @@ Set outgoing headers as an array of HeaderName => Value
 
 ---
 
+#### Method: `HttpRequest->setBasicAuth($username [, $password = ''])`
+
+Set outgoing basic auth header.  
+  
+
+
+##### Parameters:
+
+- ***string*** `$username`
+- ***string*** `$password`
+
+
+
+---
+
 #### Method: `HttpRequest->setPost($key, $value)`
 
 Set a named key of the post value  
