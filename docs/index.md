@@ -97,7 +97,7 @@ Set all post data, whipping past values.
 
 ---
 
-#### Method: `HttpRequest->setCookiesFollowRedirects($bool [, $tmp_path = '/tmp'])`
+#### Method: `HttpRequest->setCookiesFollowRedirects($bool)`
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
@@ -106,7 +106,6 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 ##### Parameters:
 
 - ***bool*** `$bool` - true/false to enable/disable respectively
-- ***string*** `$tmp_path` - Path to save the cookie jar file, defaults to /tmp
 
 
 
