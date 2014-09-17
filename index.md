@@ -8,7 +8,31 @@ Boomerang*!* is an easy to use API surface testing framework. It is written in P
 
 Inspired by [Frisby.js](http://frisbyjs.com/), Boomerang*!* takes API testing a step further by allowing easy iteration of values, validation of individual hops along a set of redirects, all the while using a more reliable, extensible architecture.
 
-## Does API surface testing replace unit testing?
+Boomerang*!* uses [semantic versioning](http://semver.org/), and is at major version 0, so the public API should not be considered stable.
+
+## What does it do?
+
+Boomerang*!* tests your API by making HTTP requests to your API and validates the response body and headers.
+
+### Features
+
+- Fully programable in PHP
+- HTTP Validation Engine
+	- Header Validations
+	- HTTP Status Validations
+	- Body Validations
+	- Validations *Per Redirection* Hop
+- JSON Structure Validation Engine
+	- Field Type Validations
+	- Numeric Range Validations
+	- Iterative Validations
+
+### Features In The Works
+
+- JSON Schema Validation
+- XML Validation
+
+## Does Boomerang*!* replace unit testing?
 
 *No*, not at all.  It is meant to be used in **conjunction** with a proper unit test suite for an enhanced test sweep.
 
