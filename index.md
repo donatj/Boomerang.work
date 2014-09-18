@@ -40,7 +40,7 @@ Boomerang*!* tests your API by making HTTP requests to your API and validates th
 
 Here is a simple sample that validates a response like `{ "origin": "216.14.16.226" }` where the IP address could be variable.
 
-{% highlight php %}
+```php
 <?php
 
 namespace Boomerang;
@@ -63,4 +63,4 @@ $json->expectStructure(array(
 ));
 
 Boomerang::addValidator($json);                        // Register the validator with Boomerang
-{% endhighlight %}
+```
