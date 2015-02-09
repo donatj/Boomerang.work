@@ -24,6 +24,35 @@ The first step in surface testing your API is making the request. That is done w
 
 ---
 
+#### Method: `HttpRequest->setUrlParam($param, $value)`
+
+Set a url param by name.  
+  
+
+
+##### Parameters:
+
+- ***string*** `$param` - The name of the param.
+- ***string*** | ***int*** | ***float*** | ***array*** `$value`
+
+
+
+---
+
+#### Method: `HttpRequest->setUrlParams($params)`
+
+Set outgoing params as an array of ParamName => Value  
+  
+
+
+##### Parameters:
+
+- ***array*** `$params` - Params to set
+
+
+
+---
+
 #### Method: `HttpRequest->setHeader($key, $value)`
 
 Set an outgoing header by name.  

@@ -39,6 +39,66 @@ Utility for generating HTTP Requests and receiving Responses into `HttpResponse`
 
 ---
 
+#### Method: `HttpRequest->getUrlParam($param)`
+
+Retrieve a url param by name  
+  
+
+
+##### Parameters:
+
+- ***string*** `$param` - The name of the param.
+
+
+##### Returns:
+
+- ***string*** | ***array*** | ***null*** - Null on failure.
+
+
+---
+
+#### Method: `HttpRequest->setUrlParam($param, $value)`
+
+Set a url param by name.  
+  
+
+
+##### Parameters:
+
+- ***string*** `$param` - The name of the param.
+- ***string*** | ***int*** | ***float*** | ***array*** `$value`
+
+
+
+---
+
+#### Method: `HttpRequest->getUrlParams()`
+
+Get all url params.  
+  
+
+
+##### Returns:
+
+- ***array***
+
+
+---
+
+#### Method: `HttpRequest->setUrlParams($params)`
+
+Set outgoing params as an array of ParamName => Value  
+  
+
+
+##### Parameters:
+
+- ***array*** `$params` - Params to set
+
+
+
+---
+
 #### Method: `HttpRequest->getHeader($key)`
 
 Retrieve an outgoing header by name  
@@ -324,6 +384,10 @@ Usually received from an `HttpRequest` object
 
 #### Method: `HttpResponse->getHeader($header [, $hop = null])`
 
+Get a response header by name.  
+  
+
+
 ##### Parameters:
 
 - ***string*** `$header`
@@ -339,7 +403,7 @@ Usually received from an `HttpRequest` object
 
 #### Method: `HttpResponse->getHeaders([ $hop = null])`
 
-Get Response headers as a HeaderName => Value array  
+Get response headers as a HeaderName => Value array  
   
 
 
@@ -357,7 +421,7 @@ Get Response headers as a HeaderName => Value array
 
 #### Method: `HttpResponse->getAllHeaders()`
 
-Get all Response headers from all hops as a HopIndex => HeaderName => Value array.  
+Get all response headers from all hops as a HopIndex => HeaderName => Value array.  
   
 
 
@@ -370,7 +434,7 @@ Get all Response headers from all hops as a HopIndex => HeaderName => Value arra
 
 #### Method: `HttpResponse->getRawHeaders()`
 
-Get the raw unparsed Response header string.  
+Get the raw un-parsed Response header string.  
   
 
 
@@ -846,6 +910,13 @@ Define a regex matching placeholder
 String Expectation
 
 Define a string matching placeholder expectation
+
+#### Method: `StringEx->__construct([ $minLength = null [, $maxLength = null]])`
+
+##### Parameters:
+
+- ***null*** | ***int*** `$minLength` - Optional minimum length in bytes of a valid value
+- ***null*** | ***int*** `$maxLength` - Optional maximum length in bytes of a valid value
 
 ### Class: StructureEx \[ `\Boomerang\TypeExpectations` \]
 
