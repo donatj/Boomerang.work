@@ -1,4 +1,4 @@
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -8,7 +8,7 @@ main {
 
 body {
   background: #217dbb;
-  font-family: Arial;
+  font-family: Arvo;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -18,13 +18,13 @@ body {
 a {
   color: #0092B4;
   text-decoration: none;
-  -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
+  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
 
@@ -66,17 +66,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5em;
-  border-bottom: 7px double #ecf0f1;
+  border-bottom: 7px double #ECF0F1;
 }
 
 h2 {
   font-size: 2em;
-  border-bottom: 5px double #ecf0f1;
+  border-bottom: 5px double #ECF0F1;
 }
 
 h3 {
   font-size: 1.5em;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 2px solid #ECF0F1;
 }
 
 h4 {
@@ -122,8 +122,8 @@ a:hover {
 }
 
 body > header main, body > main main, body > footer main {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 1000px;
   margin: 0 auto;
@@ -135,14 +135,14 @@ body > header main, body > main main, body > footer main {
   }
 }
 body > header {
-  background: #3498db;
+  background: #3498DB;
   line-height: 0;
   color: white;
   border-bottom: 17px solid #db7734;
 }
 body > header main {
   height: 125px;
-  background: #2980b9;
+  background: #2980B9;
   border-bottom: 17px solid #b96229;
   margin-bottom: -17px;
 }
@@ -158,30 +158,28 @@ body > header nav {
 }
 body > header nav a {
   display: inline-block;
-  color: #2980b9;
+  color: #2980B9;
   background: white;
   font-weight: bold;
   text-decoration: none;
   font-size: 20px;
   padding: 20px;
   margin: 4px;
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
-  -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
+  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   border: 1px solid white;
 }
 body > header nav a:hover {
-  background: #2980b9;
+  background: #2980B9;
   color: white;
 }
 @media screen and (max-width: 1000px) {
@@ -194,10 +192,8 @@ body > header nav a:hover {
     font-size: 15px;
     padding: 10px;
     margin: 0 2px;
-    -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
-    -ms-border-radius: 0 0 4px 4px;
-    -o-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0;
     border-radius: 0 0 4px 4px;
   }
 }
@@ -212,10 +208,9 @@ body > header svg {
   left: 0;
   width: 120px;
   height: 120px;
-  -webkit-transform: rotate(-40deg);
   -moz-transform: rotate(-40deg);
   -ms-transform: rotate(-40deg);
-  -o-transform: rotate(-40deg);
+  -webkit-transform: rotate(-40deg);
   transform: rotate(-40deg);
 }
 body > header svg path {
@@ -229,7 +224,7 @@ body > header svg path {
   }
 }
 body > main {
-  background: #ecf0f1;
+  background: #ECF0F1;
 }
 body > main main {
   min-height: 100%;
@@ -254,10 +249,8 @@ body > footer a {
 pre, code {
   background: bottom repeat-x rgba(223, 221, 221, 0.3);
   font-family: Consolas,"Courier New",Courier,monospace;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 
@@ -286,10 +279,8 @@ pre code {
 }
 
 #content_struct {
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
   background: #f5f7f8;
   font-size: 12px;
@@ -312,20 +303,19 @@ pre code {
 
 /* * Github Badge * */
 .github_badge {
-  background-color: #2980b9;
+  background-color: #2980B9;
   overflow: hidden;
   /* top left corner */
   position: fixed;
   right: -3em;
   top: 2.5em;
-  -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-box-shadow: 0 0 1em #888888;
-  -moz-box-shadow: 0 0 1em #888888;
-  box-shadow: 0 0 1em #888888;
+  -moz-box-shadow: 0 0 1em #888;
+  -webkit-box-shadow: 0 0 1em #888;
+  box-shadow: 0 0 1em #888;
   z-index: 100;
 }
 .github_badge a {
@@ -338,7 +328,7 @@ pre code {
   text-align: center;
   text-decoration: none;
   /* shadow */
-  text-shadow: 0 0 0.5em #444444;
+  text-shadow: 0 0 0.5em #444;
 }
 
 @media screen and (max-width: 1100px) {
