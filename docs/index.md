@@ -110,6 +110,10 @@ Set outgoing basic auth header.
 Set a named key of the post value  
 Note that this has the side effect of changing the HTTP Method to POST
 
+##### DEPRECATED
+
+Use setMethod and setFormValue instead
+
 ##### Parameters:
 
 - ***string*** `$key`
@@ -137,6 +141,10 @@ Note that if there is a non-form body set, this will replace it.
 
 Set all post data, whipping past values.  
 Note that this has the side effect of changing the HTTP Method to POST
+
+##### DEPRECATED
+
+Use setBody instead
 
 ##### Parameters:
 

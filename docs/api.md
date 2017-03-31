@@ -168,6 +168,10 @@ Set outgoing basic auth header.
 
 Retrieve an post value by name.
 
+##### DEPRECATED
+
+Use getFormValue instead
+
 ##### Parameters:
 
 - ***mixed*** `$key`
@@ -182,6 +186,10 @@ Retrieve an post value by name.
 
 Set a named key of the post value  
 Note that this has the side effect of changing the HTTP Method to POST
+
+##### DEPRECATED
+
+Use setMethod and setFormValue instead
 
 ##### Parameters:
 
@@ -220,6 +228,10 @@ Retrieve an form value by name.
 
 Retrieve all queued post-data as an array.
 
+##### DEPRECATED
+
+Use getBody instead
+
 ##### Returns:
 
 - ***array*** | ***string***
@@ -230,6 +242,10 @@ Retrieve all queued post-data as an array.
 
 Set all post data, whipping past values.  
 Note that this has the side effect of changing the HTTP Method to POST
+
+##### DEPRECATED
+
+Use setBody instead
 
 ##### Parameters:
 
