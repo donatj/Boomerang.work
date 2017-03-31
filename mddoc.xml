@@ -39,7 +39,7 @@ header_anchor: true
 					`HttpRequest` object.
 				</text>
 				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpRequest.php"
-					  method-filter="/>set|>__construct|>makeRequest/i" skip-class-header="true"
+					  method-filter="/(>set(?!Post)|>__construct|>makeRequest)/i" skip-class-header="true"
 					  skip-method-returns="true"/>
 			</section>
 			<section title="Validating API Expectations">

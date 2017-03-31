@@ -103,21 +103,7 @@ Set outgoing basic auth header.
 
 
 
----
 
-#### Method: `HttpRequest->setPost($key, $value)`
-
-Set a named key of the post value  
-Note that this has the side effect of changing the HTTP Method to POST
-
-##### DEPRECATED
-
-Use setMethod and setFormValue instead
-
-##### Parameters:
-
-- ***string*** `$key`
-- ***mixed*** `$value`
 
 ---
 
@@ -135,20 +121,7 @@ Note that if there is a non-form body set, this will replace it.
 
 
 
----
 
-#### Method: `HttpRequest->setPostData($post)`
-
-Set all post data, whipping past values.  
-Note that this has the side effect of changing the HTTP Method to POST
-
-##### DEPRECATED
-
-Use setBody instead
-
-##### Parameters:
-
-- ***array*** `$post`
 
 
 
