@@ -18,7 +18,7 @@ If you are a PHP developer, `composer` is the recommended installation method. B
 ### Globally
 
 ```bash
-composer global require 'boomerang/boomerang=dev-master'
+composer global require 'boomerang/boomerang=~0.2.0'
 ```
 
 ### In Your Composer Project
@@ -27,7 +27,7 @@ Add the following to your composer.json
 
 ```json
 "require": {
-	"boomerang/boomerang" : "dev-master"
+	"boomerang/boomerang" : "~0.2.0"
 }
 ```
 	
