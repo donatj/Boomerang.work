@@ -4,6 +4,7 @@ title: Full API Documentation
 header_anchor: true
 ---
 
+
 # Full Documentation
 
 ## Application
@@ -12,11 +13,12 @@ header_anchor: true
 
 Boomerang Application
 
+
+
 #### Method: `Boomerang::addValidator($validator)`
 
 Register a Validator with Boomerang  
-After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.  
-
+After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.
 
 ##### Parameters:
 
@@ -35,285 +37,285 @@ Utility for generating HTTP Requests and receiving Responses into `HttpResponse`
 - ***string*** `$endpoint` - URI to request.
 - ***\Boomerang\Factories\HttpResponseFactory*** `$responseFactory` - A factory for creating Response objects.
 
+---
 
+#### Method: `HttpRequest->getMethod()`
+
+Get the current request method.
+
+##### Returns:
+
+- ***string***
+
+---
+
+#### Method: `HttpRequest->setMethod($method)`
+
+Set the request method.
+
+##### Helper constants exist, for example
+
+   `$req->setMethod(HttpRequest::POST);`
+
+##### Parameters:
+
+- ***string*** `$method`
 
 ---
 
 #### Method: `HttpRequest->getUrlParam($param)`
 
-Retrieve a url param by name  
-  
-
+Retrieve a url param by name
 
 ##### Parameters:
 
 - ***string*** `$param` - The name of the param.
 
-
 ##### Returns:
 
 - ***string*** | ***array*** | ***null*** - Null on failure.
-
 
 ---
 
 #### Method: `HttpRequest->setUrlParam($param, $value)`
 
-Set a url param by name.  
-  
-
+Set a url param by name.
 
 ##### Parameters:
 
 - ***string*** `$param` - The name of the param.
 - ***string*** | ***int*** | ***float*** | ***array*** `$value`
 
-
-
 ---
 
 #### Method: `HttpRequest->getUrlParams()`
 
-Get all url params.  
-  
-
+Get all url params.
 
 ##### Returns:
 
 - ***array***
 
-
 ---
 
 #### Method: `HttpRequest->setUrlParams($params)`
 
-Set outgoing params as an array of ParamName => Value  
-  
-
+Set outgoing params as an array of ParamName => Value
 
 ##### Parameters:
 
 - ***array*** `$params` - Params to set
 
-
-
 ---
 
 #### Method: `HttpRequest->getHeader($key)`
 
-Retrieve an outgoing header by name  
-  
-
+Retrieve an outgoing header by name
 
 ##### Parameters:
 
 - ***string*** `$key` - The name of the header.
 
-
 ##### Returns:
 
 - ***string*** | ***null*** - Null on failure.
-
 
 ---
 
 #### Method: `HttpRequest->setHeader($key, $value)`
 
-Set an outgoing header by name.  
-  
-
+Set an outgoing header by name.
 
 ##### Parameters:
 
 - ***string*** `$key` - The name of the header.
 - ***string*** `$value` - The value to set the header to.
 
-
-
 ---
 
 #### Method: `HttpRequest->getHeaders()`
 
-Get all set headers.  
-  
-
+Get all set headers.
 
 ##### Returns:
 
 - ***array***
 
-
 ---
 
 #### Method: `HttpRequest->setHeaders($headers)`
 
-Set outgoing headers as an array of HeaderName => Value  
-  
-
+Set outgoing headers as an array of HeaderName => Value
 
 ##### Parameters:
 
 - ***array*** `$headers` - Headers to set
 
-
-
 ---
 
 #### Method: `HttpRequest->setBasicAuth($username [, $password = ''])`
 
-Set outgoing basic auth header.  
-  
-
+Set outgoing basic auth header.
 
 ##### Parameters:
 
 - ***string*** `$username`
 - ***string*** `$password`
 
-
-
 ---
 
 #### Method: `HttpRequest->getPost($key)`
 
-Retrieve an post value by name.  
-  
-
+Retrieve an post value by name.
 
 ##### Parameters:
 
 - ***mixed*** `$key`
 
-
 ##### Returns:
 
 - ***string*** | ***null***
-
 
 ---
 
 #### Method: `HttpRequest->setPost($key, $value)`
 
 Set a named key of the post value  
-  
-
+Note that this has the side effect of changing the HTTP Method to POST
 
 ##### Parameters:
 
-- ***mixed*** `$key`
+- ***string*** `$key`
 - ***mixed*** `$value`
-
-
 
 ---
 
-#### Method: `HttpRequest->getPostdata()`
+#### Method: `HttpRequest->setFormValue($key, $value)`
 
-Retrieve all queued post-data as an array.  
-  
+Set a named key of the form values  
+Note that if there is a non-form body set, this will replace it.
 
+##### Parameters:
+
+- ***string*** `$key`
+- ***mixed*** `$value`
+
+---
+
+#### Method: `HttpRequest->getFormValue($key)`
+
+Retrieve an form value by name.
+
+##### Parameters:
+
+- ***string*** `$key`
 
 ##### Returns:
 
-- ***array***
-
+- ***mixed*** | ***null***
 
 ---
 
-#### Method: `HttpRequest->setPostdata($post)`
+#### Method: `HttpRequest->getPostData()`
+
+Retrieve all queued post-data as an array.
+
+##### Returns:
+
+- ***array*** | ***string***
+
+---
+
+#### Method: `HttpRequest->setPostData($post)`
 
 Set all post data, whipping past values.  
-  
-
+Note that this has the side effect of changing the HTTP Method to POST
 
 ##### Parameters:
 
 - ***array*** `$post`
 
+---
 
+#### Method: `HttpRequest->getBody()`
+
+Get the requests body
+
+##### Returns:
+
+- ***array*** | ***string***
+
+---
+
+#### Method: `HttpRequest->setBody($body)`
+
+Set the requests body
+
+##### Parameters:
+
+- ***array*** | ***string*** `$body`
 
 ---
 
 #### Method: `HttpRequest->setCookiesFollowRedirects($bool)`
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
-Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
-
+Requires file system storage of a "cookie jar" file and is therefore disabled by default.
 
 ##### Parameters:
 
 - ***bool*** `$bool` - true/false to enable/disable respectively
 
-
-
 ---
 
 #### Method: `HttpRequest->setCookies($cookies)`
 
-Set outgoing cookies as an array of CookieName => Value  
-  
-
+Set outgoing cookies as an array of CookieName => Value
 
 ##### Parameters:
 
 - ***array*** `$cookies` - Cookies to set
 
-
-
 ---
 
 #### Method: `HttpRequest->setCookie($key, $value)`
 
-Set a named cookies outgoing value  
-  
-
+Set a named cookies outgoing value
 
 ##### Parameters:
 
 - ***string*** `$key`
 - ***string*** `$value`
 
-
-
 ---
 
 #### Method: `HttpRequest->getEndpoint()`
 
-Gets the request URI  
-  
-
+Gets the request URI
 
 ##### Returns:
 
 - ***string***
 
-
 ---
 
 #### Method: `HttpRequest->setEndpoint($endpoint)`
 
-Sets the request URI  
-  
-
+Sets the request URI
 
 ##### Parameters:
 
 - ***string*** `$endpoint`
 
-
-
 ---
 
 #### Method: `HttpRequest->makeRequest()`
 
-Execute the request  
-  
-
+Execute the request
 
 ##### Returns:
 
 - ***\Boomerang\HttpResponse*** - An object representing the result of the request
-
 
 ---
 
@@ -323,46 +325,35 @@ Execute the request
 
 - ***mixed***
 
-
 ---
 
 #### Method: `HttpRequest->getLastRequestTime()`
 
-Get the time the last request took in seconds a float  
-  
-
+Get the time the last request took in seconds a float
 
 ##### Returns:
 
 - ***null*** | ***float*** - null if there is no last request
 
-
 ---
 
 #### Method: `HttpRequest->getMaxRedirects()`
 
-Get the current maximum number of redirects(hops) a request should follow.  
-  
-
+Get the current maximum number of redirects(hops) a request should follow.
 
 ##### Returns:
 
 - ***int***
 
-
 ---
 
 #### Method: `HttpRequest->setMaxRedirects($maxRedirects)`
 
-Set the maximum number of redirects(hops) a request should follow.  
-  
-
+Set the maximum number of redirects(hops) a request should follow.
 
 ##### Parameters:
 
 - ***int*** `$maxRedirects`
-
-
 
 ### Class: HttpResponse \[ `\Boomerang` \]
 
@@ -378,122 +369,95 @@ Usually received from an `HttpRequest` object
 - ***string*** `$headers`
 - ***\Boomerang\HttpRequest*** | ***null*** `$request`
 
-
-
 ---
 
 #### Method: `HttpResponse->getHeader($header [, $hop = null])`
 
-Get a response header by name.  
-  
-
+Get a response header by name.
 
 ##### Parameters:
 
 - ***string*** `$header`
 - ***null*** | ***int*** `$hop`
 
-
 ##### Returns:
 
 - ***null*** | ***string*** - Header value or null on not found
-
 
 ---
 
 #### Method: `HttpResponse->getHeaders([ $hop = null])`
 
-Get response headers as a HeaderName => Value array  
-  
-
+Get response headers as a HeaderName => Value array
 
 ##### Parameters:
 
 - ***null*** | ***int*** `$hop` - The zero indexed hop(redirect). Defaults to the final hop.
 
-
 ##### Returns:
 
 - ***array*** | ***null***
-
 
 ---
 
 #### Method: `HttpResponse->getAllHeaders()`
 
 Get all response headers from all hops as a HopIndex => HeaderName => Value array.  
-  
-
+Note: header key values are lower cased.
 
 ##### Returns:
 
 - ***array***
 
-
 ---
 
 #### Method: `HttpResponse->getRawHeaders()`
 
-Get the raw un-parsed Response header string.  
-  
-
+Get the raw un-parsed Response header string.
 
 ##### Returns:
 
 - ***string***
-
 
 ---
 
 #### Method: `HttpResponse->getBody()`
 
-Get the body of the Response.  
-  
-
+Get the body of the Response.
 
 ##### Returns:
 
 - ***string***
 
-
 ---
 
 #### Method: `HttpResponse->getRequest()`
 
-Get the HttpRequest object that made the Response object.  
-  
-
+Get the HttpRequest object that made the Response object.
 
 ##### Returns:
 
 - ***\Boomerang\HttpRequest***
 
-
 ---
 
 #### Method: `HttpResponse->getHopCount()`
 
-Get the number of hops(redirects) the request took  
-  
-
+Get the number of hops(redirects) the request took
 
 ##### Returns:
 
 - ***int***
 
-
 ---
 
 #### Method: `HttpResponse->getStatus([ $hop = null])`
 
-Get the HTTP status of a hop  
-  
-
+Get the HTTP status of a hop
 
 ##### Parameters:
 
 - ***int*** | ***null*** `$hop` - The zero indexed hop(redirect). Defaults to the final hop.
-
 
 ##### Returns:
 
@@ -513,43 +477,34 @@ Used to validate expected responses, headers and HTTP statues
 
 - ***\Boomerang\Interfaces\HttpResponseInterface*** `$response`
 
-
-
 ---
 
 #### Method: `HttpResponseValidator->getResponse()`
 
 ##### Returns:
 
-- ***\Boomerang\HttpResponse***
-
+- ***\Boomerang\Interfaces\HttpResponseInterface***
 
 ---
 
 #### Method: `HttpResponseValidator->expectStatus([ $expected_status = 200 [, $hop = null]])`
 
-Verify that the HTTP response code is as expected.  
-  
-
+Verify that the HTTP response code is as expected.
 
 ##### Parameters:
 
 - ***int*** `$expected_status`
 - ***null*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
-
 ##### Returns:
 
 - ***$this***
-
 
 ---
 
 #### Method: `HttpResponseValidator->expectHeader($key, $value [, $hop = null])`
 
-Verify that a header field equals an expected value.  
-  
-
+Verify that a header field equals an expected value.
 
 ##### Parameters:
 
@@ -557,19 +512,16 @@ Verify that a header field equals an expected value.
 - ***string*** `$value` - The expected value.
 - ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
-
 ##### Returns:
 
 - ***$this***
-
 
 ---
 
 #### Method: `HttpResponseValidator->expectHeaderContains($key, $value [, $hop = null])`
 
 Verify that a header field contains an expected value.  
-For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
-
+For example, checking the header Content-Type for "json" **would** match a response of "application/json"
 
 ##### Parameters:
 
@@ -577,47 +529,51 @@ For example, checking the header Content-Type for "json" **would** match a respo
 - ***string*** `$value` - The expected containing value.
 - ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
-
 ##### Returns:
 
 - ***$this***
-
 
 ---
 
 #### Method: `HttpResponseValidator->expectBody($expectedContent)`
 
-Verify that the content body equals an expected value.  
-  
-
+Verify that the content body equals an expected value.
 
 ##### Parameters:
 
 - ***string*** `$expectedContent` - The expected value.
 
-
 ##### Returns:
 
 - ***$this***
-
 
 ---
 
 #### Method: `HttpResponseValidator->expectBodyContains($expectedContent)`
 
-Verify that the content body contains an expected value.  
-  
-
+Verify that the content body contains an expected value.
 
 ##### Parameters:
 
 - ***string*** `$expectedContent` - The expected containing value.
 
-
 ##### Returns:
 
 - ***$this***
 
+---
+
+#### Method: `HttpResponseValidator->expectHopCount($expectedCount)`
+
+Verify the number of redirection hops is as expected.
+
+##### Parameters:
+
+- ***int*** `$expectedCount` - The expected number of redirect hops.
+
+##### Returns:
+
+- ***$this***
 
 ---
 
@@ -626,7 +582,6 @@ Verify that the content body contains an expected value.
 ##### Returns:
 
 - ***\Boomerang\Interfaces\ExpectationResultInterface[]***
-
 
 ### Class: JSONValidator \[ `\Boomerang` \]
 
@@ -640,38 +595,29 @@ Used to validate JSON encoding and structure.
 
 - ***\Boomerang\Interfaces\ResponseInterface*** `$response` - The response to inspect
 
-
-
 ---
 
 #### Method: `JSONValidator->inspectJSON()`
 
-Log the JSON response as an InfoResult in the output.  
-  
-
+Log the JSON response as an InfoResult in the output.
 
 ##### Returns:
 
 - ***$this***
-
 
 ---
 
 #### Method: `JSONValidator->expectStructure($structure)`
 
-Verify that the data matches the passed expected structure definition.  
-  
-
+Verify that the data matches the passed expected structure definition.
 
 ##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure` - A description of the expected structure.
 
-
 ##### Returns:
 
 - ***$this***
-
 
 ---
 
@@ -680,7 +626,6 @@ Verify that the data matches the passed expected structure definition.
 ##### Returns:
 
 - ***\Boomerang\Interfaces\ResponseInterface***
-
 
 ---
 
@@ -713,6 +658,8 @@ Example:
 
 
 
+
+
 ---
 
 #### Method: `AllEx->getValidator()`
@@ -734,13 +681,15 @@ Example:
         function($data) { return count($data) == 4; }
     );
 
+
+
+
+
 #### Method: `AnyEx->__construct($structure)`
 
 ##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
-
-
 
 ---
 
@@ -763,6 +712,10 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 **Passes**: int
 **Fails**: float/numeric string
 
+
+
+
+
 #### Method: `IntEx->__construct([ $min = null [, $max = null]])`
 
 ##### Parameters:
@@ -776,13 +729,15 @@ Iterating Array Expectation
 
 Iterates over every element of an array, ensuring it is an array, and matching against passed structure expectations.
 
+
+
+
+
 #### Method: `IterateArrayEx->__construct($structure)`
 
 ##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
-
-
 
 ---
 
@@ -798,13 +753,15 @@ Iterating Object Expectation
 
 Iterates over every element of an object, ensuring it is an object, and matching against passed structure expectations.
 
+
+
+
+
 #### Method: `IterateObjectEx->__construct($structure)`
 
 ##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
-
-
 
 ---
 
@@ -820,13 +777,15 @@ Iterating Structure (object/array) Expectation
 
 Iterates over every element of a iterable structure (object/array), ensuring it iterable, and matching against passed structure expectations.
 
+
+
+
+
 #### Method: `IterateStructureEx->__construct($structure)`
 
 ##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
-
-
 
 ---
 
@@ -852,6 +811,10 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 
 **Passes**: `int` / `float`
 **Fails**: `numeric string`
+
+
+
+
 
 #### Method: `NumberEx->__construct([ $min = null [, $max = null]])`
 
@@ -885,6 +848,10 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 
 **Passes**: `numeric string` eg: "1.2"
 **Fails**: `int` / `float`
+
+
+
+
 
 #### Method: `NumericStringEx->__construct([ $min = null [, $max = null]])`
 
@@ -930,8 +897,6 @@ Used to define rules about structure.
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
-
-
 ---
 
 #### Method: `StructureEx->getValidator()`
@@ -939,4 +904,3 @@ Used to define rules about structure.
 ##### Returns:
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
-

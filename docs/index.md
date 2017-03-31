@@ -4,14 +4,18 @@ title: Documentation
 header_anchor: true
 ---
 
+
 # Documentation Overview
 
 For more information view the [full api documentation](docs/api.html).
+
+
 
 ## Making a Request
 
 The first step in surface testing your API is making the request. That is done with the
 					`HttpRequest` object.
+				
 
 #### Method: `HttpRequest->__construct($endpoint [, $responseFactory = null])`
 
@@ -24,11 +28,25 @@ The first step in surface testing your API is making the request. That is done w
 
 ---
 
+#### Method: `HttpRequest->setMethod($method)`
+
+Set the request method.
+
+##### Helper constants exist, for example
+
+   `$req->setMethod(HttpRequest::POST);`
+
+##### Parameters:
+
+- ***string*** `$method`
+
+
+
+---
+
 #### Method: `HttpRequest->setUrlParam($param, $value)`
 
-Set a url param by name.  
-  
-
+Set a url param by name.
 
 ##### Parameters:
 
@@ -41,9 +59,7 @@ Set a url param by name.
 
 #### Method: `HttpRequest->setUrlParams($params)`
 
-Set outgoing params as an array of ParamName => Value  
-  
-
+Set outgoing params as an array of ParamName => Value
 
 ##### Parameters:
 
@@ -55,9 +71,7 @@ Set outgoing params as an array of ParamName => Value
 
 #### Method: `HttpRequest->setHeader($key, $value)`
 
-Set an outgoing header by name.  
-  
-
+Set an outgoing header by name.
 
 ##### Parameters:
 
@@ -70,23 +84,17 @@ Set an outgoing header by name.
 
 #### Method: `HttpRequest->setHeaders($headers)`
 
-Set outgoing headers as an array of HeaderName => Value  
-  
-
+Set outgoing headers as an array of HeaderName => Value
 
 ##### Parameters:
 
 - ***array*** `$headers` - Headers to set
 
-
-
 ---
 
 #### Method: `HttpRequest->setBasicAuth($username [, $password = ''])`
 
-Set outgoing basic auth header.  
-  
-
+Set outgoing basic auth header.
 
 ##### Parameters:
 
@@ -100,23 +108,35 @@ Set outgoing basic auth header.
 #### Method: `HttpRequest->setPost($key, $value)`
 
 Set a named key of the post value  
-  
-
+Note that this has the side effect of changing the HTTP Method to POST
 
 ##### Parameters:
 
-- ***mixed*** `$key`
+- ***string*** `$key`
 - ***mixed*** `$value`
+
+---
+
+#### Method: `HttpRequest->setFormValue($key, $value)`
+
+Set a named key of the form values  
+Note that if there is a non-form body set, this will replace it.
+
+##### Parameters:
+
+- ***string*** `$key`
+- ***mixed*** `$value`
+
+
 
 
 
 ---
 
-#### Method: `HttpRequest->setPostdata($post)`
+#### Method: `HttpRequest->setPostData($post)`
 
 Set all post data, whipping past values.  
-  
-
+Note that this has the side effect of changing the HTTP Method to POST
 
 ##### Parameters:
 
@@ -126,39 +146,40 @@ Set all post data, whipping past values.
 
 ---
 
+#### Method: `HttpRequest->setBody($body)`
+
+Set the requests body
+
+##### Parameters:
+
+- ***array*** | ***string*** `$body`
+
+---
+
 #### Method: `HttpRequest->setCookiesFollowRedirects($bool)`
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
-Requires file system storage of a "cookie jar" file and is therefore disabled by default.  
-
+Requires file system storage of a "cookie jar" file and is therefore disabled by default.
 
 ##### Parameters:
 
 - ***bool*** `$bool` - true/false to enable/disable respectively
 
-
-
 ---
 
 #### Method: `HttpRequest->setCookies($cookies)`
 
-Set outgoing cookies as an array of CookieName => Value  
-  
-
+Set outgoing cookies as an array of CookieName => Value
 
 ##### Parameters:
 
 - ***array*** `$cookies` - Cookies to set
 
-
-
 ---
 
 #### Method: `HttpRequest->setCookie($key, $value)`
 
-Set a named cookies outgoing value  
-  
-
+Set a named cookies outgoing value
 
 ##### Parameters:
 
@@ -171,22 +192,21 @@ Set a named cookies outgoing value
 
 #### Method: `HttpRequest->setEndpoint($endpoint)`
 
-Sets the request URI  
-  
-
+Sets the request URI
 
 ##### Parameters:
 
 - ***string*** `$endpoint`
 
-
-
 ---
 
 #### Method: `HttpRequest->makeRequest()`
 
-Execute the request  
-  
+Execute the request
+
+
+
+
 
 
 
@@ -194,9 +214,7 @@ Execute the request
 
 #### Method: `HttpRequest->setMaxRedirects($maxRedirects)`
 
-Set the maximum number of redirects(hops) a request should follow.  
-  
-
+Set the maximum number of redirects(hops) a request should follow.
 
 ##### Parameters:
 
@@ -208,24 +226,18 @@ Validators are used to define your expecations for the response.
 
 #### Method: `HttpResponseValidator->expectStatus([ $expected_status = 200 [, $hop = null]])`
 
-Verify that the HTTP response code is as expected.  
-  
-
+Verify that the HTTP response code is as expected.
 
 ##### Parameters:
 
 - ***int*** `$expected_status`
 - ***null*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
-
-
 ---
 
 #### Method: `HttpResponseValidator->expectHeader($key, $value [, $hop = null])`
 
-Verify that a header field equals an expected value.  
-  
-
+Verify that a header field equals an expected value.
 
 ##### Parameters:
 
@@ -233,15 +245,12 @@ Verify that a header field equals an expected value.
 - ***string*** `$value` - The expected value.
 - ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
-
-
 ---
 
 #### Method: `HttpResponseValidator->expectHeaderContains($key, $value [, $hop = null])`
 
 Verify that a header field contains an expected value.  
-For example, checking the header Content-Type for "json" **would** match a response of "application/json"  
-
+For example, checking the header Content-Type for "json" **would** match a response of "application/json"
 
 ##### Parameters:
 
@@ -249,43 +258,40 @@ For example, checking the header Content-Type for "json" **would** match a respo
 - ***string*** `$value` - The expected containing value.
 - ***null*** | ***int*** `$hop` - The zero indexed redirect hop. Defaults to the final hop.
 
-
-
 ---
 
 #### Method: `HttpResponseValidator->expectBody($expectedContent)`
 
-Verify that the content body equals an expected value.  
-  
-
+Verify that the content body equals an expected value.
 
 ##### Parameters:
 
 - ***string*** `$expectedContent` - The expected value.
 
-
-
 ---
 
 #### Method: `HttpResponseValidator->expectBodyContains($expectedContent)`
 
-Verify that the content body contains an expected value.  
-  
-
+Verify that the content body contains an expected value.
 
 ##### Parameters:
 
 - ***string*** `$expectedContent` - The expected containing value.
 
+---
 
+#### Method: `HttpResponseValidator->expectHopCount($expectedCount)`
+
+Verify the number of redirection hops is as expected.
+
+##### Parameters:
+
+- ***int*** `$expectedCount` - The expected number of redirect hops.
 
 #### Method: `JSONValidator->expectStructure($structure)`
 
-Verify that the data matches the passed expected structure definition.  
-  
-
+Verify that the data matches the passed expected structure definition.
 
 ##### Parameters:
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure` - A description of the expected structure.
-

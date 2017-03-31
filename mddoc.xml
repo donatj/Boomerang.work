@@ -1,26 +1,22 @@
 <mddoc>
 	<docpage target="docs/index.md" autoloader="psr0" autoloader-root="/Users/jdonat/Projects/Boomerang/src">
-		<text>
-			<![CDATA[
+		<text><![CDATA[
 ---
 layout: default
 title: Documentation
 header_anchor: true
 ---
-]]>
-		</text>
+]]></text>
 		<section title="Documentation Overview">
 			<docpage target="docs/api.md" link="docs/api.html" link-pre-text="For more information view the "
 					 link-text="full api documentation" link-post-text=".">
-				<text>
-					<![CDATA[
+				<text><![CDATA[
 ---
 layout: default
 title: Full API Documentation
 header_anchor: true
 ---
-]]>
-				</text>
+]]></text>
 				<section title="Full Documentation">
 					<section title="Application">
 						<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/Boomerang.php"/>
