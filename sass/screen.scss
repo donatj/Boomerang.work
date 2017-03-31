@@ -12,8 +12,10 @@ $headerContrast: white;
 $headerComplement: complement($headerbg);
 $headerInnerComplement: complement($headerInner);
 
+$htagBorder: lighten($headerComplement, 20%);
+
 $mainbg: lighten(desaturate($headerbg, 40%), 20%);
-$mainInner: lighten(desaturate($headerbg, 40%), 80%);
+$mainInner: $headerContrast;
 
 // $footerbg: #2C3E50;
 // $footerInner: #34495E;
@@ -79,23 +81,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	padding-top: .4em;
+	padding-top: .9em;
 	padding-bottom: .3em;
 }
 
 h1 {
 	font-size: 2.5em;
-	border-bottom: 7px solid $mainbg;
+	border-bottom: 7px solid $htagBorder;
 }
 
 h2 {
 	font-size: 2em;
-	border-bottom: 5px solid $mainbg;
+	border-bottom: 5px solid $htagBorder;
 }
 
 h3 {
 	font-size: 1.5em;
-	border-bottom: 2px solid $mainbg;
+	border-bottom: 2px solid $htagBorder;
 }
 
 h4 {
@@ -328,7 +330,7 @@ pre {
 
 }
 
-@include github_badge( $headerInner );
+@include github_badge( $headerComplement );
 
 @media screen and (max-width: 1100px) {
 	.github_badge {

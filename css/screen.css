@@ -60,23 +60,23 @@ h1[id^=class], h2[id^=class], h3[id^=class], h4[id^=class], h5[id^=class], h6[id
 }
 
 h1, h2, h3, h4, h5, h6 {
-  padding-top: .4em;
+  padding-top: .9em;
   padding-bottom: .3em;
 }
 
 h1 {
   font-size: 2.5em;
-  border-bottom: 7px solid #a6bfcf;
+  border-bottom: 7px solid #eab18b;
 }
 
 h2 {
   font-size: 2em;
-  border-bottom: 5px solid #a6bfcf;
+  border-bottom: 5px solid #eab18b;
 }
 
 h3 {
   font-size: 1.5em;
-  border-bottom: 2px solid #a6bfcf;
+  border-bottom: 2px solid #eab18b;
 }
 
 h4 {
@@ -303,7 +303,7 @@ pre code {
 
 /* * Github Badge * */
 .github_badge {
-  background-color: #217dbb;
+  background-color: #db7734;
   overflow: hidden;
   /* top left corner */
   position: fixed;
@@ -319,7 +319,7 @@ pre code {
   z-index: 100;
 }
 .github_badge a {
-  border: 1px solid #e1f0fa;
+  border: 1px solid white;
   color: #fff;
   display: block;
   font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
