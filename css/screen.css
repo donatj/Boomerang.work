@@ -60,7 +60,7 @@ h1[id^=class], h2[id^=class], h3[id^=class], h4[id^=class], h5[id^=class], h6[id
 }
 
 h1, h2, h3, h4, h5, h6 {
-  padding-top: .9em;
+  padding-top: .4em;
   padding-bottom: .3em;
 }
 
