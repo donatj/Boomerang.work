@@ -8,7 +8,7 @@ main {
 
 body {
   background: #217dbb;
-  font-family: Arvo;
+  font-family: Raleway;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -56,7 +56,7 @@ h1[id^=method], h2[id^=method], h3[id^=method], h4[id^=method], h5[id^=method], 
   color: #db7734;
 }
 h1[id^=class], h2[id^=class], h3[id^=class], h4[id^=class], h5[id^=class], h6[id^=class] {
-  color: #b96229;
+  color: #bb5f21;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,17 +66,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5em;
-  border-bottom: 7px double #ECF0F1;
+  border-bottom: 7px solid #a6bfcf;
 }
 
 h2 {
   font-size: 2em;
-  border-bottom: 5px double #ECF0F1;
+  border-bottom: 5px solid #a6bfcf;
 }
 
 h3 {
   font-size: 1.5em;
-  border-bottom: 2px solid #ECF0F1;
+  border-bottom: 2px solid #a6bfcf;
 }
 
 h4 {
@@ -142,8 +142,8 @@ body > header {
 }
 body > header main {
   height: 125px;
-  background: #2980B9;
-  border-bottom: 17px solid #b96229;
+  background: #217dbb;
+  border-bottom: 17px solid #bb5f21;
   margin-bottom: -17px;
 }
 @media screen and (max-width: 1000px) {
@@ -153,21 +153,21 @@ body > header main {
 }
 body > header nav {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
 }
 body > header nav a {
   display: inline-block;
-  color: #2980B9;
+  color: #217dbb;
   background: white;
   font-weight: bold;
   text-decoration: none;
   font-size: 20px;
   padding: 20px;
-  margin: 4px;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  margin: 0 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -179,7 +179,7 @@ body > header nav a {
   border: 1px solid white;
 }
 body > header nav a:hover {
-  background: #2980B9;
+  background: #217dbb;
   color: white;
 }
 @media screen and (max-width: 1000px) {
@@ -224,7 +224,7 @@ body > header svg path {
   }
 }
 body > main {
-  background: #ECF0F1;
+  background: #a6bfcf;
 }
 body > main main {
   min-height: 100%;
@@ -240,7 +240,7 @@ body > footer main {
   text-align: center;
   color: white;
   padding: 10px 20px;
-  background: #20638f;
+  background: #196090;
 }
 body > footer a {
   color: #CCF;
@@ -282,7 +282,7 @@ pre code {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
-  background: #f5f7f8;
+  background: #d3dfe7;
   font-size: 12px;
   line-height: 1.4em;
   float: right;
@@ -303,7 +303,7 @@ pre code {
 
 /* * Github Badge * */
 .github_badge {
-  background-color: #2980B9;
+  background-color: #217dbb;
   overflow: hidden;
   /* top left corner */
   position: fixed;
@@ -319,7 +319,7 @@ pre code {
   z-index: 100;
 }
 .github_badge a {
-  border: 1px solid #e7f2fa;
+  border: 1px solid #e1f0fa;
   color: #fff;
   display: block;
   font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;

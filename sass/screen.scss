@@ -6,14 +6,14 @@
 @include reset-html5;
 
 $headerbg: #3498DB;
-$headerInner: #2980B9;
+$headerInner: darken($headerbg, 10%);
 $headerContrast: white;
 
 $headerComplement: complement($headerbg);
 $headerInnerComplement: complement($headerInner);
 
-$mainbg: #ECF0F1;
-$mainInner: white;
+$mainbg: lighten(desaturate($headerbg, 40%), 20%);
+$mainInner: lighten(desaturate($headerbg, 40%), 80%);
 
 // $footerbg: #2C3E50;
 // $footerInner: #34495E;
@@ -27,7 +27,7 @@ main {
 // @include reset-body;
 body {
 	background: $footerbg;
-	font-family: Arvo;
+	font-family: Raleway;
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
@@ -85,12 +85,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 2.5em;
-	border-bottom: 7px double $mainbg;
+	border-bottom: 7px solid $mainbg;
 }
 
 h2 {
 	font-size: 2em;
-	border-bottom: 5px double $mainbg;
+	border-bottom: 5px solid $mainbg;
 }
 
 h3 {
@@ -178,8 +178,8 @@ body {
 
 		nav {
 			position: absolute;
-			top: 20px;
-			right: 20px;
+			top: 15px;
+			right: 15px;
 
 			// float: right;
 			a {
@@ -190,9 +190,9 @@ body {
 				text-decoration: none;
 				font-size: 20px;
 				padding: 20px;
-				margin: 4px;
+				margin: 0 4px;
 
-				@include border-radius(8px);
+				@include border-radius(4px);
 
 				@include transition-property(all);
 				@include transition-duration(.3s);
