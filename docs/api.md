@@ -15,7 +15,11 @@ Boomerang Application
 
 
 
-#### Method: `Boomerang::addValidator($validator)`
+#### Method: `Boomerang::addValidator`
+
+```php
+function addValidator($validator)
+```
 
 Register a Validator with Boomerang  
 After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.
@@ -30,7 +34,11 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 
 Utility for generating HTTP Requests and receiving Responses into `HttpResponse` objects.
 
-#### Method: `HttpRequest->__construct($endpoint [, $responseFactory = null])`
+#### Method: `HttpRequest->__construct`
+
+```php
+function __construct($endpoint [, $responseFactory = null])
+```
 
 ##### Parameters:
 
@@ -39,7 +47,11 @@ Utility for generating HTTP Requests and receiving Responses into `HttpResponse`
 
 ---
 
-#### Method: `HttpRequest->getMethod()`
+#### Method: `HttpRequest->getMethod`
+
+```php
+function getMethod()
+```
 
 Get the current request method.
 
@@ -49,7 +61,11 @@ Get the current request method.
 
 ---
 
-#### Method: `HttpRequest->setMethod($method)`
+#### Method: `HttpRequest->setMethod`
+
+```php
+function setMethod($method)
+```
 
 Set the request method.
 
@@ -65,7 +81,11 @@ $req->setMethod(HttpRequest::POST);
 
 ---
 
-#### Method: `HttpRequest->getUrlParam($param)`
+#### Method: `HttpRequest->getUrlParam`
+
+```php
+function getUrlParam($param)
+```
 
 Retrieve a url param by name
 
@@ -79,7 +99,11 @@ Retrieve a url param by name
 
 ---
 
-#### Method: `HttpRequest->setUrlParam($param, $value)`
+#### Method: `HttpRequest->setUrlParam`
+
+```php
+function setUrlParam($param, $value)
+```
 
 Set a url param by name.
 
@@ -90,7 +114,11 @@ Set a url param by name.
 
 ---
 
-#### Method: `HttpRequest->getUrlParams()`
+#### Method: `HttpRequest->getUrlParams`
+
+```php
+function getUrlParams()
+```
 
 Get all url params.
 
@@ -100,7 +128,11 @@ Get all url params.
 
 ---
 
-#### Method: `HttpRequest->setUrlParams($params)`
+#### Method: `HttpRequest->setUrlParams`
+
+```php
+function setUrlParams($params)
+```
 
 Set outgoing params as an array of ParamName => Value
 
@@ -110,7 +142,11 @@ Set outgoing params as an array of ParamName => Value
 
 ---
 
-#### Method: `HttpRequest->getHeader($key)`
+#### Method: `HttpRequest->getHeader`
+
+```php
+function getHeader($key)
+```
 
 Retrieve an outgoing header by name
 
@@ -124,7 +160,11 @@ Retrieve an outgoing header by name
 
 ---
 
-#### Method: `HttpRequest->setHeader($key, $value)`
+#### Method: `HttpRequest->setHeader`
+
+```php
+function setHeader($key, $value)
+```
 
 Set an outgoing header by name.
 
@@ -135,7 +175,11 @@ Set an outgoing header by name.
 
 ---
 
-#### Method: `HttpRequest->getHeaders()`
+#### Method: `HttpRequest->getHeaders`
+
+```php
+function getHeaders()
+```
 
 Get all set headers.
 
@@ -145,7 +189,11 @@ Get all set headers.
 
 ---
 
-#### Method: `HttpRequest->setHeaders($headers)`
+#### Method: `HttpRequest->setHeaders`
+
+```php
+function setHeaders($headers)
+```
 
 Set outgoing headers as an array of HeaderName => Value
 
@@ -155,7 +203,11 @@ Set outgoing headers as an array of HeaderName => Value
 
 ---
 
-#### Method: `HttpRequest->setBasicAuth($username [, $password = ''])`
+#### Method: `HttpRequest->setBasicAuth`
+
+```php
+function setBasicAuth($username [, $password = ''])
+```
 
 Set outgoing basic auth header.
 
@@ -166,7 +218,11 @@ Set outgoing basic auth header.
 
 ---
 
-#### Method: `HttpRequest->getPost($key)`
+#### Method: `HttpRequest->getPost`
+
+```php
+function getPost($key)
+```
 
 Retrieve an post value by name.
 
@@ -184,7 +240,11 @@ Use getFormValue instead
 
 ---
 
-#### Method: `HttpRequest->setPost($key, $value)`
+#### Method: `HttpRequest->setPost`
+
+```php
+function setPost($key, $value)
+```
 
 Set a named key of the post value  
 Note that this has the side effect of changing the HTTP Method to POST
@@ -200,7 +260,11 @@ Use setMethod and setFormValue instead
 
 ---
 
-#### Method: `HttpRequest->setFormValue($key, $value)`
+#### Method: `HttpRequest->setFormValue`
+
+```php
+function setFormValue($key, $value)
+```
 
 Set a named key of the form values  
 Note that if there is a non-form body set, this will replace it.
@@ -212,7 +276,11 @@ Note that if there is a non-form body set, this will replace it.
 
 ---
 
-#### Method: `HttpRequest->getFormValue($key)`
+#### Method: `HttpRequest->getFormValue`
+
+```php
+function getFormValue($key)
+```
 
 Retrieve an form value by name.
 
@@ -226,7 +294,11 @@ Retrieve an form value by name.
 
 ---
 
-#### Method: `HttpRequest->getPostData()`
+#### Method: `HttpRequest->getPostData`
+
+```php
+function getPostData()
+```
 
 Retrieve all queued post-data as an array.
 
@@ -240,7 +312,11 @@ Use getBody instead
 
 ---
 
-#### Method: `HttpRequest->setPostData($post)`
+#### Method: `HttpRequest->setPostData`
+
+```php
+function setPostData($post)
+```
 
 Set all post data, whipping past values.  
 Note that this has the side effect of changing the HTTP Method to POST
@@ -255,7 +331,11 @@ Use setBody instead
 
 ---
 
-#### Method: `HttpRequest->getBody()`
+#### Method: `HttpRequest->getBody`
+
+```php
+function getBody()
+```
 
 Get the requests body
 
@@ -265,7 +345,11 @@ Get the requests body
 
 ---
 
-#### Method: `HttpRequest->setBody($body)`
+#### Method: `HttpRequest->setBody`
+
+```php
+function setBody($body)
+```
 
 Set the requests body
 
@@ -275,7 +359,11 @@ Set the requests body
 
 ---
 
-#### Method: `HttpRequest->setCookiesFollowRedirects($bool)`
+#### Method: `HttpRequest->setCookiesFollowRedirects`
+
+```php
+function setCookiesFollowRedirects($bool)
+```
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.
@@ -286,7 +374,11 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 
 ---
 
-#### Method: `HttpRequest->setCookies($cookies)`
+#### Method: `HttpRequest->setCookies`
+
+```php
+function setCookies($cookies)
+```
 
 Set outgoing cookies as an array of CookieName => Value
 
@@ -296,7 +388,11 @@ Set outgoing cookies as an array of CookieName => Value
 
 ---
 
-#### Method: `HttpRequest->setCookie($key, $value)`
+#### Method: `HttpRequest->setCookie`
+
+```php
+function setCookie($key, $value)
+```
 
 Set a named cookies outgoing value
 
@@ -307,7 +403,11 @@ Set a named cookies outgoing value
 
 ---
 
-#### Method: `HttpRequest->getEndpoint()`
+#### Method: `HttpRequest->getEndpoint`
+
+```php
+function getEndpoint()
+```
 
 Gets the request URI
 
@@ -317,7 +417,11 @@ Gets the request URI
 
 ---
 
-#### Method: `HttpRequest->setEndpoint($endpoint)`
+#### Method: `HttpRequest->setEndpoint`
+
+```php
+function setEndpoint($endpoint)
+```
 
 Sets the request URI
 
@@ -327,7 +431,11 @@ Sets the request URI
 
 ---
 
-#### Method: `HttpRequest->makeRequest()`
+#### Method: `HttpRequest->makeRequest`
+
+```php
+function makeRequest()
+```
 
 Execute the request
 
@@ -337,7 +445,11 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest->getCurlInfo()`
+#### Method: `HttpRequest->getCurlInfo`
+
+```php
+function getCurlInfo()
+```
 
 ##### Returns:
 
@@ -345,7 +457,11 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest->getLastRequestTime()`
+#### Method: `HttpRequest->getLastRequestTime`
+
+```php
+function getLastRequestTime()
+```
 
 Get the time the last request took in seconds a float
 
@@ -355,7 +471,11 @@ Get the time the last request took in seconds a float
 
 ---
 
-#### Method: `HttpRequest->getMaxRedirects()`
+#### Method: `HttpRequest->getMaxRedirects`
+
+```php
+function getMaxRedirects()
+```
 
 Get the current maximum number of redirects(hops) a request should follow.
 
@@ -365,7 +485,11 @@ Get the current maximum number of redirects(hops) a request should follow.
 
 ---
 
-#### Method: `HttpRequest->setMaxRedirects($maxRedirects)`
+#### Method: `HttpRequest->setMaxRedirects`
+
+```php
+function setMaxRedirects($maxRedirects)
+```
 
 Set the maximum number of redirects(hops) a request should follow.
 
@@ -379,7 +503,11 @@ Represents an HTTP Response.
 
 Usually received from an `HttpRequest` object
 
-#### Method: `HttpResponse->__construct($body, $headers [, $request = null])`
+#### Method: `HttpResponse->__construct`
+
+```php
+function __construct($body, $headers [, $request = null])
+```
 
 ##### Parameters:
 
@@ -389,7 +517,11 @@ Usually received from an `HttpRequest` object
 
 ---
 
-#### Method: `HttpResponse->getHeader($header [, $hop = null])`
+#### Method: `HttpResponse->getHeader`
+
+```php
+function getHeader($header [, $hop = null])
+```
 
 Get a response header by name.
 
@@ -404,7 +536,11 @@ Get a response header by name.
 
 ---
 
-#### Method: `HttpResponse->getHeaders([ $hop = null])`
+#### Method: `HttpResponse->getHeaders`
+
+```php
+function getHeaders([ $hop = null])
+```
 
 Get response headers as a HeaderName => Value array
 
@@ -418,7 +554,11 @@ Get response headers as a HeaderName => Value array
 
 ---
 
-#### Method: `HttpResponse->getAllHeaders()`
+#### Method: `HttpResponse->getAllHeaders`
+
+```php
+function getAllHeaders()
+```
 
 Get all response headers from all hops as a HopIndex => HeaderName => Value array.  
 Note: header key values are lower cased.
@@ -429,7 +569,11 @@ Note: header key values are lower cased.
 
 ---
 
-#### Method: `HttpResponse->getRawHeaders()`
+#### Method: `HttpResponse->getRawHeaders`
+
+```php
+function getRawHeaders()
+```
 
 Get the raw un-parsed Response header string.
 
@@ -439,7 +583,11 @@ Get the raw un-parsed Response header string.
 
 ---
 
-#### Method: `HttpResponse->getBody()`
+#### Method: `HttpResponse->getBody`
+
+```php
+function getBody()
+```
 
 Get the body of the Response.
 
@@ -449,7 +597,11 @@ Get the body of the Response.
 
 ---
 
-#### Method: `HttpResponse->getRequest()`
+#### Method: `HttpResponse->getRequest`
+
+```php
+function getRequest()
+```
 
 Get the HttpRequest object that made the Response object.
 
@@ -459,7 +611,11 @@ Get the HttpRequest object that made the Response object.
 
 ---
 
-#### Method: `HttpResponse->getHopCount()`
+#### Method: `HttpResponse->getHopCount`
+
+```php
+function getHopCount()
+```
 
 Get the number of hops(redirects) the request took
 
@@ -469,7 +625,11 @@ Get the number of hops(redirects) the request took
 
 ---
 
-#### Method: `HttpResponse->getStatus([ $hop = null])`
+#### Method: `HttpResponse->getStatus`
+
+```php
+function getStatus([ $hop = null])
+```
 
 Get the HTTP status of a hop
 
@@ -489,7 +649,11 @@ HTTP Validation
 
 Used to validate expected responses, headers and HTTP statues
 
-#### Method: `HttpResponseValidator->__construct($response)`
+#### Method: `HttpResponseValidator->__construct`
+
+```php
+function __construct($response)
+```
 
 ##### Parameters:
 
@@ -497,7 +661,11 @@ Used to validate expected responses, headers and HTTP statues
 
 ---
 
-#### Method: `HttpResponseValidator->getResponse()`
+#### Method: `HttpResponseValidator->getResponse`
+
+```php
+function getResponse()
+```
 
 ##### Returns:
 
@@ -505,7 +673,11 @@ Used to validate expected responses, headers and HTTP statues
 
 ---
 
-#### Method: `HttpResponseValidator->expectStatus([ $expected_status = 200 [, $hop = null]])`
+#### Method: `HttpResponseValidator->expectStatus`
+
+```php
+function expectStatus([ $expected_status = 200 [, $hop = null]])
+```
 
 Verify that the HTTP response code is as expected.
 
@@ -520,7 +692,11 @@ Verify that the HTTP response code is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHeader($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeader`
+
+```php
+function expectHeader($key, $value [, $hop = null])
+```
 
 Verify that a header field equals an expected value.
 
@@ -536,7 +712,11 @@ Verify that a header field equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHeaderContains($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeaderContains`
+
+```php
+function expectHeaderContains($key, $value [, $hop = null])
+```
 
 Verify that a header field contains an expected value.  
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"
@@ -553,7 +733,11 @@ For example, checking the header Content-Type for "json" **would** match a respo
 
 ---
 
-#### Method: `HttpResponseValidator->expectBody($expectedContent)`
+#### Method: `HttpResponseValidator->expectBody`
+
+```php
+function expectBody($expectedContent)
+```
 
 Verify that the content body equals an expected value.
 
@@ -567,7 +751,11 @@ Verify that the content body equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectBodyContains($expectedContent)`
+#### Method: `HttpResponseValidator->expectBodyContains`
+
+```php
+function expectBodyContains($expectedContent)
+```
 
 Verify that the content body contains an expected value.
 
@@ -581,7 +769,11 @@ Verify that the content body contains an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHopCount($expectedCount)`
+#### Method: `HttpResponseValidator->expectHopCount`
+
+```php
+function expectHopCount($expectedCount)
+```
 
 Verify the number of redirection hops is as expected.
 
@@ -595,7 +787,11 @@ Verify the number of redirection hops is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator->getExpectationResults()`
+#### Method: `HttpResponseValidator->getExpectationResults`
+
+```php
+function getExpectationResults()
+```
 
 ##### Returns:
 
@@ -607,7 +803,11 @@ JSON Validator
 
 Used to validate JSON encoding and structure.
 
-#### Method: `JSONValidator->__construct($response)`
+#### Method: `JSONValidator->__construct`
+
+```php
+function __construct($response)
+```
 
 ##### Parameters:
 
@@ -615,7 +815,11 @@ Used to validate JSON encoding and structure.
 
 ---
 
-#### Method: `JSONValidator->inspectJSON()`
+#### Method: `JSONValidator->inspectJSON`
+
+```php
+function inspectJSON()
+```
 
 Log the JSON response as an InfoResult in the output.
 
@@ -625,7 +829,11 @@ Log the JSON response as an InfoResult in the output.
 
 ---
 
-#### Method: `JSONValidator->expectStructure($structure)`
+#### Method: `JSONValidator->expectStructure`
+
+```php
+function expectStructure($structure)
+```
 
 Verify that the data matches the passed expected structure definition.
 
@@ -639,7 +847,11 @@ Verify that the data matches the passed expected structure definition.
 
 ---
 
-#### Method: `JSONValidator->getResponse()`
+#### Method: `JSONValidator->getResponse`
+
+```php
+function getResponse()
+```
 
 ##### Returns:
 
@@ -647,7 +859,11 @@ Verify that the data matches the passed expected structure definition.
 
 ---
 
-#### Method: `JSONValidator->getExpectationResults()`
+#### Method: `JSONValidator->getExpectationResults`
+
+```php
+function getExpectationResults()
+```
 
 ##### Returns:
 
@@ -668,7 +884,11 @@ Example:
         function($data) { return count($data) == 3; }
     );
 
-#### Method: `AllEx->__construct($structure)`
+#### Method: `AllEx->__construct`
+
+```php
+function __construct($structure)
+```
 
 ##### Parameters:
 
@@ -680,7 +900,11 @@ Example:
 
 ---
 
-#### Method: `AllEx->getValidator()`
+#### Method: `AllEx->getValidator`
+
+```php
+function getValidator()
+```
 
 ##### Returns:
 
@@ -703,7 +927,11 @@ Example:
 
 
 
-#### Method: `AnyEx->__construct($structure)`
+#### Method: `AnyEx->__construct`
+
+```php
+function __construct($structure)
+```
 
 ##### Parameters:
 
@@ -711,7 +939,11 @@ Example:
 
 ---
 
-#### Method: `AnyEx->getValidator()`
+#### Method: `AnyEx->getValidator`
+
+```php
+function getValidator()
+```
 
 ##### Returns:
 
@@ -734,7 +966,11 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 
 
 
-#### Method: `IntEx->__construct([ $min = null [, $max = null]])`
+#### Method: `IntEx->__construct`
+
+```php
+function __construct([ $min = null [, $max = null]])
+```
 
 ##### Parameters:
 
@@ -751,7 +987,11 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 
 
-#### Method: `IterateArrayEx->__construct($structure)`
+#### Method: `IterateArrayEx->__construct`
+
+```php
+function __construct($structure)
+```
 
 ##### Parameters:
 
@@ -759,7 +999,11 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 ---
 
-#### Method: `IterateArrayEx->getValidator()`
+#### Method: `IterateArrayEx->getValidator`
+
+```php
+function getValidator()
+```
 
 ##### Returns:
 
@@ -775,7 +1019,11 @@ Iterates over every element of an object, ensuring it is an object, and matching
 
 
 
-#### Method: `IterateObjectEx->__construct($structure)`
+#### Method: `IterateObjectEx->__construct`
+
+```php
+function __construct($structure)
+```
 
 ##### Parameters:
 
@@ -783,7 +1031,11 @@ Iterates over every element of an object, ensuring it is an object, and matching
 
 ---
 
-#### Method: `IterateObjectEx->getValidator()`
+#### Method: `IterateObjectEx->getValidator`
+
+```php
+function getValidator()
+```
 
 ##### Returns:
 
@@ -799,7 +1051,11 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 
 
-#### Method: `IterateStructureEx->__construct($structure)`
+#### Method: `IterateStructureEx->__construct`
+
+```php
+function __construct($structure)
+```
 
 ##### Parameters:
 
@@ -807,7 +1063,11 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 ---
 
-#### Method: `IterateStructureEx->getValidator()`
+#### Method: `IterateStructureEx->getValidator`
+
+```php
+function getValidator()
+```
 
 ##### Returns:
 
@@ -834,7 +1094,11 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 
 
 
-#### Method: `NumberEx->__construct([ $min = null [, $max = null]])`
+#### Method: `NumberEx->__construct`
+
+```php
+function __construct([ $min = null [, $max = null]])
+```
 
 ##### Parameters:
 
@@ -851,7 +1115,11 @@ See: [php.net/is_numeric](http://php.net/is_numeric)
 
 **Passes**: `numeric string` / `int` / `float`
 
-#### Method: `NumericEx->__construct([ $min = null [, $max = null]])`
+#### Method: `NumericEx->__construct`
+
+```php
+function __construct([ $min = null [, $max = null]])
+```
 
 ##### Parameters:
 
@@ -871,7 +1139,11 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 
 
 
-#### Method: `NumericStringEx->__construct([ $min = null [, $max = null]])`
+#### Method: `NumericStringEx->__construct`
+
+```php
+function __construct([ $min = null [, $max = null]])
+```
 
 ##### Parameters:
 
@@ -884,7 +1156,11 @@ Regex Match Expectation
 
 Define a regex matching placeholder
 
-#### Method: `RegexEx->__construct($pattern)`
+#### Method: `RegexEx->__construct`
+
+```php
+function __construct($pattern)
+```
 
 ##### Parameters:
 
@@ -896,7 +1172,11 @@ String Expectation
 
 Define a string matching placeholder expectation
 
-#### Method: `StringEx->__construct([ $minLength = null [, $maxLength = null]])`
+#### Method: `StringEx->__construct`
+
+```php
+function __construct([ $minLength = null [, $maxLength = null]])
+```
 
 ##### Parameters:
 
@@ -909,7 +1189,11 @@ Structure Expectation
 
 Used to define rules about structure.
 
-#### Method: `StructureEx->__construct($structure)`
+#### Method: `StructureEx->__construct`
+
+```php
+function __construct($structure)
+```
 
 ##### Parameters:
 
@@ -917,7 +1201,11 @@ Used to define rules about structure.
 
 ---
 
-#### Method: `StructureEx->getValidator()`
+#### Method: `StructureEx->getValidator`
+
+```php
+function getValidator()
+```
 
 ##### Returns:
 

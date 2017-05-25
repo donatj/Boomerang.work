@@ -17,7 +17,11 @@ The first step in surface testing your API is making the request. That is done w
 					`HttpRequest` object.
 				
 
-#### Method: `HttpRequest->__construct($endpoint [, $responseFactory = null])`
+#### Method: `HttpRequest->__construct`
+
+```php
+function __construct($endpoint [, $responseFactory = null])
+```
 
 ##### Parameters:
 
@@ -28,7 +32,11 @@ The first step in surface testing your API is making the request. That is done w
 
 ---
 
-#### Method: `HttpRequest->setMethod($method)`
+#### Method: `HttpRequest->setMethod`
+
+```php
+function setMethod($method)
+```
 
 Set the request method.
 
@@ -46,7 +54,11 @@ $req->setMethod(HttpRequest::POST);
 
 ---
 
-#### Method: `HttpRequest->setUrlParam($param, $value)`
+#### Method: `HttpRequest->setUrlParam`
+
+```php
+function setUrlParam($param, $value)
+```
 
 Set a url param by name.
 
@@ -59,7 +71,11 @@ Set a url param by name.
 
 ---
 
-#### Method: `HttpRequest->setUrlParams($params)`
+#### Method: `HttpRequest->setUrlParams`
+
+```php
+function setUrlParams($params)
+```
 
 Set outgoing params as an array of ParamName => Value
 
@@ -71,7 +87,11 @@ Set outgoing params as an array of ParamName => Value
 
 ---
 
-#### Method: `HttpRequest->setHeader($key, $value)`
+#### Method: `HttpRequest->setHeader`
+
+```php
+function setHeader($key, $value)
+```
 
 Set an outgoing header by name.
 
@@ -84,7 +104,11 @@ Set an outgoing header by name.
 
 ---
 
-#### Method: `HttpRequest->setHeaders($headers)`
+#### Method: `HttpRequest->setHeaders`
+
+```php
+function setHeaders($headers)
+```
 
 Set outgoing headers as an array of HeaderName => Value
 
@@ -94,7 +118,11 @@ Set outgoing headers as an array of HeaderName => Value
 
 ---
 
-#### Method: `HttpRequest->setBasicAuth($username [, $password = ''])`
+#### Method: `HttpRequest->setBasicAuth`
+
+```php
+function setBasicAuth($username [, $password = ''])
+```
 
 Set outgoing basic auth header.
 
@@ -109,7 +137,11 @@ Set outgoing basic auth header.
 
 ---
 
-#### Method: `HttpRequest->setFormValue($key, $value)`
+#### Method: `HttpRequest->setFormValue`
+
+```php
+function setFormValue($key, $value)
+```
 
 Set a named key of the form values  
 Note that if there is a non-form body set, this will replace it.
@@ -129,7 +161,11 @@ Note that if there is a non-form body set, this will replace it.
 
 ---
 
-#### Method: `HttpRequest->setBody($body)`
+#### Method: `HttpRequest->setBody`
+
+```php
+function setBody($body)
+```
 
 Set the requests body
 
@@ -139,7 +175,11 @@ Set the requests body
 
 ---
 
-#### Method: `HttpRequest->setCookiesFollowRedirects($bool)`
+#### Method: `HttpRequest->setCookiesFollowRedirects`
+
+```php
+function setCookiesFollowRedirects($bool)
+```
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.
@@ -150,7 +190,11 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 
 ---
 
-#### Method: `HttpRequest->setCookies($cookies)`
+#### Method: `HttpRequest->setCookies`
+
+```php
+function setCookies($cookies)
+```
 
 Set outgoing cookies as an array of CookieName => Value
 
@@ -160,7 +204,11 @@ Set outgoing cookies as an array of CookieName => Value
 
 ---
 
-#### Method: `HttpRequest->setCookie($key, $value)`
+#### Method: `HttpRequest->setCookie`
+
+```php
+function setCookie($key, $value)
+```
 
 Set a named cookies outgoing value
 
@@ -173,7 +221,11 @@ Set a named cookies outgoing value
 
 ---
 
-#### Method: `HttpRequest->setEndpoint($endpoint)`
+#### Method: `HttpRequest->setEndpoint`
+
+```php
+function setEndpoint($endpoint)
+```
 
 Sets the request URI
 
@@ -183,7 +235,11 @@ Sets the request URI
 
 ---
 
-#### Method: `HttpRequest->makeRequest()`
+#### Method: `HttpRequest->makeRequest`
+
+```php
+function makeRequest()
+```
 
 Execute the request
 
@@ -195,7 +251,11 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest->setMaxRedirects($maxRedirects)`
+#### Method: `HttpRequest->setMaxRedirects`
+
+```php
+function setMaxRedirects($maxRedirects)
+```
 
 Set the maximum number of redirects(hops) a request should follow.
 
@@ -207,7 +267,11 @@ Set the maximum number of redirects(hops) a request should follow.
 
 Validators are used to define your expecations for the response.
 
-#### Method: `HttpResponseValidator->expectStatus([ $expected_status = 200 [, $hop = null]])`
+#### Method: `HttpResponseValidator->expectStatus`
+
+```php
+function expectStatus([ $expected_status = 200 [, $hop = null]])
+```
 
 Verify that the HTTP response code is as expected.
 
@@ -218,7 +282,11 @@ Verify that the HTTP response code is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHeader($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeader`
+
+```php
+function expectHeader($key, $value [, $hop = null])
+```
 
 Verify that a header field equals an expected value.
 
@@ -230,7 +298,11 @@ Verify that a header field equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHeaderContains($key, $value [, $hop = null])`
+#### Method: `HttpResponseValidator->expectHeaderContains`
+
+```php
+function expectHeaderContains($key, $value [, $hop = null])
+```
 
 Verify that a header field contains an expected value.  
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"
@@ -243,7 +315,11 @@ For example, checking the header Content-Type for "json" **would** match a respo
 
 ---
 
-#### Method: `HttpResponseValidator->expectBody($expectedContent)`
+#### Method: `HttpResponseValidator->expectBody`
+
+```php
+function expectBody($expectedContent)
+```
 
 Verify that the content body equals an expected value.
 
@@ -253,7 +329,11 @@ Verify that the content body equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectBodyContains($expectedContent)`
+#### Method: `HttpResponseValidator->expectBodyContains`
+
+```php
+function expectBodyContains($expectedContent)
+```
 
 Verify that the content body contains an expected value.
 
@@ -263,7 +343,11 @@ Verify that the content body contains an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHopCount($expectedCount)`
+#### Method: `HttpResponseValidator->expectHopCount`
+
+```php
+function expectHopCount($expectedCount)
+```
 
 Verify the number of redirection hops is as expected.
 
@@ -271,7 +355,11 @@ Verify the number of redirection hops is as expected.
 
 - ***int*** `$expectedCount` - The expected number of redirect hops.
 
-#### Method: `JSONValidator->expectStructure($structure)`
+#### Method: `JSONValidator->expectStructure`
+
+```php
+function expectStructure($structure)
+```
 
 Verify that the data matches the passed expected structure definition.
 
