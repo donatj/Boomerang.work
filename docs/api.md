@@ -9,13 +9,13 @@ header_anchor: true
 
 ## Application
 
-### Class: Boomerang \[ `\Boomerang` \]
+### Class: \Boomerang\Boomerang
 
 Boomerang Application
 
 
 
-#### Method: `Boomerang::addValidator`
+#### Method: Boomerang::addValidator
 
 ```php
 function addValidator($validator)
@@ -30,11 +30,26 @@ After creating an instance of a Validator, it needs to be registered with Boomer
 
 ## Http
 
-### Class: HttpRequest \[ `\Boomerang` \]
+### Class: \Boomerang\HttpRequest
 
 Utility for generating HTTP Requests and receiving Responses into `HttpResponse` objects.
 
-#### Method: `HttpRequest->__construct`
+```php
+<?php
+namespace Boomerang;
+
+class HttpRequest {
+	const GET = "GET";
+	const POST = "POST";
+	const PUT = "PUT";
+	const PATCH = "PATCH";
+	const DELETE = "DELETE";
+	const TRACE = "TRACE";
+	const OPTIONS = "OPTIONS";
+}
+```
+
+#### Method: HttpRequest->__construct
 
 ```php
 function __construct($endpoint [, $responseFactory = null])
@@ -47,7 +62,7 @@ function __construct($endpoint [, $responseFactory = null])
 
 ---
 
-#### Method: `HttpRequest->getMethod`
+#### Method: HttpRequest->getMethod
 
 ```php
 function getMethod()
@@ -61,7 +76,7 @@ Get the current request method.
 
 ---
 
-#### Method: `HttpRequest->setMethod`
+#### Method: HttpRequest->setMethod
 
 ```php
 function setMethod($method)
@@ -81,7 +96,7 @@ $req->setMethod(HttpRequest::POST);
 
 ---
 
-#### Method: `HttpRequest->getUrlParam`
+#### Method: HttpRequest->getUrlParam
 
 ```php
 function getUrlParam($param)
@@ -99,7 +114,7 @@ Retrieve a url param by name
 
 ---
 
-#### Method: `HttpRequest->setUrlParam`
+#### Method: HttpRequest->setUrlParam
 
 ```php
 function setUrlParam($param, $value)
@@ -114,7 +129,7 @@ Set a url param by name.
 
 ---
 
-#### Method: `HttpRequest->getUrlParams`
+#### Method: HttpRequest->getUrlParams
 
 ```php
 function getUrlParams()
@@ -128,7 +143,7 @@ Get all url params.
 
 ---
 
-#### Method: `HttpRequest->setUrlParams`
+#### Method: HttpRequest->setUrlParams
 
 ```php
 function setUrlParams($params)
@@ -142,7 +157,7 @@ Set outgoing params as an array of ParamName => Value
 
 ---
 
-#### Method: `HttpRequest->getHeader`
+#### Method: HttpRequest->getHeader
 
 ```php
 function getHeader($key)
@@ -160,7 +175,7 @@ Retrieve an outgoing header by name
 
 ---
 
-#### Method: `HttpRequest->setHeader`
+#### Method: HttpRequest->setHeader
 
 ```php
 function setHeader($key, $value)
@@ -175,7 +190,7 @@ Set an outgoing header by name.
 
 ---
 
-#### Method: `HttpRequest->getHeaders`
+#### Method: HttpRequest->getHeaders
 
 ```php
 function getHeaders()
@@ -189,7 +204,7 @@ Get all set headers.
 
 ---
 
-#### Method: `HttpRequest->setHeaders`
+#### Method: HttpRequest->setHeaders
 
 ```php
 function setHeaders($headers)
@@ -203,7 +218,7 @@ Set outgoing headers as an array of HeaderName => Value
 
 ---
 
-#### Method: `HttpRequest->setBasicAuth`
+#### Method: HttpRequest->setBasicAuth
 
 ```php
 function setBasicAuth($username [, $password = ''])
@@ -218,7 +233,7 @@ Set outgoing basic auth header.
 
 ---
 
-#### Method: `HttpRequest->getPost`
+#### Method: HttpRequest->getPost
 
 ```php
 function getPost($key)
@@ -240,7 +255,7 @@ Use getFormValue instead
 
 ---
 
-#### Method: `HttpRequest->setPost`
+#### Method: HttpRequest->setPost
 
 ```php
 function setPost($key, $value)
@@ -260,7 +275,7 @@ Use setMethod and setFormValue instead
 
 ---
 
-#### Method: `HttpRequest->setFormValue`
+#### Method: HttpRequest->setFormValue
 
 ```php
 function setFormValue($key, $value)
@@ -276,7 +291,7 @@ Note that if there is a non-form body set, this will replace it.
 
 ---
 
-#### Method: `HttpRequest->getFormValue`
+#### Method: HttpRequest->getFormValue
 
 ```php
 function getFormValue($key)
@@ -294,7 +309,7 @@ Retrieve an form value by name.
 
 ---
 
-#### Method: `HttpRequest->getPostData`
+#### Method: HttpRequest->getPostData
 
 ```php
 function getPostData()
@@ -312,7 +327,7 @@ Use getBody instead
 
 ---
 
-#### Method: `HttpRequest->setPostData`
+#### Method: HttpRequest->setPostData
 
 ```php
 function setPostData($post)
@@ -331,7 +346,7 @@ Use setBody instead
 
 ---
 
-#### Method: `HttpRequest->getBody`
+#### Method: HttpRequest->getBody
 
 ```php
 function getBody()
@@ -345,7 +360,7 @@ Get the requests body
 
 ---
 
-#### Method: `HttpRequest->setBody`
+#### Method: HttpRequest->setBody
 
 ```php
 function setBody($body)
@@ -359,7 +374,7 @@ Set the requests body
 
 ---
 
-#### Method: `HttpRequest->setCookiesFollowRedirects`
+#### Method: HttpRequest->setCookiesFollowRedirects
 
 ```php
 function setCookiesFollowRedirects($bool)
@@ -374,7 +389,7 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 
 ---
 
-#### Method: `HttpRequest->setCookies`
+#### Method: HttpRequest->setCookies
 
 ```php
 function setCookies($cookies)
@@ -388,7 +403,7 @@ Set outgoing cookies as an array of CookieName => Value
 
 ---
 
-#### Method: `HttpRequest->setCookie`
+#### Method: HttpRequest->setCookie
 
 ```php
 function setCookie($key, $value)
@@ -403,7 +418,7 @@ Set a named cookies outgoing value
 
 ---
 
-#### Method: `HttpRequest->getEndpoint`
+#### Method: HttpRequest->getEndpoint
 
 ```php
 function getEndpoint()
@@ -417,7 +432,7 @@ Gets the request URI
 
 ---
 
-#### Method: `HttpRequest->setEndpoint`
+#### Method: HttpRequest->setEndpoint
 
 ```php
 function setEndpoint($endpoint)
@@ -431,7 +446,7 @@ Sets the request URI
 
 ---
 
-#### Method: `HttpRequest->makeRequest`
+#### Method: HttpRequest->makeRequest
 
 ```php
 function makeRequest()
@@ -445,7 +460,7 @@ Execute the request
 
 ---
 
-#### Method: `HttpRequest->getCurlInfo`
+#### Method: HttpRequest->getCurlInfo
 
 ```php
 function getCurlInfo()
@@ -457,7 +472,7 @@ function getCurlInfo()
 
 ---
 
-#### Method: `HttpRequest->getLastRequestTime`
+#### Method: HttpRequest->getLastRequestTime
 
 ```php
 function getLastRequestTime()
@@ -471,7 +486,7 @@ Get the time the last request took in seconds a float
 
 ---
 
-#### Method: `HttpRequest->getMaxRedirects`
+#### Method: HttpRequest->getMaxRedirects
 
 ```php
 function getMaxRedirects()
@@ -485,7 +500,7 @@ Get the current maximum number of redirects(hops) a request should follow.
 
 ---
 
-#### Method: `HttpRequest->setMaxRedirects`
+#### Method: HttpRequest->setMaxRedirects
 
 ```php
 function setMaxRedirects($maxRedirects)
@@ -497,13 +512,13 @@ Set the maximum number of redirects(hops) a request should follow.
 
 - ***int*** `$maxRedirects`
 
-### Class: HttpResponse \[ `\Boomerang` \]
+### Class: \Boomerang\HttpResponse
 
 Represents an HTTP Response.
 
 Usually received from an `HttpRequest` object
 
-#### Method: `HttpResponse->__construct`
+#### Method: HttpResponse->__construct
 
 ```php
 function __construct($body, $headers [, $request = null])
@@ -517,7 +532,7 @@ function __construct($body, $headers [, $request = null])
 
 ---
 
-#### Method: `HttpResponse->getHeader`
+#### Method: HttpResponse->getHeader
 
 ```php
 function getHeader($header [, $hop = null])
@@ -536,7 +551,7 @@ Get a response header by name.
 
 ---
 
-#### Method: `HttpResponse->getHeaders`
+#### Method: HttpResponse->getHeaders
 
 ```php
 function getHeaders([ $hop = null])
@@ -554,7 +569,7 @@ Get response headers as a HeaderName => Value array
 
 ---
 
-#### Method: `HttpResponse->getAllHeaders`
+#### Method: HttpResponse->getAllHeaders
 
 ```php
 function getAllHeaders()
@@ -569,7 +584,7 @@ Note: header key values are lower cased.
 
 ---
 
-#### Method: `HttpResponse->getRawHeaders`
+#### Method: HttpResponse->getRawHeaders
 
 ```php
 function getRawHeaders()
@@ -583,7 +598,7 @@ Get the raw un-parsed Response header string.
 
 ---
 
-#### Method: `HttpResponse->getBody`
+#### Method: HttpResponse->getBody
 
 ```php
 function getBody()
@@ -597,7 +612,7 @@ Get the body of the Response.
 
 ---
 
-#### Method: `HttpResponse->getRequest`
+#### Method: HttpResponse->getRequest
 
 ```php
 function getRequest()
@@ -611,7 +626,7 @@ Get the HttpRequest object that made the Response object.
 
 ---
 
-#### Method: `HttpResponse->getHopCount`
+#### Method: HttpResponse->getHopCount
 
 ```php
 function getHopCount()
@@ -625,7 +640,7 @@ Get the number of hops(redirects) the request took
 
 ---
 
-#### Method: `HttpResponse->getStatus`
+#### Method: HttpResponse->getStatus
 
 ```php
 function getStatus([ $hop = null])
@@ -643,13 +658,13 @@ Get the HTTP status of a hop
 
 ## Validators
 
-### Class: HttpResponseValidator \[ `\Boomerang` \]
+### Class: \Boomerang\HttpResponseValidator
 
 HTTP Validation
 
 Used to validate expected responses, headers and HTTP statues
 
-#### Method: `HttpResponseValidator->__construct`
+#### Method: HttpResponseValidator->__construct
 
 ```php
 function __construct($response)
@@ -661,7 +676,7 @@ function __construct($response)
 
 ---
 
-#### Method: `HttpResponseValidator->getResponse`
+#### Method: HttpResponseValidator->getResponse
 
 ```php
 function getResponse()
@@ -673,7 +688,7 @@ function getResponse()
 
 ---
 
-#### Method: `HttpResponseValidator->expectStatus`
+#### Method: HttpResponseValidator->expectStatus
 
 ```php
 function expectStatus([ $expected_status = 200 [, $hop = null]])
@@ -692,7 +707,7 @@ Verify that the HTTP response code is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHeader`
+#### Method: HttpResponseValidator->expectHeader
 
 ```php
 function expectHeader($key, $value [, $hop = null])
@@ -712,7 +727,7 @@ Verify that a header field equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHeaderContains`
+#### Method: HttpResponseValidator->expectHeaderContains
 
 ```php
 function expectHeaderContains($key, $value [, $hop = null])
@@ -733,7 +748,7 @@ For example, checking the header Content-Type for "json" **would** match a respo
 
 ---
 
-#### Method: `HttpResponseValidator->expectBody`
+#### Method: HttpResponseValidator->expectBody
 
 ```php
 function expectBody($expectedContent)
@@ -751,7 +766,7 @@ Verify that the content body equals an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectBodyContains`
+#### Method: HttpResponseValidator->expectBodyContains
 
 ```php
 function expectBodyContains($expectedContent)
@@ -769,7 +784,7 @@ Verify that the content body contains an expected value.
 
 ---
 
-#### Method: `HttpResponseValidator->expectHopCount`
+#### Method: HttpResponseValidator->expectHopCount
 
 ```php
 function expectHopCount($expectedCount)
@@ -787,7 +802,7 @@ Verify the number of redirection hops is as expected.
 
 ---
 
-#### Method: `HttpResponseValidator->getExpectationResults`
+#### Method: HttpResponseValidator->getExpectationResults
 
 ```php
 function getExpectationResults()
@@ -797,13 +812,13 @@ function getExpectationResults()
 
 - ***\Boomerang\Interfaces\ExpectationResultInterface[]***
 
-### Class: JSONValidator \[ `\Boomerang` \]
+### Class: \Boomerang\JSONValidator
 
 JSON Validator
 
 Used to validate JSON encoding and structure.
 
-#### Method: `JSONValidator->__construct`
+#### Method: JSONValidator->__construct
 
 ```php
 function __construct($response)
@@ -815,7 +830,7 @@ function __construct($response)
 
 ---
 
-#### Method: `JSONValidator->inspectJSON`
+#### Method: JSONValidator->inspectJSON
 
 ```php
 function inspectJSON()
@@ -829,7 +844,7 @@ Log the JSON response as an InfoResult in the output.
 
 ---
 
-#### Method: `JSONValidator->expectStructure`
+#### Method: JSONValidator->expectStructure
 
 ```php
 function expectStructure($structure)
@@ -847,7 +862,7 @@ Verify that the data matches the passed expected structure definition.
 
 ---
 
-#### Method: `JSONValidator->getResponse`
+#### Method: JSONValidator->getResponse
 
 ```php
 function getResponse()
@@ -859,7 +874,7 @@ function getResponse()
 
 ---
 
-#### Method: `JSONValidator->getExpectationResults`
+#### Method: JSONValidator->getExpectationResults
 
 ```php
 function getExpectationResults()
@@ -871,7 +886,7 @@ function getExpectationResults()
 
 ## Type Expectations
 
-### Class: AllEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\AllEx
 
 All Expectation
 
@@ -884,7 +899,7 @@ Example:
         function($data) { return count($data) == 3; }
     );
 
-#### Method: `AllEx->__construct`
+#### Method: AllEx->__construct
 
 ```php
 function __construct($structure)
@@ -900,7 +915,7 @@ function __construct($structure)
 
 ---
 
-#### Method: `AllEx->getValidator`
+#### Method: AllEx->getValidator
 
 ```php
 function getValidator()
@@ -910,7 +925,7 @@ function getValidator()
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: AnyEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\AnyEx
 
 Any Expectation
 
@@ -927,7 +942,7 @@ Example:
 
 
 
-#### Method: `AnyEx->__construct`
+#### Method: AnyEx->__construct
 
 ```php
 function __construct($structure)
@@ -939,7 +954,7 @@ function __construct($structure)
 
 ---
 
-#### Method: `AnyEx->getValidator`
+#### Method: AnyEx->getValidator
 
 ```php
 function getValidator()
@@ -949,11 +964,7 @@ function getValidator()
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: ArrayEx \[ `\Boomerang\TypeExpectations` \]
-
-
-
-### Class: IntEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\IntEx
 
 Integer Expectation
 
@@ -966,7 +977,7 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 
 
 
-#### Method: `IntEx->__construct`
+#### Method: IntEx->__construct
 
 ```php
 function __construct([ $min = null [, $max = null]])
@@ -977,7 +988,7 @@ function __construct([ $min = null [, $max = null]])
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: IterateArrayEx \[ `\Boomerang\TypeExpectations\Iterate` \]
+### Class: \Boomerang\TypeExpectations\Iterate\IterateArrayEx
 
 Iterating Array Expectation
 
@@ -987,7 +998,7 @@ Iterates over every element of an array, ensuring it is an array, and matching a
 
 
 
-#### Method: `IterateArrayEx->__construct`
+#### Method: IterateArrayEx->__construct
 
 ```php
 function __construct($structure)
@@ -999,7 +1010,7 @@ function __construct($structure)
 
 ---
 
-#### Method: `IterateArrayEx->getValidator`
+#### Method: IterateArrayEx->getValidator
 
 ```php
 function getValidator()
@@ -1009,7 +1020,7 @@ function getValidator()
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: IterateObjectEx \[ `\Boomerang\TypeExpectations\Iterate` \]
+### Class: \Boomerang\TypeExpectations\Iterate\IterateObjectEx
 
 Iterating Object Expectation
 
@@ -1019,7 +1030,7 @@ Iterates over every element of an object, ensuring it is an object, and matching
 
 
 
-#### Method: `IterateObjectEx->__construct`
+#### Method: IterateObjectEx->__construct
 
 ```php
 function __construct($structure)
@@ -1031,7 +1042,7 @@ function __construct($structure)
 
 ---
 
-#### Method: `IterateObjectEx->getValidator`
+#### Method: IterateObjectEx->getValidator
 
 ```php
 function getValidator()
@@ -1041,7 +1052,7 @@ function getValidator()
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: IterateStructureEx \[ `\Boomerang\TypeExpectations\Iterate` \]
+### Class: \Boomerang\TypeExpectations\Iterate\IterateStructureEx
 
 Iterating Structure (object/array) Expectation
 
@@ -1051,7 +1062,7 @@ Iterates over every element of a iterable structure (object/array), ensuring it 
 
 
 
-#### Method: `IterateStructureEx->__construct`
+#### Method: IterateStructureEx->__construct
 
 ```php
 function __construct($structure)
@@ -1063,7 +1074,7 @@ function __construct($structure)
 
 ---
 
-#### Method: `IterateStructureEx->getValidator`
+#### Method: IterateStructureEx->getValidator
 
 ```php
 function getValidator()
@@ -1073,7 +1084,7 @@ function getValidator()
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: NullEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\NullEx
 
 Null Expectation
 
@@ -1081,7 +1092,7 @@ Defines a placeholder expectation of a NULL value.
 
 **Passes**: `null`
 
-### Class: NumberEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\NumberEx
 
 Number Expectation
 
@@ -1094,7 +1105,7 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 
 
 
-#### Method: `NumberEx->__construct`
+#### Method: NumberEx->__construct
 
 ```php
 function __construct([ $min = null [, $max = null]])
@@ -1105,7 +1116,7 @@ function __construct([ $min = null [, $max = null]])
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: NumericEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\NumericEx
 
 Numeric Expectation
 
@@ -1115,7 +1126,7 @@ See: [php.net/is_numeric](http://php.net/is_numeric)
 
 **Passes**: `numeric string` / `int` / `float`
 
-#### Method: `NumericEx->__construct`
+#### Method: NumericEx->__construct
 
 ```php
 function __construct([ $min = null [, $max = null]])
@@ -1126,7 +1137,7 @@ function __construct([ $min = null [, $max = null]])
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: NumericStringEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\NumericStringEx
 
 Numeric String Expectation
 
@@ -1139,7 +1150,7 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 
 
 
-#### Method: `NumericStringEx->__construct`
+#### Method: NumericStringEx->__construct
 
 ```php
 function __construct([ $min = null [, $max = null]])
@@ -1150,13 +1161,13 @@ function __construct([ $min = null [, $max = null]])
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: RegexEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\RegexEx
 
 Regex Match Expectation
 
 Define a regex matching placeholder
 
-#### Method: `RegexEx->__construct`
+#### Method: RegexEx->__construct
 
 ```php
 function __construct($pattern)
@@ -1166,13 +1177,13 @@ function __construct($pattern)
 
 - ***string*** `$pattern` - The preg pattern to search for
 
-### Class: StringEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\StringEx
 
 String Expectation
 
 Define a string matching placeholder expectation
 
-#### Method: `StringEx->__construct`
+#### Method: StringEx->__construct
 
 ```php
 function __construct([ $minLength = null [, $maxLength = null]])
@@ -1183,13 +1194,13 @@ function __construct([ $minLength = null [, $maxLength = null]])
 - ***null*** | ***int*** `$minLength` - Optional minimum length in bytes of a valid value
 - ***null*** | ***int*** `$maxLength` - Optional maximum length in bytes of a valid value
 
-### Class: StructureEx \[ `\Boomerang\TypeExpectations` \]
+### Class: \Boomerang\TypeExpectations\StructureEx
 
 Structure Expectation
 
 Used to define rules about structure.
 
-#### Method: `StructureEx->__construct`
+#### Method: StructureEx->__construct
 
 ```php
 function __construct($structure)
@@ -1201,7 +1212,7 @@ function __construct($structure)
 
 ---
 
-#### Method: `StructureEx->getValidator`
+#### Method: StructureEx->getValidator
 
 ```php
 function getValidator()
