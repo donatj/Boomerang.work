@@ -12,7 +12,7 @@ Boomerang*!* uses [semantic versioning](http://semver.org/), and is at major ver
 
 ## What does it do?
 
-Boomerang*!* tests your API by making HTTP requests to your API and validates the response body and headers.
+Boomerang*!* tests your API by making actual HTTP requests to your API and validates the response body and headers according to rules you define.
 
 ### Features
 
@@ -27,14 +27,13 @@ Boomerang*!* tests your API by making HTTP requests to your API and validates th
 	- Numeric Range Validations
 	- Iterative Validations
 
-### Features In The Works
+### Features Possibly In The Works
 
-- JSON Schema Validation
 - XML Validation
 
 ## Does Boomerang*!* replace unit testing?
 
-*No*, not at all.  It is meant to be used in **conjunction** with a proper unit test suite for an enhanced test sweep.
+*No*, not at all. Boomerang*!* is for what is known as "end to end" or E2E testing. A final sanity test of youre response.  It is intended to be used in **conjunction** with a other unit test suites for an full test sweep. 
 
 ## What does a simple test look like?
 
