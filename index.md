@@ -8,7 +8,7 @@ Boomerang*!* is an easy to use API surface testing framework. It is written in P
 
 Inspired by [Frisby.js](http://frisbyjs.com/), Boomerang*!* takes API testing a step further by allowing easy iteration of values, validation of individual hops along a set of redirects, all the while using a more reliable, extensible architecture.
 
-Boomerang*!* uses [semantic versioning](http://semver.org/), and is at major version 0, so the public API while the API should not contain major changes, there may be some small shuffeling from time to time.
+Boomerang*!* uses [semantic versioning](http://semver.org/), and is at major version 0, so the public API while the API should not contain major changes, there may be some small shuffeling from time to time until we hit our 1.0 release.
 
 ## What does it do?
 
