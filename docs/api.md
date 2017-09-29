@@ -886,6 +886,45 @@ function getExpectationResults()
 
 ## Type Expectations
 
+### Class: \Boomerang\TypeExpectations\AllEx
+
+All Expectation
+
+Defines a requirement to match **all** structure definitions expectations.
+
+Example:
+
+    new AllEx(
+        array(1,2,3),
+        function($data) { return count($data) == 3; }
+    );
+
+#### Method: AllEx->__construct
+
+```php
+function __construct($structure)
+```
+
+##### Parameters:
+
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
+
+
+
+
+
+---
+
+#### Method: AllEx->getValidator
+
+```php
+function getValidator()
+```
+
+##### Returns:
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
 ### Class: \Boomerang\TypeExpectations\AnyEx
 
 Any Expectation
@@ -916,6 +955,62 @@ function __construct($structure)
 ---
 
 #### Method: AnyEx->getValidator
+
+```php
+function getValidator()
+```
+
+##### Returns:
+
+- ***\Boomerang\Interfaces\ValidatorInterface***
+
+### Class: \Boomerang\TypeExpectations\IntEx
+
+Integer Expectation
+
+Defines a placeholder expectation of an integer with an optional minimum/maximum range.
+
+**Passes**: int
+**Fails**: float/numeric string
+
+
+
+
+
+#### Method: IntEx->__construct
+
+```php
+function __construct([ $min = null [, $max = null]])
+```
+
+##### Parameters:
+
+- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
+- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
+
+### Class: \Boomerang\TypeExpectations\Iterate\IterateArrayEx
+
+Iterating Array Expectation
+
+Iterates over every element of an array, ensuring it is an array, and matching against passed structure expectations.
+
+
+
+
+
+#### Method: IterateArrayEx->__construct
+
+```php
+function __construct($structure)
+```
+
+##### Parameters:
+
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
+
+---
+
+#### Method: IterateArrayEx->getValidator
 
 ```php
 function getValidator()
@@ -989,37 +1084,13 @@ function getValidator()
 
 - ***\Boomerang\Interfaces\ValidatorInterface***
 
-### Class: \Boomerang\TypeExpectations\Iterate\IterateArrayEx
+### Class: \Boomerang\TypeExpectations\NullEx
 
-Iterating Array Expectation
+Null Expectation
 
-Iterates over every element of an array, ensuring it is an array, and matching against passed structure expectations.
+Defines a placeholder expectation of a NULL value.
 
-
-
-
-
-#### Method: IterateArrayEx->__construct
-
-```php
-function __construct($structure)
-```
-
-##### Parameters:
-
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
-
----
-
-#### Method: IterateArrayEx->getValidator
-
-```php
-function getValidator()
-```
-
-##### Returns:
-
-- ***\Boomerang\Interfaces\ValidatorInterface***
+**Passes**: `null`
 
 ### Class: \Boomerang\TypeExpectations\NumberEx
 
@@ -1045,58 +1116,26 @@ function __construct([ $min = null [, $max = null]])
 - ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
 - ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
-### Class: \Boomerang\TypeExpectations\StructureEx
+### Class: \Boomerang\TypeExpectations\NumericEx
 
-Structure Expectation
+Numeric Expectation
 
-Used to define rules about structure.
+Defines a placeholder expectation of a "numeric" (int/float/numeric string) with an optional minimum/maximum range.
 
-#### Method: StructureEx->__construct
+See: [php.net/is_numeric](http://php.net/is_numeric)
+
+**Passes**: `numeric string` / `int` / `float`
+
+#### Method: NumericEx->__construct
 
 ```php
-function __construct($structure)
+function __construct([ $min = null [, $max = null]])
 ```
 
 ##### Parameters:
 
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
-
----
-
-#### Method: StructureEx->getValidator
-
-```php
-function getValidator()
-```
-
-##### Returns:
-
-- ***\Boomerang\Interfaces\ValidatorInterface***
-
-### Class: \Boomerang\TypeExpectations\NullEx
-
-Null Expectation
-
-Defines a placeholder expectation of a NULL value.
-
-**Passes**: `null`
-
-### Class: \Boomerang\TypeExpectations\StringEx
-
-String Expectation
-
-Define a string matching placeholder expectation
-
-#### Method: StringEx->__construct
-
-```php
-function __construct([ $minLength = null [, $maxLength = null]])
-```
-
-##### Parameters:
-
-- ***null*** | ***int*** `$minLength` - Optional minimum length in bytes of a valid value
-- ***null*** | ***int*** `$maxLength` - Optional maximum length in bytes of a valid value
+- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
+- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
 
 ### Class: \Boomerang\TypeExpectations\NumericStringEx
 
@@ -1138,65 +1177,30 @@ function __construct($pattern)
 
 - ***string*** `$pattern` - The preg pattern to search for
 
-### Class: \Boomerang\TypeExpectations\IntEx
+### Class: \Boomerang\TypeExpectations\StringEx
 
-Integer Expectation
+String Expectation
 
-Defines a placeholder expectation of an integer with an optional minimum/maximum range.
+Define a string matching placeholder expectation
 
-**Passes**: int
-**Fails**: float/numeric string
-
-
-
-
-
-#### Method: IntEx->__construct
+#### Method: StringEx->__construct
 
 ```php
-function __construct([ $min = null [, $max = null]])
+function __construct([ $minLength = null [, $maxLength = null]])
 ```
 
 ##### Parameters:
 
-- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
-- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
+- ***null*** | ***int*** `$minLength` - Optional minimum length in bytes of a valid value
+- ***null*** | ***int*** `$maxLength` - Optional maximum length in bytes of a valid value
 
-### Class: \Boomerang\TypeExpectations\NumericEx
+### Class: \Boomerang\TypeExpectations\StructureEx
 
-Numeric Expectation
+Structure Expectation
 
-Defines a placeholder expectation of a "numeric" (int/float/numeric string) with an optional minimum/maximum range.
+Used to define rules about structure.
 
-See: [php.net/is_numeric](http://php.net/is_numeric)
-
-**Passes**: `numeric string` / `int` / `float`
-
-#### Method: NumericEx->__construct
-
-```php
-function __construct([ $min = null [, $max = null]])
-```
-
-##### Parameters:
-
-- ***null*** | ***int*** | ***float*** `$min` - Optional minimum valid value
-- ***null*** | ***int*** | ***float*** `$max` - Optional maximum valid value
-
-### Class: \Boomerang\TypeExpectations\AllEx
-
-All Expectation
-
-Defines a requirement to match **all** structure definitions expectations.
-
-Example:
-
-    new AllEx(
-        array(1,2,3),
-        function($data) { return count($data) == 3; }
-    );
-
-#### Method: AllEx->__construct
+#### Method: StructureEx->__construct
 
 ```php
 function __construct($structure)
@@ -1204,15 +1208,11 @@ function __construct($structure)
 
 ##### Parameters:
 
-- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
-
-
-
-
+- ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure`
 
 ---
 
-#### Method: AllEx->getValidator
+#### Method: StructureEx->getValidator
 
 ```php
 function getValidator()
