@@ -43,7 +43,7 @@ header_anchor: true
 					  skip-method-returns="true"/>
 			</section>
 			<section title="Validating API Expectations">
-				<text>Validators are used to define your expecations for the response.</text>
+				<text>Validators are used to define your expectations for the response.</text>
 				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/HttpResponseValidator.php"
 					  method-filter="/>expect/i" skip-class-header="true" skip-method-returns="true"/>
 				<file name="/Users/jdonat/Projects/Boomerang/src/Boomerang/JSONValidator.php"

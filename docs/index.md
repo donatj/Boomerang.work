@@ -280,7 +280,7 @@ Set the maximum number of redirects(hops) a request should follow.
 
 ## Validating API Expectations
 
-Validators are used to define your expecations for the response.
+Validators are used to define your expectations for the response.
 
 #### Method: HttpResponseValidator->expectStatus
 

@@ -22,7 +22,8 @@ function addValidator($validator)
 ```
 
 Register a Validator with Boomerang  
-After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be tallied and displayed.
+After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be  
+tallied and displayed.
 
 ##### Parameters:
 
