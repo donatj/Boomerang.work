@@ -22,20 +22,20 @@ The first step in surface testing your API is making the request. That is done w
 namespace Boomerang;
 
 class HttpRequest {
-	const GET = "GET";
-	const POST = "POST";
-	const PUT = "PUT";
-	const PATCH = "PATCH";
-	const DELETE = "DELETE";
-	const TRACE = "TRACE";
-	const OPTIONS = "OPTIONS";
+	public const GET = "GET";
+	public const POST = "POST";
+	public const PUT = "PUT";
+	public const PATCH = "PATCH";
+	public const DELETE = "DELETE";
+	public const TRACE = "TRACE";
+	public const OPTIONS = "OPTIONS";
 }
 ```
 
 #### Method: HttpRequest->__construct
 
 ```php
-function __construct($endpoint [, $responseFactory = null])
+function __construct($endpoint [, \Boomerang\Factories\HttpResponseFactory $responseFactory = null])
 ```
 
 ##### Parameters:
@@ -53,7 +53,7 @@ function __construct($endpoint [, $responseFactory = null])
 function setMethod($method)
 ```
 
-Set the request method.
+Set the request method.  
 
 ##### Helper constants exist, for example
 
@@ -89,7 +89,7 @@ Set a url param by name.
 #### Method: HttpRequest->setUrlParams
 
 ```php
-function setUrlParams($params)
+function setUrlParams(array $params)
 ```
 
 Set outgoing params as an array of ParamName => Value
@@ -122,7 +122,7 @@ Set an outgoing header by name.
 #### Method: HttpRequest->setHeaders
 
 ```php
-function setHeaders($headers)
+function setHeaders(array $headers)
 ```
 
 Set outgoing headers as an array of HeaderName => Value
@@ -159,6 +159,7 @@ function setFormValue($key, $value)
 ```
 
 Set a named key of the form values  
+  
 Note that if there is a non-form body set, this will replace it.
 
 ##### Parameters:
@@ -197,6 +198,7 @@ function setCookiesFollowRedirects($bool)
 ```
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
+  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.
 
 ##### Parameters:
@@ -208,7 +210,7 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 #### Method: HttpRequest->setCookies
 
 ```php
-function setCookies($cookies)
+function setCookies(array $cookies)
 ```
 
 Set outgoing cookies as an array of CookieName => Value
@@ -282,6 +284,8 @@ Set the maximum number of redirects(hops) a request should follow.
 
 Validators are used to define your expectations for the response.
 
+---
+
 #### Method: HttpResponseValidator->expectStatus
 
 ```php
@@ -320,6 +324,7 @@ function expectHeaderContains($key, $value [, $hop = null])
 ```
 
 Verify that a header field contains an expected value.  
+  
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"
 
 ##### Parameters:
@@ -369,6 +374,8 @@ Verify the number of redirection hops is as expected.
 ##### Parameters:
 
 - ***int*** `$expectedCount` - The expected number of redirect hops.
+
+---
 
 #### Method: JSONValidator->expectStructure
 

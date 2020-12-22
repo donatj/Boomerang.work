@@ -13,15 +13,16 @@ header_anchor: true
 
 Boomerang Application
 
-
+---
 
 #### Method: Boomerang::addValidator
 
 ```php
-function addValidator($validator)
+function addValidator(\Boomerang\Interfaces\ValidatorInterface $validator)
 ```
 
 Register a Validator with Boomerang  
+  
 After creating an instance of a Validator, it needs to be registered with Boomerang in order for results to be  
 tallied and displayed.
 
@@ -40,20 +41,20 @@ Utility for generating HTTP Requests and receiving Responses into `HttpResponse`
 namespace Boomerang;
 
 class HttpRequest {
-	const GET = "GET";
-	const POST = "POST";
-	const PUT = "PUT";
-	const PATCH = "PATCH";
-	const DELETE = "DELETE";
-	const TRACE = "TRACE";
-	const OPTIONS = "OPTIONS";
+	public const GET = "GET";
+	public const POST = "POST";
+	public const PUT = "PUT";
+	public const PATCH = "PATCH";
+	public const DELETE = "DELETE";
+	public const TRACE = "TRACE";
+	public const OPTIONS = "OPTIONS";
 }
 ```
 
 #### Method: HttpRequest->__construct
 
 ```php
-function __construct($endpoint [, $responseFactory = null])
+function __construct($endpoint [, \Boomerang\Factories\HttpResponseFactory $responseFactory = null])
 ```
 
 ##### Parameters:
@@ -83,7 +84,7 @@ Get the current request method.
 function setMethod($method)
 ```
 
-Set the request method.
+Set the request method.  
 
 ##### Helper constants exist, for example
 
@@ -147,7 +148,7 @@ Get all url params.
 #### Method: HttpRequest->setUrlParams
 
 ```php
-function setUrlParams($params)
+function setUrlParams(array $params)
 ```
 
 Set outgoing params as an array of ParamName => Value
@@ -208,7 +209,7 @@ Get all set headers.
 #### Method: HttpRequest->setHeaders
 
 ```php
-function setHeaders($headers)
+function setHeaders(array $headers)
 ```
 
 Set outgoing headers as an array of HeaderName => Value
@@ -263,6 +264,7 @@ function setPost($key, $value)
 ```
 
 Set a named key of the post value  
+  
 Note that this has the side effect of changing the HTTP Method to POST
 
 ##### DEPRECATED
@@ -283,6 +285,7 @@ function setFormValue($key, $value)
 ```
 
 Set a named key of the form values  
+  
 Note that if there is a non-form body set, this will replace it.
 
 ##### Parameters:
@@ -331,10 +334,11 @@ Use getBody instead
 #### Method: HttpRequest->setPostData
 
 ```php
-function setPostData($post)
+function setPostData(array $post)
 ```
 
 Set all post data, whipping past values.  
+  
 Note that this has the side effect of changing the HTTP Method to POST
 
 ##### DEPRECATED
@@ -382,6 +386,7 @@ function setCookiesFollowRedirects($bool)
 ```
 
 Allows you to enable cookie's set by server re-posting following a redirect.  
+  
 Requires file system storage of a "cookie jar" file and is therefore disabled by default.
 
 ##### Parameters:
@@ -393,7 +398,7 @@ Requires file system storage of a "cookie jar" file and is therefore disabled by
 #### Method: HttpRequest->setCookies
 
 ```php
-function setCookies($cookies)
+function setCookies(array $cookies)
 ```
 
 Set outgoing cookies as an array of CookieName => Value
@@ -522,7 +527,7 @@ Usually received from an `HttpRequest` object
 #### Method: HttpResponse->__construct
 
 ```php
-function __construct($body, $headers [, $request = null])
+function __construct($body, $headers [, \Boomerang\HttpRequest $request = null])
 ```
 
 ##### Parameters:
@@ -577,6 +582,7 @@ function getAllHeaders()
 ```
 
 Get all response headers from all hops as a HopIndex => HeaderName => Value array.  
+  
 Note: header key values are lower cased.
 
 ##### Returns:
@@ -668,7 +674,7 @@ Used to validate expected responses, headers and HTTP statues
 #### Method: HttpResponseValidator->__construct
 
 ```php
-function __construct($response)
+function __construct(\Boomerang\Interfaces\HttpResponseInterface $response)
 ```
 
 ##### Parameters:
@@ -735,6 +741,7 @@ function expectHeaderContains($key, $value [, $hop = null])
 ```
 
 Verify that a header field contains an expected value.  
+  
 For example, checking the header Content-Type for "json" **would** match a response of "application/json"
 
 ##### Parameters:
@@ -822,7 +829,7 @@ Used to validate JSON encoding and structure.
 #### Method: JSONValidator->__construct
 
 ```php
-function __construct($response)
+function __construct(\Boomerang\Interfaces\ResponseInterface $response)
 ```
 
 ##### Parameters:
@@ -910,10 +917,6 @@ function __construct($structure)
 
 - ***\Boomerang\Interfaces\TypeExpectationInterface*** | ***callable*** | ***mixed*** `$structure,...` - One or more structure definitions to match
 
-
-
-
-
 ---
 
 #### Method: AllEx->getValidator
@@ -939,9 +942,7 @@ Example:
         function($data) { return count($data) == 4; }
     );
 
-
-
-
+---
 
 #### Method: AnyEx->__construct
 
@@ -974,9 +975,7 @@ Defines a placeholder expectation of an integer with an optional minimum/maximum
 **Passes**: int
 **Fails**: float/numeric string
 
-
-
-
+---
 
 #### Method: IntEx->__construct
 
@@ -995,9 +994,7 @@ Iterating Array Expectation
 
 Iterates over every element of an array, ensuring it is an array, and matching against passed structure expectations.
 
-
-
-
+---
 
 #### Method: IterateArrayEx->__construct
 
@@ -1027,9 +1024,7 @@ Iterating Object Expectation
 
 Iterates over every element of an object, ensuring it is an object, and matching against passed structure expectations.
 
-
-
-
+---
 
 #### Method: IterateObjectEx->__construct
 
@@ -1059,9 +1054,7 @@ Iterating Structure (object/array) Expectation
 
 Iterates over every element of a iterable structure (object/array), ensuring it iterable, and matching against passed structure expectations.
 
-
-
-
+---
 
 #### Method: IterateStructureEx->__construct
 
@@ -1102,9 +1095,7 @@ Defines a placeholder expectation of a "number" (int/float) with an optional min
 **Passes**: `int` / `float`
 **Fails**: `numeric string`
 
-
-
-
+---
 
 #### Method: NumberEx->__construct
 
@@ -1147,9 +1138,7 @@ Defines a placeholder expectation of a "numeric string" with an optional minimum
 **Passes**: `numeric string` eg: "1.2"
 **Fails**: `int` / `float`
 
-
-
-
+---
 
 #### Method: NumericStringEx->__construct
 
