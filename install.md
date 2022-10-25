@@ -18,21 +18,15 @@ If you are a PHP developer, `composer` is the recommended installation method. B
 ### Globally
 
 ```bash
-composer global require 'boomerang/boomerang=~0.2.0'
+composer global require 'boomerang/boomerang'
 ```
 
 ### In Your Composer Project
 
 Add the following to your composer.json
 
-```json
-"require": {
-	"boomerang/boomerang" : "~0.2.0"
-}
+```bash
+composer require --dev 'boomerang/boomerang'
 ```
-	
+
 Then, from your project root you can then execute `./vendor/bin/boomerang`
-
-## Via PHAR
-
-Info to come!
