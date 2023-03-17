@@ -1,4 +1,4 @@
-exclude: ["sass", ".sass-cache", "config.rb", "docsrc"]
+exclude: ["sass", ".sass-cache", "config.rb", "docsrc", "node_modules", "vendor"]
 permalink: /blog/:year/:month/:day/:title.html
 
 markdown: redcarpet
