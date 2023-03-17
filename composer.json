@@ -1,0 +1,16 @@
+{
+    "name": "boomerang/website",
+    "description": "The Website for Boomerang!",
+    "type": "project",
+    "require-dev": {
+        "donatj/mddoc": "^0.4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesse Donat",
+            "email": "donatj@gmail.com"
+        }
+    ],
+    "require": {}
+}
