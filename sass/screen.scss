@@ -1,9 +1,4 @@
-@import "compass/css3";
-@import "compass/reset/utilities";
-@import "compass/typography/text/force-wrap";
 @import "github_badge.scss";
-
-@include reset-html5;
 
 $headerbg: #3498DB;
 $headerInner: darken($headerbg, 10%);
@@ -22,6 +17,21 @@ $mainInner: $headerContrast;
 $footerbg: darken($headerbg, 10);
 $footerInner: darken($headerInner, 10);
 
+%force-wrap {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+}
+
+// html5 reset
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
 main {
   display: block;
 }
@@ -39,9 +49,8 @@ body {
 a {
 	color: #0092B4;
 	text-decoration: none;
-	@include transition-property(all);
-	@include transition-duration(.2s);
-
+	transition-property: all;
+	transition-duration: 0.2s;
 }
 
 li, ul {
@@ -143,8 +152,7 @@ a:hover { color: #D70036;}
 body {
 	& > header, & > main, & > footer {
 		main {
-			@include box-sizing(border-box);
-			// box-sizing: border-box;
+			box-sizing: border-box;
 			width: 1000px;
 			margin: 0 auto;
 			position: relative;
@@ -194,10 +202,10 @@ body {
 				padding: 20px;
 				margin: 0 4px;
 
-				@include border-radius(4px);
+				border-radius: 4px;
 
-				@include transition-property(all);
-				@include transition-duration(.3s);
+				transition-property: all;
+				transition-duration: 0.3s;
 
 				border: 1px solid $headerContrast;
 
@@ -215,7 +223,7 @@ body {
 					font-size: 15px;
 					padding: 10px;
 					margin: 0 2px;
-					@include border-radius(0 0 4px 4px);
+					border-radius: 0 0 4px 4px;
 				}
 
 			}
@@ -232,7 +240,7 @@ body {
 			width: 120px;
 			height: 120px;
 
-			@include rotate( -40deg );
+			transform: rotate(-40deg);
 
 			path {
 				fill: $headerContrast;
@@ -253,7 +261,9 @@ body {
 		main {
 			min-height: 100%;
 			padding: 10px 40px;
+
 			background: $mainInner;
+			color: lighten(invert($mainInner), 10%);
 		}
 	}
 
@@ -283,12 +293,13 @@ body {
 pre, code {
 	background: bottom repeat-x rgba(223, 221, 221, .3); //#DFDDDD;
 	font-family: Consolas,"Courier New",Courier,monospace;
-	@include border-radius(3px);
+
+	border-radius: 3px;
 }
 
 pre {
+	@extend %force-wrap;
 	display: block;
-	@include force-wrap();
 	font-size: .9em;
 	padding: 22px;
 	line-height: 1.4em;
@@ -307,7 +318,8 @@ pre {
 }
 
 #content_struct {
-	@include border-radius(8px);
+	border-radius: 8px;
+
 	background: mix($mainbg, $mainInner);
 	font-size: 12px;
 	line-height: 1.4em;

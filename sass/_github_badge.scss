@@ -1,4 +1,3 @@
-@import "compass/css3";
 
 @mixin github_badge( $color:#A00, $rotate:45deg ) {
 	/* * Github Badge * */
@@ -9,8 +8,8 @@
 		position: fixed;
 		right: -3em;
 		top: 2.5em;
-		@include rotate( $rotate );
-		@include box-shadow(0 0 1em #888);
+		transform: rotate(45deg);
+		box-shadow: 0 0 1em #888;
 		z-index: 100;
 
 		a {
@@ -23,7 +22,7 @@
 			text-align: center;
 			text-decoration: none;
 			/* shadow */
-			@include text-shadow(0 0 0.5em #444);
+			text-shadow: 0 0 0.5em #444;
 		}
 	}
 }

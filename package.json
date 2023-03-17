@@ -1,0 +1,17 @@
+{
+  "name": "boomerang.work",
+  "version": "1.0.0",
+  "description": "Boomerang.work homepage",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "npx sass sass:css"
+  },
+  "author": "Jesse G. Donat",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.59.3"
+  }
+}
