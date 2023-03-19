@@ -2,6 +2,7 @@
 
 css/
 docs/
+install.md
 .sass-cache/
 _site/
 node_modules/

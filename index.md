@@ -10,6 +10,16 @@ Originally inspired by [Frisby.js](https://docs.frisbyjs.com/), Boomerang*!* tak
 
 Boomerang*!* uses [semantic versioning](https://semver.org/), and is at major version 0, so the public API while the API should not contain major changes, there may be some small shuffeling from time to time until we hit our 1.0 release.
 
+## Quick Start
+
+### Install
+
+```bash
+composer require --dev boomerang/boomerang
+```
+
+More information on installation can be found on the [Installation](/install.html) page.
+
 ## What does it do?
 
 Boomerang*!* tests your API by making actual HTTP requests to your API and validates the response body and headers according to rules you define.

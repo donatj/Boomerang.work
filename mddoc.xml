@@ -1,5 +1,5 @@
-<mddoc>
-	<docpage target="docs/index.md" autoloader="psr0" autoloader-root="Boomerang/src">
+<mddoc autoloader="psr0" working-dir="Boomerang" autoloader-root="src">
+	<docpage target="docs/index.md">
 		<text><![CDATA[
 ---
 layout: default
@@ -8,7 +8,7 @@ header_anchor: true
 ---
 ]]></text>
 		<section title="Documentation Overview">
-			<docpage target="docs/api.md" link="docs/api.html" link-pre-text="For more information view the "
+			<docpage target="docs/api.md" link="/docs/api.html" link-pre-text="For more information view the "
 					 link-text="full api documentation" link-post-text=".">
 				<text><![CDATA[
 ---
@@ -19,18 +19,18 @@ header_anchor: true
 ]]></text>
 				<section title="Full Documentation">
 					<section title="Application">
-						<file name="Boomerang/src/Boomerang/Boomerang.php"/>
+						<file name="src/Boomerang/Boomerang.php"/>
 					</section>
 					<section title="Http">
-						<file name="Boomerang/src/Boomerang/HttpRequest.php"/>
-						<file name="Boomerang/src/Boomerang/HttpResponse.php"/>
+						<file name="src/Boomerang/HttpRequest.php"/>
+						<file name="src/Boomerang/HttpResponse.php"/>
 					</section>
 					<section title="Validators">
-						<file name="Boomerang/src/Boomerang/HttpResponseValidator.php"/>
-						<file name="Boomerang/src/Boomerang/JSONValidator.php"/>
+						<file name="src/Boomerang/HttpResponseValidator.php"/>
+						<file name="src/Boomerang/JSONValidator.php"/>
 					</section>
 					<section title="Type Expectations">
-						<recursiveDirectory name="Boomerang/src/Boomerang/TypeExpectations"/>
+						<recursiveDirectory name="src/Boomerang/TypeExpectations"/>
 					</section>
 				</section>
 			</docpage>
@@ -38,17 +38,39 @@ header_anchor: true
 				<text>The first step in surface testing your API is making the request. That is done with the
 					`HttpRequest` object.
 				</text>
-				<file name="Boomerang/src/Boomerang/HttpRequest.php"
+				<file name="src/Boomerang/HttpRequest.php"
 					  method-filter="/(>set(?!Post)|>__construct|>makeRequest)/i" skip-class-header="true"
 					  skip-method-returns="true"/>
 			</section>
 			<section title="Validating API Expectations">
 				<text>Validators are used to define your expectations for the response.</text>
-				<file name="Boomerang/src/Boomerang/HttpResponseValidator.php"
+				<file name="src/Boomerang/HttpResponseValidator.php"
 					  method-filter="/>expect/i" skip-class-header="true" skip-method-returns="true"/>
-				<file name="Boomerang/src/Boomerang/JSONValidator.php"
+				<file name="src/Boomerang/JSONValidator.php"
 					  method-filter="/>expect/i" skip-class-header="true" skip-method-returns="true"/>
 			</section>
 		</section>
+	</docpage>
+
+	<docpage target="install.md">
+		<text><![CDATA[
+---
+layout: default
+title: Installation
+header_anchor: true
+---
+]]></text>
+	<section title="Installation">
+		<section title="Dependencies">
+			<composer-requires/>
+		</section>
+		<section title="Installing with Composer">
+			<text>PHP User Agent is available through Packagist via Composer.</text>
+			<composer-install dev="true" text="Add to your local project" />
+
+			<composer-install global="true" text="Install globally" />
+		</section>
+
+	</section>
 	</docpage>
 </mddoc>
