@@ -1,4 +1,17 @@
-exclude: ["sass", ".sass-cache", "config.rb", "docsrc", "node_modules", "vendor"]
+exclude: [
+  "sass",
+  ".sass-cache",
+  "config.rb",
+  "docsrc",
+  "node_modules",
+  "package.json",
+  "package-lock.json",
+  "vendor",
+  "composer.json",
+  "composer.lock",
+  "Boomerang",
+  "README.md"
+]
 permalink: /blog/:year/:month/:day/:title.html
 
 markdown: redcarpet
