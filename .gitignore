@@ -1,6 +1,7 @@
 /Boomerang
 
 css/
+docs/
 .sass-cache/
 _site/
 node_modules/

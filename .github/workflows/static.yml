@@ -42,6 +42,20 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: json, dom
+
+      - name: Install dependencies with composer
+        run: composer install
+        
+      - run: ln -s ./vendor/boomerang/boomerang Boomerang
+
+      - name: Generate Docs
+        run: ./vendor/bin/mddoc
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
