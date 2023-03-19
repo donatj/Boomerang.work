@@ -5,4 +5,5 @@ css/
 _site/
 node_modules/
 
+composer.lock
 /vendor/

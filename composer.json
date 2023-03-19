@@ -3,7 +3,8 @@
     "description": "The Website for Boomerang!",
     "type": "project",
     "require-dev": {
-        "donatj/mddoc": "^0.4.0"
+        "donatj/mddoc": "^0.4.0",
+        "boomerang/boomerang": "*"
     },
     "license": "MIT",
     "authors": [
@@ -11,6 +12,5 @@
             "name": "Jesse Donat",
             "email": "donatj@gmail.com"
         }
-    ],
-    "require": {}
+    ]
 }
