@@ -4,9 +4,9 @@ layout: default
 
 # Introduction
 
-Boomerang*!* is an easy to use API surface testing framework. It is written in PHP and is composer compatible.
+Boomerang*!* is an easy to use API surface testing framework for PHP projects.
 
-Inspired by [Frisby.js](https://docs.frisbyjs.com/), Boomerang*!* takes API testing a step further by allowing easy iteration of values, validation of individual hops along a set of redirects, all the while using a more reliable, extensible architecture.
+Originally inspired by [Frisby.js](https://docs.frisbyjs.com/), Boomerang*!* takes API testing a step further by allowing easy iteration of values, validation of individual hops along a set of redirects, all the while using a more reliable, extensible architecture.
 
 Boomerang*!* uses [semantic versioning](https://semver.org/), and is at major version 0, so the public API while the API should not contain major changes, there may be some small shuffeling from time to time until we hit our 1.0 release.
 
@@ -18,22 +18,18 @@ Boomerang*!* tests your API by making actual HTTP requests to your API and valid
 
 - Fully programable in PHP
 - HTTP Validation Engine
-	- Header Validations
-	- HTTP Status Validations
-	- Body Validations
-	- Validations *Per Redirection* Hop
+  - Header Validations
+  - HTTP Status Validations
+  - Body Validations
+  - Validations *Per Redirection* Hop
 - JSON Structure Validation Engine
-	- Field Type Validations
-	- Numeric Range Validations
-	- Iterative Validations
-
-### Features Possibly In The Works
-
-- XML Validation
+  - Field Type Validations
+  - Numeric Range Validations
+  - Iterative Validations
 
 ## Does Boomerang*!* replace unit testing?
 
-*No*, not at all. Boomerang*!* is for what is known as "end to end" or E2E testing. A final sanity test of youre response.  It is intended to be used in **conjunction** with a other unit test suites for an full test sweep. 
+*No*, not at all. Boomerang*!* is for what is known as "end to end" or E2E testing. A final sanity test of youre response.  It is intended to be used in **conjunction** with a other unit test suites for an full test sweep.
 
 ## What does a simple test look like?
 
