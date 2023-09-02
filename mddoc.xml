@@ -30,7 +30,7 @@ header_anchor: true
 						<file name="src/Boomerang/JSONValidator.php"/>
 					</section>
 					<section title="Type Expectations">
-						<recursiveDirectory name="src/Boomerang/TypeExpectations"/>
+						<recursive-directory name="src/Boomerang/TypeExpectations"/>
 					</section>
 				</section>
 			</docpage>
