@@ -3,7 +3,7 @@
     "description": "The Website for Boomerang!",
     "type": "project",
     "require-dev": {
-        "donatj/mddoc": "^0.7.0",
+        "donatj/mddoc": "^0.8.0",
         "boomerang/boomerang": "*"
     },
     "license": "MIT",
