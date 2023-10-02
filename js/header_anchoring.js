@@ -38,6 +38,14 @@ function header_anchoring( rootElm, contentElm, max_depth ) {
 		a.classList.add('quicklink');
 		a.innerText = e.innerText;
 
+		a.addEventListener('click', function(ev) {
+			ev.preventDefault();
+			e.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+			});
+		});
+
 		output += '<li>' + a.outerHTML + '</li>';
 
 		last_hv = hv;
