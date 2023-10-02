@@ -1,5 +1,4 @@
-<mddoc>
-	<autoloader type="psr0" root="src" namespace="Boomerang" />
+<mddoc autoloader="psr0" working-dir="Boomerang" autoloader-root="src">
 	<docpage target="docs/index.md">
 		<text><![CDATA[
 ---
