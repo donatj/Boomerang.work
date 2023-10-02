@@ -1,23 +1,23 @@
+/**
+ * @param rootElm HTMLElement
+ * @param contentElm HTMLElement
+ * @param max_depth Number
+ */
+function header_anchoring( rootElm, contentElm, max_depth ) {
+	let output = '';
+	let i = 0;
 
-function header_anchoring( search_selector, injection_selector, max_depth ) {
+	let last_hv = 0;
+	/** @type {NodeListOf<HTMLElement>} */
+	const hItems = rootElm.querySelectorAll('h1,h2,h3,h4,h5,h6,h7,h8');
 
-	if( typeof "".repeat == "undefined" ) {
-		String.prototype.repeat = function( num ) {
-			return new Array( num + 1 ).join( this );
-		}
-	}
-
-	var output = '';
-	var i = 0;
-
-	var last_hv = 0;
-	$$(search_selector)[0].getElements('h1,h2,h3,h4,h5,h6,h7,h8').each(function(e,i) {
-		var tag = e.get('tag');
-		var hv  = parseInt( /^h(\d+)/gi.exec(tag)[1], 10);
-		var hv_diff = hv - last_hv;
+	for (const e of hItems) {
+		const tag = e.tagName;
+		const hv = parseInt(/^h(\d+)/gi.exec(tag)[1], 10);
+		const hv_diff = hv - last_hv;
 
 		if(hv > max_depth) {
-			return;
+			continue;
 		}
 
 		if( hv_diff > 0 ) {
@@ -26,23 +26,25 @@ function header_anchoring( search_selector, injection_selector, max_depth ) {
 			output += '</ul>'.repeat( 0 - hv_diff );
 		}
 
-		var id
-		if( !(id = e.get('id')) ) {
+		let id;
+		if( !(id = e.getAttribute('id')) ) {
 			id   = 'hqlink-' + i;
 		}
-		
-		var href = location.protocol + '//' + location.host + location.pathname + '#' + id
-		var a    = new Element('a.quicklink').set('href', href);
-		a.set('text', e.get('text'));
+
+		const href = location.protocol + '//' + location.host + location.pathname + '#' + id;
+
+		const a = document.createElement('a');
+		a.setAttribute('href', href);
+		a.classList.add('quicklink');
+		a.innerText = e.innerText;
 
 		output += '<li>' + a.outerHTML + '</li>';
 
 		last_hv = hv;
 		i++;
-	});
+	}
 
 	output += '</ul>'.repeat( last_hv );
 	
-	$$(injection_selector).set('html', output);
-
-};
+	contentElm.innerHTML = output;
+}

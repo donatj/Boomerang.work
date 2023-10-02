@@ -18,8 +18,12 @@
 		<script src="/js/header_anchoring.js"></script>
 		{% if page.header_anchor %}
 		<script type="text/javascript">
-		window.addEvent('load', function() {
-			header_anchoring( 'body > main', '#content_struct', 3 );
+		document.addEventListener('DOMContentLoaded', function() {
+			header_anchoring( 
+				document.querySelector('body > main'), 
+				document.querySelector('#content_struct'), 
+				3
+			);
 		});
 		</script>
 		{% endif %}
