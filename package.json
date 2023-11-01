@@ -12,6 +12,6 @@
   "author": "Jesse G. Donat",
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.68.0"
+    "sass": "^1.69.5"
   }
 }
