@@ -1,10 +1,11 @@
 ---
 layout: default
+title: Boomerang! - API Surface Testing
 ---
 
 # Introduction
 
-Boomerang*!* is an easy to use API surface testing framework for PHP projects.
+Boomerang*!* is an easy-to-use API surface testing framework.
 
 Originally inspired by [Frisby.js](https://docs.frisbyjs.com/), Boomerang*!* takes API testing a step further by allowing easy iteration of values, validation of individual hops along a set of redirects, all the while using a more reliable, extensible architecture.
 
