@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Boomerang! - API Surface Testing
+title: API Surface Testing
 ---
 
 # Introduction
@@ -10,6 +10,14 @@ Boomerang*!* is an easy-to-use API surface testing framework.
 Originally inspired by [Frisby.js](https://docs.frisbyjs.com/), Boomerang*!* takes API testing a step further by allowing easy iteration of values, validation of individual hops along a set of redirects, all the while using a more reliable, extensible architecture.
 
 Boomerang*!* uses [semantic versioning](https://semver.org/), and is at major version 0, so the public API while the API should not contain major changes, there may be some small shuffeling from time to time until we hit our 1.0 release.
+
+## Looking for a different Boomerang? 
+
+There's a non-zero chance that you're here looking for a different API testing utility also named Boomerang. I get contacted by confused people about it all the time.
+
+The other Boomerang stole our name. Our project is 10 years older. We politely asked them to change it, but they refused.
+
+With that in mind, I recommend [RapidAPI](https://paw.cloud/) - It does what the other Boomerang does, and it's authors aren't jerks.
 
 ## Quick Start
 
